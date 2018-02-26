@@ -47,7 +47,7 @@
     'arrow-parens': ['error', 'as-needed'],
 
     'comma-style': 'error',
-    'comma-dangle': ['error', 'always'],
+    'comma-dangle': ['error', 'only-multiline'],
 
     'keyword-spacing': 'error',
     'array-bracket-spacing': 'error',
