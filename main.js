@@ -9,7 +9,9 @@ class App extends React.Component {
       <div>
         UB Components
         <br />
-        <GenericButton></GenericButton>
+        <GenericButton
+          text={ 'test button' }
+        />
       </div>
     )
   }
