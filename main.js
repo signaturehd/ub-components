@@ -12,6 +12,9 @@ class App extends React.Component {
         <GenericButton
           text={ 'test button' }
         />
+        <GenericButton
+          text={ 'test button' }
+        />
       </div>
     )
   }
