@@ -1,4 +1,13 @@
-import nonAuth from './nonAuth'
-import BaseViewComponent from './BaseViewComponent'
+import React from 'react'
+import { Route } from 'react-router-dom'
 
-export default BaseViewComponent(nonAuth)
+import BaseComponent from './BaseComponent'
+import nonAuth from './nonAuth'
+import auth from './auth'
+
+export default () => (
+  <Route component={ BaseComponent }>
+    { auth() }
+    { nonAuth() }
+  </Route>
+)

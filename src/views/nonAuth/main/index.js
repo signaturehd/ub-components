@@ -1,17 +1,8 @@
-import React, { Component, } from 'react'
-import { UButton } from '../../../ub-components'
+import React from 'react'
+import { Route } from 'react-router-dom'
 
-class Main extends Component {
-  render () {
-    return (
-      <div>
-        Hello world
-        <UButton.GenericButton
-          text={ 'Custom Button Text' }
-        />
-      </div>
-    )
-  }
-}
+import Main from './Main'
 
-export default Main
+export default () => (
+  <Route exact path='/' component={ Main } />
+)

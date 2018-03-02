@@ -1,10 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
-import main from './main'
+import Optical from './Optical'
 
 export default () => (
-  <Route>
-    { main() }
-  </Route>
+  <Route path='optical' component={ Optical } />
 )

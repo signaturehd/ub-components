@@ -49,6 +49,7 @@ module.exports = {
   externals: project.externals,
   devServer: {
     port: project.port,
+    historyApiFallback: true,
   },
   plugins: [
     HtmlWebpackPluginConfig,
