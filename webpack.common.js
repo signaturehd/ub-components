@@ -17,6 +17,12 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 
 module.exports = {
+  target: 'web',
+  node: {
+      fs: 'empty',
+      net: 'empty',
+      tls: 'empty',
+  },
   entry: inProjectSrc(project.main),
   output: {
     path: path.resolve(project.outDir),
