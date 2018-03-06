@@ -1,11 +1,13 @@
 import React , { Component } from 'react'
+import 'styles/button.css'
 
-export default class GenericSelect extends Component {
+
+export default class GenericButton extends Component {
   render () {
     const { text } = this.props
 
     return (
-      <button>{ text }</button>
+      <button className = { '_button-lg' }>{ text }</button>
     )
   }
 }
