@@ -1,0 +1,9 @@
+button {
+  border-radius: 50px;
+  border : 1px #ff8a00;
+  background : transparent;
+}
+
+._button-lg {
+  width : 100%;
+}
