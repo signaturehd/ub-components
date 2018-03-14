@@ -3,8 +3,6 @@ import ConnectComponent from '../../utils/ConnectComponent'
 
 import LoginPresenter from './presenter/LoginPresenter'
 
-import LoginParam from '../../domain/user/param/LoginParam'
-
 import BaseView from '../common/base/BaseView'
 
 import { GenericButton } from '../../ub-components/UButton/'

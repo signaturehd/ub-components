@@ -1,10 +1,10 @@
-import LoginInteractor from '../../../domain/user/interactor/LoginInteractor'
-import LoginParam from '../../../domain/user/param/LoginParam'
+import LoginInteractor from '../../../domain/interactor/user/LoginInteractor'
+import LoginParam from '../../../domain/param/LoginParam'
 
 export default class LoginPresenter {
 
   constructor(container) {
-    this.loginInteractor = new LoginInteractor(container.get('UserRepository'))
+    this.loginInteractor = new LoginInteractor(container.get('HRBenefitsClient'))
   }
 
   setView(view) {
