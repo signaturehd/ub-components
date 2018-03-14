@@ -5,7 +5,7 @@ export default class UserService {
   }
 
   login(loginParam) {
-    return this.apiClient.post('/login', {
+    return this.apiClient.post('/v1/login', {
       body: loginParam,
       json: true,
     })

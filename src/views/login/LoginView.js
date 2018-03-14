@@ -17,6 +17,11 @@ class LoginView extends BaseView {
   constructor(props) {
     super(props)
 
+    this.state = {
+      username: '',
+      password: '',
+    }
+
     this.presenter = props.presenter
     this.presenter.setView(this)
   }
@@ -29,10 +34,16 @@ class LoginView extends BaseView {
         </div>
         <div className = { '._login-form-grid' }>
           <div className = {'_image-logo'}></div>
-          <GenericTextBox placeholder = { 'Employee Id' } type = { 'text' }/>
-          <GenericTextBox placeholder = { 'Password' } type = { 'password' }/>
+          <GenericTextBox
+            onChange = { e => this.setState({ username: e.target.value }) }
+            placeholder = { 'Employee Id' }
+            type = { 'text' }/>
+          <GenericTextBox
+            onChange = { e => this.setState({ password: e.target.value }) }
+            placeholder = { 'Password' }
+            type = { 'password' }/>
           <GenericButton text="Hello"
-            onClick = { () => this.presenter.login(LoginParam('1700387', 'a@17003877')) }/>
+            onClick = { () => this.presenter.login(this.state.username, this.state.password) }/>
         </div>
       </div>
     )

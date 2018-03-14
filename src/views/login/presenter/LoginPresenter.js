@@ -1,6 +1,5 @@
 import LoginInteractor from '../../../domain/user/interactor/LoginInteractor'
-import UserService from '../../../data/user/service/UserService'
-import UserDataRepository from '../../../data/user/repository/UserDataRepository'
+import LoginParam from '../../../domain/user/param/LoginParam'
 
 export default class LoginPresenter {
 
@@ -12,18 +11,16 @@ export default class LoginPresenter {
     this.view = view
   }
 
-  login(loginParam) {
+  login(username, password) {
     this.view.showLoading('')
 
-    this.loginInteractor.execute(loginParam)
+    this.loginInteractor.execute(LoginParam(username, password))
       .subscribe(
         data => {
           this.view.hideLoading()
-          console.log(data)
         },
         error => {
           this.view.hideLoading()
-          console.log(error)
         }
       )
   }
