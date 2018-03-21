@@ -10,4 +10,11 @@ export default class UserService {
       json: true,
     })
   }
+
+  otp(otpParam) {
+    return this.apiClient.post('/v1/otp', {
+      body: otpParam,
+      json: true,
+    })
+  }
 }
