@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route, browserHistory } from 'react-router-dom'
 
 /* Routes */
-import LoginView from './views/login/LoginView'
+import App from './views/App'
 import { main } from './css'
 
 import store from './store'
@@ -19,8 +19,6 @@ import AppModule from './di/AppModule'
 ReactDOM.render(
   <Provider store={ store }>
     <BrowserRouter history={ browserHistory }>
-      <Route path = '/' render={(props) => (
-        <LoginView {...props} container = { AppModule(new Container()) } />
-      )} />
+      <App container={ AppModule(new Container()) } />
     </BrowserRouter>
   </Provider>, document.getElementById('root'))

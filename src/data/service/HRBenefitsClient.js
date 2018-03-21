@@ -1,3 +1,5 @@
+import ServiceErrorOperator from '../common/operator/ServiceErrorOperator'
+
 export default class HRBenefitsClient {
 
   constructor(service) {
@@ -6,5 +8,6 @@ export default class HRBenefitsClient {
 
   login(loginParam) {
     return this.service.login(loginParam)
+      .pipe(ServiceErrorOperator())
   }
 }

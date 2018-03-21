@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ConnectComponent from '../../utils/ConnectComponent'
+import ConnectView from '../../utils/ConnectView'
 
 import LoginPresenter from './presenter/LoginPresenter'
 
@@ -48,4 +48,4 @@ class LoginView extends BaseView {
   }
 }
 
-export default ConnectComponent(LoginView, LoginPresenter)
+export default ConnectView(LoginView, LoginPresenter)

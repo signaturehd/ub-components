@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-export default function ConnectComponent (View, Presenter) {
-  class ConnectComponent extends Component {
+export default function ConnectView (View, Presenter) {
+  class ConnectView extends Component {
     constructor () {
       super()
     }
@@ -13,5 +13,5 @@ export default function ConnectComponent (View, Presenter) {
     }
   }
 
-  return ConnectComponent
+  return ConnectView
 }
