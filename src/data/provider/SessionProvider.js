@@ -6,6 +6,10 @@ export default class SessionProvider {
     this.storage = window.localStorage
   }
 
+  setToken (token = '') {
+    return this.storage.setItem(TOKEN, token)
+  }
+
   getToken () {
     return this.storage.getItem(TOKEN) || ''
   }

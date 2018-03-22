@@ -19,7 +19,7 @@ export default container => {
   )
 
   container.singleton('HRBenefitsService', HRBenefitsService, ['ApiClient'])
-  container.singleton('HRBenefitsClient', HRBenefitsClient, ['HRBenefitsService'])
+  container.singleton('HRBenefitsClient', HRBenefitsClient, ['HRBenefitsService', 'SessionProvider'])
 
   return container
 }
