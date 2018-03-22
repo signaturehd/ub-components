@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path = '/' render={(props) => {
+          <Route path = '/' render={(props) => {
             if (this.state.isLogin) {
               return <DrawerView container = { this.props.container } />
             } else {

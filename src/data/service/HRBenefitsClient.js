@@ -37,4 +37,18 @@ export default class HRBenefitsClient {
   getAccountToken () {
     return this.sessionProvider.getAccountToken()
   }
+
+  setAccountNumber (accountNumber) {
+    this.sessionProvider.setAccountNumber(accountNumber)
+  }
+
+  getAccountNumber () {
+    return this.sessionProvider.getAccountNumber()
+  }
+
+  /* accounts */
+  validateAccountNumber (accountNumber) {
+    return this.service.validateAccountNumber(accountNumber)
+      .pipe(ServiceErrorOperator())
+  }
 }

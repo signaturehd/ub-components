@@ -21,8 +21,9 @@ class DrawerView extends BaseMVPView {
         TODO sidebar here lol
         <button onClick={ () => this.presenter.logout() }>Logout</button>
         <Switch>
-          <Route exact path = '/benefits' render={(props) => {
-            return <BenefitsPartial container = { this.props.container } />
+          <Route path = '/benefits' render={(props) => {
+            console.log('returning benefit partial')
+            return <BenefitsPartial parent = { this } />
           }} />
         </Switch>
       </div>
