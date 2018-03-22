@@ -9,6 +9,7 @@ export default class VerifyOtpInteractor {
       .do(authResp => {
         if (authResp) {
           this.client.setToken(authResp.token)
+          this.client.setAccountToken(authResp.accountToken)
         }
       })
   }

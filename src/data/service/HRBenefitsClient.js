@@ -29,4 +29,12 @@ export default class HRBenefitsClient {
   getToken () {
     return this.sessionProvider.getToken()
   }
+
+  setAccountToken (accountToken) {
+    this.sessionProvider.setAccountToken(accountToken)
+  }
+
+  getAccountToken () {
+    return this.sessionProvider.getAccountToken()
+  }
 }

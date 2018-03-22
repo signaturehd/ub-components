@@ -13,7 +13,8 @@ export default container => {
       headers: {
         'X-IBM-Client-Id': CLIENT_ID,
         'X-IBM-Client-Secret': CLIENT_SECRET,
-        'token': container.get('SessionProvider').getToken()
+        'token': container.get('SessionProvider').getToken(),
+        'accountToken': container.get('SessionProvider').getAccountToken(),
       }
     })
   )
