@@ -22,7 +22,6 @@ class DrawerView extends BaseMVPView {
         <button onClick={ () => this.presenter.logout() }>Logout</button>
         <Switch>
           <Route path = '/benefits' render={(props) => {
-            console.log('returning benefit partial')
             return <BenefitsPartial parent = { this } />
           }} />
         </Switch>
