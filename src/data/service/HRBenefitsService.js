@@ -7,14 +7,14 @@ export default class HRBenefitsService {
 
   /* user */
   login(loginParam) {
-    return this.apiClient.post('/v1/login', {
+    return this.apiClient.post('v1/login', {
       body: loginParam,
       json: true,
     })
   }
 
   otp(otpParam) {
-    return this.apiClient.post('/v1/otp', {
+    return this.apiClient.post('v1/otp', {
       body: otpParam,
       json: true,
     })
@@ -26,6 +26,13 @@ export default class HRBenefitsService {
       headers: {
         referenceid: Math.random().toString(36).substring(7)
       },
+      json: true,
+    })
+  }
+
+  /* rds */
+  getReleasingCenters () {
+    return this.apiClient.get('v1/rds/centers', {
       json: true,
     })
   }

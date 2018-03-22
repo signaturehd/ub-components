@@ -51,4 +51,10 @@ export default class HRBenefitsClient {
     return this.service.validateAccountNumber(accountNumber)
       .pipe(ServiceErrorOperator())
   }
+
+  /* rds */
+  getReleasingCenters () {
+    return this.service.getReleasingCenters()
+      .pipe(ServiceErrorOperator())
+  }
 }

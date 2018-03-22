@@ -15,6 +15,10 @@ class BenefitsPartial extends BaseMVPView {
     }
   }
 
+  showReleasingCenters (releasingCenters) {
+    //TODO show to generic multilist dialog
+  }
+
   onValidAccountNumber () {
     //TODO dismiss account number dialog
   }
@@ -32,6 +36,12 @@ class BenefitsPartial extends BaseMVPView {
           this.presenter.validateAccountNumber(accountNumber) }>
           Validate Account Number
         </button>
+        {
+          //TODO move to FAB
+        }
+        <button onClick={ () =>
+          this.presenter.getReleasingCenters()
+        }>Get Releasing Centers</button>
       </div>
     )
   }
