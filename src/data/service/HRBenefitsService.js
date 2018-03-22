@@ -5,6 +5,7 @@ export default class HRBenefitsService {
     this.accountClient = accountClient
   }
 
+  /* user */
   login(loginParam) {
     return this.apiClient.post('/v1/login', {
       body: loginParam,
@@ -19,6 +20,7 @@ export default class HRBenefitsService {
     })
   }
 
+  /* account */
   validateAccountNumber (accountNumber) {
     return this.accountClient.get('accounts/v1/' + accountNumber, {
       headers: {
