@@ -57,4 +57,9 @@ export default class HRBenefitsClient {
     return this.service.getReleasingCenters()
       .pipe(ServiceErrorOperator())
   }
+  /* Library */
+  getBooks () {
+    return this.service.getBooks()
+      .pipe(ServiceErrorOperator())
+  }
 }

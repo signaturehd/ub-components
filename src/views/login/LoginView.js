@@ -11,7 +11,7 @@ import { GenericTextBox } from '../../ub-components/TextBox/'
 import './presenter/login.css'
 
 import OtpModal from '../otp/OtpModal'
-
+import NavBar from '../../ub-components/NavBar/NavBar.js'
 class LoginView extends BaseMVPView {
 
   constructor(props) {
@@ -35,7 +35,9 @@ class LoginView extends BaseMVPView {
 
     return (
       <div>
+        <NavBar/>
         {
+
           //TODO properly show otp modal as 'modal', not by just swapping views lol
           showOtpModal ?
           <OtpModal
