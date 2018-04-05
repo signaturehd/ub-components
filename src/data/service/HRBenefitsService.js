@@ -39,26 +39,24 @@ export default class HRBenefitsService {
    /* Library */
    getBooks () {
     return  Observable.create(observer => {
-      observer.next([
-        {
-          book_id: '1',
-          book_name: 'The Origin',
-          book_author: 'Dan Brown',
-          book_rating: '4',
-          },
-          {
-            book_id: '2',
-            book_name: 'Angels and Demons',
-            book_author: 'Dan Brown',
-            book_rating: '5', 
-          },
-          {
-            book_id: '3',
-            book_name: 'The Lost Symbol',
-            book_author: 'Dan Brown',
-            book_rating: '5', 
-          }
-      ])
+      observer.next; {
+        content: {
+            books: [
+              {
+                Author: 'Dan Brown',
+                Title: 'The Origin',
+                id : 1007,
+                Rating: 5,
+              },
+              {
+                Author: 'Dan Brown',
+                Title: 'The Lost Symbol',
+                id : 1008,
+                Rating: 4,
+              }
+            ]
+         }
+      };
       
        observer.complete()
       })

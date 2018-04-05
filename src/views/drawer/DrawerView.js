@@ -9,7 +9,6 @@ import BenefitsPartial from '../benefits/BenefitsPartial'
 import Presenter from './presenter/DrawerPresenter'
 
 class DrawerView extends BaseMVPView {
-
   constructor (props) {
     super(props)
   }
