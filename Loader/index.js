@@ -1,8 +1,8 @@
-import React, { Componet } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 
-import 'styles/style.css'
+import './styles/style.css'
 
 class Loader extends Component {
   render () {
@@ -12,8 +12,7 @@ class Loader extends Component {
     return(
       <div className = { 'linear-activity' } >
         <div
-        className = { width ? 'determinate' : 'indeterminate' }
-        { width && width = { width } } >
+        className = { width ? 'determinate' : 'indeterminate' }>
         </div>
       </div>
     )
