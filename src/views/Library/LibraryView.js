@@ -1,30 +1,36 @@
-mport React from 'react'
+import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import BaseMVPView from '../common/base/BaseMVPView'
+
 
 import ConnectView from '../../utils/ConnectView'
-import Interactor from '../../domain/interactor/library'
+import Interactor from '../../domain/interactor/library/GetbooksInteractor'
 
 import Presenter from './presenter/LibraryPresenter'
+import BaseMVPView from '../common/base/BaseMVPView';
+import ConnectPartial from '../../utils/ConnectPartial';
 
-class LibraryView extends Baseview {
-    constructor(props)
-    super (props)
-    {
+ class LibraryView extends BaseMVPView {
+    constructor (props) {
+        super(props)
+      }
+
+      componentDidMount (){
+          this.presenter.getBooks()
+      }
+        showBooks(books)
         
-    }
+        {
+            console.log (books)
+        }
+
+
    
+render () {  
+    return(<div> set.this.state.</div>)
    
-render () {
-    <div id="root"></div>
+  
     
-    //To retrieve keys from Data
-    var keys = Object.keys(empdata.content);
- 
-    //iterate through the keys to get the underlying values
-    var allEmps = keys.map((t) => empdata.content[t].map((e) => (<div><li>{e.id}-{e.Author}-{e.Title}{e.Rating}</li></div>)) );
-    return (<div> </div>)
-    return (<div>{allEmps}</div>)
     }
 }
+export default ConnectPartial(LibraryView, Presenter)
 

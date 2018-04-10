@@ -1,3 +1,4 @@
+import{Observable} from 'rxjs'
 export default class HRBenefitsService {
 
   constructor(apiClient, accountClient) {
@@ -39,9 +40,10 @@ export default class HRBenefitsService {
    /* Library */
    getBooks () {
     return  Observable.create(observer => {
-      observer.next; {
-        content: {
-            books: [
+      observer.next({
+        response: {
+            statusCode: 200,
+            body: [
               {
                 Author: 'Dan Brown',
                 Title: 'The Origin',
@@ -56,7 +58,7 @@ export default class HRBenefitsService {
               }
             ]
          }
-      };
+      });
       
        observer.complete()
       })

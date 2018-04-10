@@ -3,7 +3,7 @@ import GetbooksInteractor from '../../../domain/interactor/library/GetbooksInter
 
 export default class LibraryPresenter {
   constructor (container) {
-    this.GetbooksInteractor = new LibraryPresenter(container.get('HRBenefitsClient'))
+    this.getbooksInteractor = new GetbooksInteractor(container.get('HRBenefitsClient'))
   }
 
   setView(view) {
@@ -13,10 +13,10 @@ export default class LibraryPresenter {
   getBooks() {
     this.view.showLoading()
 
-    this.GetbooksInteractor.execute(getBooks())
-    .subscribe(showBooks => {
+    this.getbooksInteractor.execute()
+    .subscribe(books => {
         this.view.hideLoading()
-        this.view.showBooks(showBooks)
+        this.view.showBooks(books)
       }, e => {
         this.view.hideLoading()
         //TODO prompt generic error
