@@ -43,7 +43,7 @@ class LoginView extends BaseMVPView {
             username = { username }
             transactionType = { 2 } /> //TODO, move this static '2' to proper file on domain
           :
-          <div>
+          <div className = {'_box-form'}>
             <div className = { '_login-grid' }>
               <div className = { '_benefit-frame' }>
                 <div className = { '_banner-logo' }></div>

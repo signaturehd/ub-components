@@ -9,7 +9,9 @@
   background-repeat: no-repeat;
   height: 100vh;
 }
-
+._box-form {
+  text-align: center;
+}
 ._banner-logo {
   background: url('../../../images/ublogo.png');
   background-size:30vh;
