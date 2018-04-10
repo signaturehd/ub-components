@@ -35,6 +35,7 @@ class LoginView extends BaseMVPView {
 
     return (
       <div>
+        { super.render() }
         {
           //TODO properly show otp modal as 'modal', not by just swapping views lol
           showOtpModal ?
