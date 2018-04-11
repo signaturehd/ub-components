@@ -22,10 +22,10 @@ export default class HRBenefitsService {
 
   /* account */
   validateAccountNumber (accountNumber) {
-    return this.accountClient.get(`accounts/v1/${  accountNumber}`, {
+    return this.accountClient.get(`accounts/v1/${accountNumber}`, {
       headers: {
         referenceid: Math.random().toString(36)
-.substring(7)
+        .substring(7)
       },
       json: true,
     })
@@ -37,6 +37,7 @@ export default class HRBenefitsService {
       json: true,
     })
   }
+
    /* Library */
    getBooks () {
     return  Observable.create(observer => {
@@ -45,27 +46,35 @@ export default class HRBenefitsService {
             statusCode: 200,
             body: [
               {
-                Author: 'Dan Brown',
-                Title: 'The Origin',
                 id : 1007,
-                Rating: 5,
+                author: 'Pen Kilmaster',
+                name : 'Senior Cost Accountant',
+                title: 'The Origin',
+                image : 'https://i.pinimg.com/564x/fc/b7/47/fcb74721dca0c66312d59b7258740f15.jpg',
+                description : 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.',
+                rating: 5,
               },
               {
-                Author: 'Dan Brown',
-                Title: 'The Lost Symbol',
-                id : 1008,
-                Rating: 4,
-              },
+                id : 1007,
+                author: 'Pen Kilmaster',
+                name : 'Senior Cost Accountant',
+                title: 'The Origin',
+                image : 'https://i.pinimg.com/564x/e5/86/e0/e586e0b818a324d077cd98e8627188ab.jpg',
+                description : 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.',
+                rating: 5,              },
               {
-                Author: 'J.K.',
-                Title: 'The Harry Potter Series',
-                id : 1100,
-                Rating: 4,
+                id : 1007,
+                author: 'Pen Kilmaster',
+                name : 'Senior Cost Accountant',
+                title: 'The Origin',
+                image : 'https://i.pinimg.com/564x/e5/86/e0/e586e0b818a324d077cd98e8627188ab.jpg',
+                description : 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.',
+                rating: 5,
               }
             ]
          }
       })
-      
+
        observer.complete()
       })
   }

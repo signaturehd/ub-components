@@ -37,8 +37,10 @@ class LibraryView extends BaseMVPView {
             return (
               <GenericCard
                 title = { book.title }
-                description = { book.Author }
-              />              
+                author = { book.author }
+                image = { book.image }
+                description = { book.description }
+              />
             )
           })
         }
