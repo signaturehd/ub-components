@@ -34,10 +34,12 @@ class LibraryView extends BaseMVPView {
       <div className = {'library-container'}>
         {
           showBooks.map((book, key) => {
-            <GenericCard
-              title = { book.title }
-              description = { book.Author }
-          />
+            return (
+              <GenericCard
+                title = { book.title }
+                description = { book.Author }
+              />              
+            )
           })
         }
       </div>
