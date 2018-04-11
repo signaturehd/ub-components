@@ -6,7 +6,7 @@ import ConnectView from '../../utils/ConnectView'
 
 import BenefitsPartial from '../benefits/BenefitsPartial'
 import LibraryView from '../Library/LibraryView'
-
+import NewsView from '../news/NewsView'
 import Presenter from './presenter/DrawerPresenter'
 
 class DrawerView extends BaseMVPView {
@@ -27,6 +27,10 @@ class DrawerView extends BaseMVPView {
           <Route path = '/library' render={(props) => {
             console.log('showing library')
             return <LibraryView parent = { this } />
+          }} />
+            <Route path = '/news' render={(props) => {
+            console.log('showing news')
+            return <NewsView parent = { this } />
           }} />
         </Switch>
         

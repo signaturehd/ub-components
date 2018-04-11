@@ -62,4 +62,9 @@ export default class HRBenefitsClient {
     return this.service.getBooks()
       .pipe(ServiceErrorOperator())
   }
+  /* News */
+  getNews () {
+    return this.service.getNews()
+      .pipe(ServiceErrorOperator())
+  }
 }

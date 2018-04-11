@@ -22,10 +22,13 @@ class LibraryView extends BaseMVPView {
   }
 
   componentDidMount () {
+    
       this.presenter.getBooks()
   }
 
-  showBooks (books) {this.setState({showBooks:books})}
+  showBooks (books) {
+    
+    this.setState({showBooks:books})}
 
   render () {
     const { showBooks } = this.state
@@ -34,10 +37,12 @@ class LibraryView extends BaseMVPView {
       <div className = {'library-container'}>
         {
           showBooks.map((book, key) => {
-            <GenericCard
-              title = { book.title }
-              description = { book.Author }
-          />
+            return (
+              <GenericCard
+                title = { book.title }
+                description = { book.Author }
+              />
+            )
           })
         }
       </div>

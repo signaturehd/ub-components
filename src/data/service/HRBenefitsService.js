@@ -69,4 +69,9 @@ export default class HRBenefitsService {
        observer.complete()
       })
   }
+  getNews () {
+    return this.apiClient.get('v1/news', {
+      json: true,
+    })
+  }
 }
