@@ -13,17 +13,17 @@ export default class LoginPresenter {
 
   login(username, password) {
     this.view.showLoading()
-
-    this.loginInteractor.execute(LoginParam(username, password))
-      .subscribe(
-        data => {
-          this.view.hideLoading()
-          this.view.onLoginSuccess()
-        },
-        error => {
-          this.view.hideLoading()
-          //TODO generic error handling
-        }
-      )
+    this.view.onLoginSuccess()
+    // this.loginInteractor.execute(LoginParam(username, password))
+    //   .subscribe(
+    //     data => {
+    //       this.view.hideLoading()
+    //       this.view.onLoginSuccess()
+    //     },
+    //     error => {
+    //       this.view.hideLoading()
+    //       //TODO generic error handling
+    //     }
+    //   )
   }
 }
