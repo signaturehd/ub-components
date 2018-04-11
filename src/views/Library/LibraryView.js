@@ -12,21 +12,30 @@ import ConnectPartial from '../../utils/ConnectPartial';
  class LibraryView extends BaseMVPView {
     constructor (props) {
         super(props)
+        this.state= {
+            showBooks: []
+        }
+        
       }
 
       componentDidMount (){
           this.presenter.getBooks()
       }
-        showBooks(books)
-        
-        {
-            console.log (books)
+        showBooks(books) {this.setState({showBooks:books})
         }
 
 
    
 render () {  
-    return(<div> set.this.state.</div>)
+    const { showBooks } = this.state
+    return <div><h3>{ showBooks.map((book, key) => {
+        return (
+            <div>{book.Title}{book.Author}{book.id}{book.Rating}</div>
+             
+        )
+       
+        
+    }) }</h3></div>
    
   
     

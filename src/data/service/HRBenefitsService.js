@@ -1,20 +1,19 @@
-import{Observable} from 'rxjs'
+import { Observable } from 'rxjs'
 export default class HRBenefitsService {
-
-  constructor(apiClient, accountClient) {
+  constructor (apiClient, accountClient) {
     this.apiClient = apiClient
     this.accountClient = accountClient
   }
 
   /* user */
-  login(loginParam) {
+  login (loginParam) {
     return this.apiClient.post('v1/login', {
       body: loginParam,
       json: true,
     })
   }
 
-  otp(otpParam) {
+  otp (otpParam) {
     return this.apiClient.post('v1/otp', {
       body: otpParam,
       json: true,
@@ -23,9 +22,10 @@ export default class HRBenefitsService {
 
   /* account */
   validateAccountNumber (accountNumber) {
-    return this.accountClient.get('accounts/v1/' + accountNumber, {
+    return this.accountClient.get(`accounts/v1/${  accountNumber}`, {
       headers: {
-        referenceid: Math.random().toString(36).substring(7)
+        referenceid: Math.random().toString(36)
+.substring(7)
       },
       json: true,
     })
@@ -55,10 +55,16 @@ export default class HRBenefitsService {
                 Title: 'The Lost Symbol',
                 id : 1008,
                 Rating: 4,
+              },
+              {
+                Author: 'J.K.',
+                Title: 'The Harry Potter Series',
+                id : 1100,
+                Rating: 4,
               }
             ]
          }
-      });
+      })
       
        observer.complete()
       })
