@@ -7,13 +7,18 @@ import './styles/style.css'
 class Loader extends Component {
   render () {
 
-    const { width } = this.props
+    const { width, show } = this.props
 
     return(
-      <div className = { 'linear-activity' } >
-        <div
-        className = { width ? 'determinate' : 'indeterminate' }>
-        </div>
+      <div>
+        {
+          show &&
+          <div className = { 'linear-activity' } >
+            <div
+            className = { width ? 'determinate' : 'indeterminate' }>
+            </div>
+          </div>          
+        }
       </div>
     )
   }
@@ -21,9 +26,11 @@ class Loader extends Component {
 
 Loader.propTypes = {
   width : PropTypes.number,
+  show : PropTypes.bool
 }
 
 Loader.defaultProps = {
-  width : 0
+  width : 0,
+  show : false
 }
 export default Loader

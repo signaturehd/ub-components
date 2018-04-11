@@ -1,17 +1,24 @@
+._input-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left:30px;
+  padding-right:30px;
+}
+
+
 ._generic-textbox {
-    padding: 10px;
-    font-size: 15px;
+    font-size: 16px;
+    padding-bottom: 8px;
     outline: none;
-    min-width: 250px;
-    border-radius: 5px;
-    border: 1.5px solid #e1e1e1;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    min-width: 100%;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid #e1e1e1;
     background: #fff;
-    margin: 10px;
     letter-spacing: 1.5px;
-    font-family: 'Calibri',Arial,sans-serif;
 }
 
 ._generic-textbox:focus {
-    border: 1.5px solid #ffa800;
+    border-bottom: 2px solid #ffa800;
 }
