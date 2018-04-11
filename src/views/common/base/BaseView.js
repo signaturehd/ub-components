@@ -13,12 +13,12 @@ class BaseView extends Component {
   }
 
   showLoading(message) {
-    this.setState({ loader : !this.state.loader })
+    this.setState({ loader : true })
     console.log(`loading: ${message}`)
   }
 
   hideLoading() {
-    this.setState({ loader : !this.state.loader })
+    this.setState({ loader : false })
     console.log('hide loading')
   }
 
