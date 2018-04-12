@@ -19,14 +19,12 @@ class OtpModal extends BaseMVPView {
   }
 
   onOtpSuccess () {
-    //TODO redirect to login
     console.log('otp success')
   }
 
   render () {
     const { transactionType, username, onClose } = this.props
     const { otp } = this.state
-    console.log(onClose)
     return (
 
       <Modal
