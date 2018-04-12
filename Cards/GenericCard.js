@@ -16,7 +16,7 @@ class GenericCard extends Component {
       cardStyle : {
         background : `url(${image}) rgba(0,0,0,0.4)`,
         backgroundSize : "contain",
-        height: "120px"
+        height: "100px"
       }
     }
 
