@@ -1,0 +1,35 @@
+header {
+  background-color: #FF8A00;
+  width: auto;
+  grid-column: span 3;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.4em;
+  color: white;
+  align-items: center;
+  box-shadow: 0  1px 4px 0 rgba(0,0,0,0.37);
+
+}
+/* ._appbar-contents {
+  font-family: Montserrat-Light;
+  color: #474747;
+  font-style: 16px;
+  line-height: 14px;
+  position: right;
+}
+._appbar-temp-button {
+    margin-left:  50%;
+}
+._appbar-active-links {
+  font-family: Montserrat-Light;
+  color: #00ADEE;
+  font-style: 16px;
+  line-height: 14px;
+} */
+._img-ub-logo {
+  width: auto;
+  height: 20px;
+  float: left;
+  margin-left: 3%;
+  width: auto;
+}
