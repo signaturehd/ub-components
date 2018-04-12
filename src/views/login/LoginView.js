@@ -54,7 +54,7 @@ class LoginView extends BaseMVPView {
                 <div className = {'_image-logo'}></div>
                 <GenericTextBox
                   onChange = { e => this.setState({ username: e.target.value }) }
-                  placeholder = { 'Employee Id' }
+                  placeholder = { 'Employee ID' }
                   type = { 'text' }/>
                 <GenericTextBox
                   onChange = { e => this.setState({ password: e.target.value }) }
