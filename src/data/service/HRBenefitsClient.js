@@ -10,6 +10,7 @@ export default class HRBenefitsClient {
   }
 
   /* User */
+  //HTTP status code
   login (loginParam) {
     return this.service.login(loginParam)
       .pipe(ServiceErrorOperator())

@@ -6,6 +6,7 @@ import BenefitsPartial from '../benefits/BenefitsPartial'
 import Presenter from './presenter/DrawerPresenter'
 import { GenericButton } from '../../ub-components/UButton/'
 import { GenericCard } from '../../ub-components/Cards/'
+import { SideBar } from '../../ub-components/SideBar/'
 import './styles/styles.css'
 
 class DrawerView extends BaseMVPView {
@@ -53,33 +54,56 @@ class DrawerView extends BaseMVPView {
       return (
         <div className = { containerClass }>
           <div className={'header'}>
-            <img src={ require('../../images/logo.png') }
+            <img
+              src={ require('../../images/logo.png') }
               className= {'_img-ub-logo'}/>
-          {this.state.mobileView && <button onClick={this.toggleSideBar}>wad</button>}
+            {this.state.mobileView &&
+            <button
+              onClick={this.toggleSideBar}>
+              <img
+                src={ require('../../images/profile-picture.png') }
+                className= {'_img-ub-logo'}/>
+            </button>}
           </div>
         {
           this.state.showSidebar &&
-      <div class= {'flex-item'} id="canvas-left">
-        <div class="fixed">
-          <div className = "sidebar">
-            Module 1 Insert Here  111111>
+          <div className= {'flex-item'} id="canvas-left">
+            <div className = {'fixed'}>
+                <SideBar></SideBar>
+            </div>
           </div>
-        </div>
-      </div>
         }
         <div className= {'main'}>
           <div className = {'card-frame'}>
             <GenericCard></GenericCard>
-              <GenericCard></GenericCard>
-                <GenericCard></GenericCard>
-                  <GenericCard></GenericCard>
-            <GenericButton onClick={ () => this.presenter.logout() }>Logout</GenericButton>
-            <Switch>
-              <Route path = '/benefits' render={(props) => {
-            return <BenefitsPartial parent = { this } />
-            }} />
-          </Switch>
           </div>
+          <div className = {'card-frame'}>
+            <GenericCard></GenericCard>
+          </div>
+          <div className = {'card-frame'}>
+            <GenericCard></GenericCard>
+          </div>
+          <div className = {'card-frame'}>
+            <GenericCard></GenericCard>
+          </div>
+          <div className = {'card-frame'}>
+            <GenericCard></GenericCard>
+          </div>
+          <div className = {'card-frame'}>
+            <GenericCard></GenericCard>
+          </div>
+          <div className = {'card-frame'}>
+            <GenericCard></GenericCard>
+          </div>
+          <div className = {'card-frame'}>
+            <GenericCard></GenericCard>
+          </div>
+          <GenericButton onClick={ () => this.presenter.logout() }>Logout</GenericButton>
+          <Switch>
+            <Route path = '/benefits' render={(props) => {
+          return <BenefitsPartial parent = { this } />
+          }} />
+        </Switch>
         </div>
       </div>
     )
