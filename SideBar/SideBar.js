@@ -8,28 +8,45 @@ class SideBar extends Component {
   }
 
   render() {
-    const { textlink, icon , onClick} = this.props
-    const style = {
-      moduleStyle : {
-        opacity: 0.3,
-        color: "#FFFFFF"
-      }
-    }
-    const list =
+    const { textlink, icon , onClick, text} = this.props
+    const modules =
     [
-      {id: 0 , title: "Home"},
-      {id: 1 , title: "Inventory"},
+      {id: 0 , title: "Module 1"},
+      {id: 1 , title: "Module 2"},
       {id: 2 , title: ""},
-      {id: 3 , title: ""}
+      {id: 3 , title: ""},
     ]
     return (
-
       <div className = {'_sidebar-overlay'}>
-      <ul className = {'_link-list'}>awdawdad
-        <li className = {'_link-item'} onClick = { onClick }>awdawasdasdasads</li>
-      </ul>
+        <ul className = {'_link-list'}>
+            {
+              modules.map(function(d, idx)
+              {
+               return (
+                <li className = {'_text-link'}
+                    onClick = { onClick }
+                    key={idx}>
+                    <a>
+                      <i className = { '_icon' }></i>
+                        <span className = {'_side-text'}>{d.title}</span>
+                    </a>
+                </li>
+                )
+             })
+           }
+        </ul>
       </div>
     )
   }
+}
+SideBar.propTypes = {
+  onClick : PropTypes.func,
+  text : PropTypes.string,
+  icon : PropTypes.string,
+}
+
+SideBar.defaultProps = {
+  text : 'title',
+  icon : "image",
 }
 export default SideBar
