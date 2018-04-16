@@ -75,4 +75,10 @@ export default class HRBenefitsService {
       headers: {token}
     })
   }
+    /* library */
+    getBooks (token) {
+        return this.apiClient.get('v1/books', {
+            headers: {token}
+        })
+    }
 }
