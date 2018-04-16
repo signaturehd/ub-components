@@ -42,4 +42,16 @@ export default class HRBenefitsService {
       json: true,
     })
   }
+
+  /* library */
+  getBooks (token) {
+    return this.apiClient.get('v1/books', {
+      headers: {
+          'X-IBM-Client-Id': CLIENT_ID,
+          'X-IBM-Client-Secret': CLIENT_SECRET,
+          'token': token
+      },
+    })
+  }
 }
+
