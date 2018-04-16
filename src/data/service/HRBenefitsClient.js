@@ -53,8 +53,21 @@ export default class HRBenefitsClient {
   }
 
   /* rds */
-  getReleasingCenters () {
-    return this.service.getReleasingCenters()
+  getReleasingCenters (token) {
+    return this.service.getReleasingCenters(token)
       .pipe(ServiceErrorOperator())
   }
+
+
+  /* optical */
+  getOptical (token) {
+    return this.service.getOptical(token)
+      .pipe(ServiceErrorOperator())
+  }
+
+  /* dental reimbursement */
+
+  /* dental loa */
+
+
 }

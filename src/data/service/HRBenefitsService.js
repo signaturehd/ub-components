@@ -9,20 +9,54 @@ export default class HRBenefitsService {
 
   /* user */
   login(loginParam) {
-    return this.apiClient.post('v1/login', loginParam, {
-      headers: {
-        'X-IBM-Client-Id': CLIENT_ID,
-        'X-IBM-Client-Secret': CLIENT_SECRET,
-      },
-    })
+    return this.apiClient.post('v1/login', loginParam)
   }
 
   otp(otpParam) {
-    return this.apiClient.post('v1/otp', otpParam, {
-      headers: {
-        'X-IBM-Client-Id': CLIENT_ID,
-        'X-IBM-Client-Secret': CLIENT_SECRET,
-      },
+    return this.apiClient.post('v1/otp', otpParam)
+  }
+
+  /* dental loa */
+  validateDentalLoa (token) {
+    return this.apiClient.get('v1/issuances/dental/loa/validate?type=1', {
+      headers: {token}
+    })
+  }
+
+  addDentalLoa (token, dentalLoaParam) {
+    const formData = DentalLoaParam
+    return this.apiClient.post('v1/issuances/dental/loa/submit', formData, {
+      headers : {token}
+    })
+  }
+
+  /* dental reimbursements */
+
+  validateDentalReimbursement (token) {
+    return this.apiClient.get('v1/reimbursements/dental/validate?type=1', {
+      headers: {token}
+    })
+  }
+
+  addDentalReimbursement (token, dentalLoaParam) {
+    const formData = new FormData()
+    return this.apiClient.post('v2/reimbursements/dental/submit', formData, {
+      headers : {token}
+    })
+  }
+
+  /* Optical */
+  validateOptical (token) {
+    return this.apiClient.get('v1/reimbursements/optical/validate', {
+      headers : {token}
+    })
+  }
+
+  addOptical (token, opticalParam) {
+    const formData = new FormData()
+
+    return this.apiClient.post('v2/reimbursements/optical/submit', formData, {
+      headers : {token}
     })
   }
 
@@ -30,16 +64,15 @@ export default class HRBenefitsService {
   validateAccountNumber (accountNumber) {
     return this.accountClient.get('accounts/v1/' + accountNumber, {
       headers: {
-        referenceid: Math.random().toString(36).substring(7)
-      },
-      json: true,
+        referenceId : Math.random().toString(36).substring(7)
+      }
     })
   }
 
   /* rds */
-  getReleasingCenters () {
+  getReleasingCenters (token) {
     return this.apiClient.get('v1/rds/centers', {
-      json: true,
+      headers: {token}
     })
   }
 }

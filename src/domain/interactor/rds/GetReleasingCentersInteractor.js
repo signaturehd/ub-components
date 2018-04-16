@@ -5,6 +5,6 @@ export default class GetReleasingCentersInteractor {
   }
 
   execute () {
-    return this.client.getReleasingCenters()
+    return this.client.getReleasingCenters(this.client.getToken())
   }
 }
