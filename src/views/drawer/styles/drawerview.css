@@ -23,19 +23,8 @@
   padding-bottom: 15px;
   font-size: 1.4em;
   color: white;
-  position: sticky;
+  position: fixed;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
-}
-.main {
-  grid-area: main;
-  padding: 5px 5px 5px 5px;
-  height: auto;
-  width:auto;
-  display:  grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  column-count: 2;
-  grid-column-gap: 20px;
-  margin-top: 15px;
 }
 .flexitem {
     display: flex;
@@ -49,7 +38,7 @@
 }
 .fixed {
     position: fixed;
-
+    top: 7.2%;
 }
 ._img-ub-logo {
   width: auto;
