@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-spacing */
 import { Observable } from 'rxjs'
 
 export default class HRBenefitsService {
@@ -62,7 +63,8 @@ export default class HRBenefitsService {
 
   /* account */
   validateAccountNumber (accountNumber) {
-    return this.accountClient.get('accounts/v1/' + accountNumber, {
+    return this.accountClient.get(
+// eslint-disable-next-line'accounts/v1/' + accountNumber, {
       headers: {
         referenceId : Math.random().toString(36).substring(7)
       }
