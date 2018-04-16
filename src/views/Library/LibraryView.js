@@ -17,7 +17,7 @@ class LibraryView extends BaseMVPView {
   constructor (props) {
     super(props)
     this.state= {
-        showBooks: []
+        books : []
     }
   }
 
@@ -28,12 +28,12 @@ class LibraryView extends BaseMVPView {
   showBooks (books) {this.setState({showBooks:books})}
 
   render () {
-    const { showBooks } = this.state
+    const { books } = this.state
 
     return (
       <div className = {'library-container'}>
         {
-          showBooks.map((book, key) => {
+          books.map((book, key) => {
             return (
               <GenericCard
                 title = { book.title }

@@ -5,6 +5,6 @@ export default class GetbooksInteractor
   }
 
   execute () {
-    return this.client.getBooks()
+    return this.client.getBooks(this.client.getToken)
   }
 }
