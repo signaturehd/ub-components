@@ -3,6 +3,7 @@ import store from '../../store'
 import { EventActions } from '../../actions'
 
 export default class HRBenefitsClient {
+
   constructor (service, sessionProvider) {
     this.service = service
     this.sessionProvider = sessionProvider
@@ -52,13 +53,21 @@ export default class HRBenefitsClient {
   }
 
   /* rds */
-  getReleasingCenters () {
-    return this.service.getReleasingCenters()
+  getReleasingCenters (token) {
+    return this.service.getReleasingCenters(token)
       .pipe(ServiceErrorOperator())
   }
-  /* Library */
-  getBooks () {
-    return this.service.getBooks()
+
+
+  /* optical */
+  getOptical (token) {
+    return this.service.getOptical(token)
       .pipe(ServiceErrorOperator())
   }
+
+  /* dental reimbursement */
+
+  /* dental loa */
+
+
 }
