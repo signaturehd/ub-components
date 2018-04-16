@@ -11,6 +11,7 @@ export default class OtpPresenter {
     this.view = view
   }
 
+
   verifyOtp(username, otp, transactionType) {
     this.view.showLoading()
     this.verifyOtpInteractor.execute(OtpParam(username, otp, transactionType))
