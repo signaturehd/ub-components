@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom'
 
 import LoginView from './login/LoginView'
 import DrawerView from './drawer/DrawerView'
-
 import Presenter from './AppPresenter'
 
 import { connect } from 'react-redux'
