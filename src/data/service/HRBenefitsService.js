@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs'
+
 export default class HRBenefitsService {
 
   constructor(apiClient, accountClient) {
@@ -7,16 +9,20 @@ export default class HRBenefitsService {
 
   /* user */
   login(loginParam) {
-    return this.apiClient.post('v1/login', {
-      body: loginParam,
-      json: true,
+    return this.apiClient.post('v1/login', loginParam, {
+      headers: {
+        'X-IBM-Client-Id': CLIENT_ID,
+        'X-IBM-Client-Secret': CLIENT_SECRET,
+      },
     })
   }
 
   otp(otpParam) {
-    return this.apiClient.post('v1/otp', {
-      body: otpParam,
-      json: true,
+    return this.apiClient.post('v1/otp', otpParam, {
+      headers: {
+        'X-IBM-Client-Id': CLIENT_ID,
+        'X-IBM-Client-Secret': CLIENT_SECRET,
+      },
     })
   }
 
