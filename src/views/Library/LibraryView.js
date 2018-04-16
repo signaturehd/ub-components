@@ -25,7 +25,7 @@ class LibraryView extends BaseMVPView {
       this.presenter.getBooks()
   }
 
-  showBooks (books) {this.setState({showBooks:books})}
+  books (books) {this.setState({books})}
 
   render () {
     const { books } = this.state
