@@ -13,16 +13,17 @@ export default class OtpPresenter {
 
   verifyOtp(username, otp, transactionType) {
     this.view.showLoading()
-
-    this.verifyOtpInteractor.execute(OtpParam(username, otp, transactionType))
-      .subscribe(
-        data => {
-          this.view.hideLoading()
-          this.view.onOtpSuccess()
-        },
-        error => {
-          this.view.hideLoading()
-        }
-      )
+    this.view.onOtpSuccess()
+    //
+    // this.verifyOtpInteractor.execute(OtpParam(username, otp, transactionType))
+    //   .subscribe(
+    //     data => {
+    //       this.view.hideLoading()
+    //       this.view.onOtpSuccess()
+    //     },
+    //     error => {
+    //       this.view.hideLoading()
+    //     }
+    //   )
   }
 }
