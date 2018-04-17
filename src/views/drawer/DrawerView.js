@@ -17,6 +17,10 @@ class DrawerView extends BaseMVPView {
     super(props)
     }
   render () {
+<<<<<<< HEAD
+=======
+    // TODO render tru react router each partial page, (profile, settings, benefits, etc)
+>>>>>>> 1c6826246ce08608eb9de33189a3c0150e6ff637
     return (
 
       <div>
@@ -25,6 +29,7 @@ class DrawerView extends BaseMVPView {
         <Drawer>
         </Drawer>
         <Switch>
+<<<<<<< HEAD
           <Route path = '/benefits' render={(props) => {
             return <BenefitsPartial parent = { this } />
           }} />
@@ -33,6 +38,14 @@ class DrawerView extends BaseMVPView {
             return <LibraryView parent = { this } />
           }} />
         </Switch>
+=======
+          <Route path = '/benefits' render={props => <BenefitsPartial parent = { this } />} />
+          <Route path = '/library' render={props => 
+             <LibraryView parent = { this } />
+          } />
+        </Switch>
+
+>>>>>>> 1c6826246ce08608eb9de33189a3c0150e6ff637
       </div>
     )
   }

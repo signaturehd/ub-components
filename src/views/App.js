@@ -14,7 +14,6 @@ const mapStateToProps = state => ({
 })
 
 class App extends Component {
-
   constructor (props) {
     super(props)
 
@@ -42,16 +41,15 @@ class App extends Component {
     this.setState({ isLogin })
   }
 
-  render() {
+  render () {
     return (
       <div>
         <Switch>
-          <Route path = '/' render={(props) => {
+          <Route path = '/' render={props => {
             if (this.state.isLogin) {
               return <DrawerView container = { this.props.container } />
-            } else {
+            } 
               return <LoginView container = { this.props.container } />
-            }
           }} />
         </Switch>
       </div>

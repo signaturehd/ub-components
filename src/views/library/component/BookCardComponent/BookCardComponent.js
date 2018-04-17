@@ -9,7 +9,6 @@ class BookCardComponent extends Component {
   }
 
   render () {
-
     const { } = this.props
 
     return (
@@ -27,7 +26,6 @@ class BookCardComponent extends Component {
       </div>
     )
   }
-
 }
 
 BookCardComponent.propTypes = {
@@ -43,8 +41,8 @@ BookCardComponent.propTypes = {
 BookCardComponent.defaultProps = {
   title : 'title',
   description : 'description',
-  author : "author",
-  image : "image",
+  author : 'author',
+  image : 'image',
   rating : 0,
 }
 

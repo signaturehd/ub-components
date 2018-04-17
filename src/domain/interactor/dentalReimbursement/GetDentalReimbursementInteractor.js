@@ -1,5 +1,4 @@
 export default class GetDentalReimbursementInteractor {
-
   constructor (client) {
     this.client = client
   }

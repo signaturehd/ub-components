@@ -74,6 +74,4 @@ export default class HRBenefitsClient {
   /* dental reimbursement */
 
   /* dental loa */
-
-
 }
