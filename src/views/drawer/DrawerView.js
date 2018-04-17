@@ -3,6 +3,8 @@ import { Switch, Route } from 'react-router-dom'
 import BaseMVPView from '../common/base/BaseMVPView'
 import ConnectView from '../../utils/ConnectView'
 import BenefitsPartial from '../benefits/BenefitsPartial'
+import LibraryView from '../Library/LibraryView'
+
 import Presenter from './presenter/DrawerPresenter'
 import { GenericButton } from '../../ub-components/UButton/'
 import { GenericCard } from '../../ub-components/Cards/'

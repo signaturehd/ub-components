@@ -13,8 +13,7 @@ import './css/login.css'
 import OtpModal from '../otp/OtpModal'
 
 class LoginView extends BaseMVPView {
-
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -37,14 +36,14 @@ class LoginView extends BaseMVPView {
       <div>
         { super.render() }
         {
-          //TODO properly show otp modal as 'modal', not by just swapping views lol
+          // TODO properly show otp modal as 'modal', not by just swapping views lol
           showOtpModal &&
           <OtpModal
             show = { this.state.showOtpModal }
-            onClose = { () => this.setState({showOtpModal : false }) }
+            onClose = { () => this.setState({ showOtpModal : false }) }
             parent = { this }
             username = { username }
-            transactionType = { 2 } /> //TODO, move this static '2' to proper file on domain
+            transactionType = { 2 } /> // TODO, move this static '2' to proper file on domain
         }
           <div className = {'_box-form'}>
             <div className = { '_login-grid' }>
