@@ -9,7 +9,8 @@ import Presenter from './presenter/LibraryPresenter'
 import BaseMVPView from '../common/base/BaseMVPView'
 import ConnectPartial from '../../utils/ConnectPartial'
 
-import { GenericCard } from '../../ub-components/Cards'
+import { Cards } from './components'
+
 
 import './css/styles.css'
 
@@ -36,7 +37,7 @@ this.setState({ books })
       <div className = {'library-container'}>
         {
           books.map((book, key) => (
-              <GenericCard
+              <Cards
                 title = { book.title }
                 author = { book.author }
                 image = { book.image }
