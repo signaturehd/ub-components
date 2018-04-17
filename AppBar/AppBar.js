@@ -5,12 +5,11 @@ import './styles/appbar.css'
 
 
 class SideBar extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
   }
 
-  render() {
-
+  render () {
     return (
       <header>
         <img

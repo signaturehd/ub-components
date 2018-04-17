@@ -28,8 +28,8 @@ GenericTextBox.propTypes = {
 }
 
 GenericTextBox.defaultProps = {
-  placeholder : "Generic TextBox",
-  type : "text",
+  placeholder : 'Generic TextBox',
+  type : 'text',
   maxLength : 100
 }
 
