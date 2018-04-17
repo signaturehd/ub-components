@@ -36,22 +36,14 @@ class LoginView extends BaseMVPView {
       <div>
         { super.render() }
         {
-<<<<<<< HEAD
-          //TODO properly show otp modal as 'modal', not by just swapping views lol
-=======
-          // TODO properly show otp modal as 'modal', not by just swapping views lol
->>>>>>> 1c6826246ce08608eb9de33189a3c0150e6ff637
+
           showOtpModal &&
           <OtpModal
             show = { this.state.showOtpModal }
             onClose = { () => this.setState({ showOtpModal : false }) }
             parent = { this }
             username = { username }
-<<<<<<< HEAD
-            transactionType = { 2 } /> //TODO, move this static '2' to proper file on domain
-=======
             transactionType = { 2 } /> // TODO, move this static '2' to proper file on domain
->>>>>>> 1c6826246ce08608eb9de33189a3c0150e6ff637
         }
           <div className = {'_box-form'}>
             <div className = { '_login-grid' }>
