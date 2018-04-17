@@ -5,26 +5,28 @@ import BaseMVPView from '../common/base/BaseMVPView'
 import ConnectView from '../../utils/ConnectView'
 
 import BenefitsPartial from '../benefits/BenefitsPartial'
+import LibraryView from '../Library/LibraryView'
 
 import Presenter from './presenter/DrawerPresenter'
 
 class DrawerView extends BaseMVPView {
-
   constructor (props) {
     super(props)
   }
 
   render () {
-    //TODO render tru react router each partial page, (profile, settings, benefits, etc)
+    // TODO render tru react router each partial page, (profile, settings, benefits, etc)
     return (
       <div>
         TODO sidebar here lol
         <button onClick={ () => this.presenter.logout() }>Logout</button>
         <Switch>
-          <Route path = '/benefits' render={(props) => {
-            return <BenefitsPartial parent = { this } />
-          }} />
+          <Route path = '/benefits' render={props => <BenefitsPartial parent = { this } />} />
+          <Route path = '/library' render={props => 
+             <LibraryView parent = { this } />
+          } />
         </Switch>
+
       </div>
     )
   }
