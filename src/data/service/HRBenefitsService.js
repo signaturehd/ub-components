@@ -62,7 +62,8 @@ export default class HRBenefitsService {
 
   /* account */
   validateAccountNumber (accountNumber) {
-    return this.accountClient.get('accounts/v1/' + accountNumber, {
+    return this.accountClient.get(
+    'accounts/v1/' + accountNumber, {
       headers: {
         referenceId : Math.random().toString(36).substring(7)
       }
@@ -75,4 +76,10 @@ export default class HRBenefitsService {
       headers: {token}
     })
   }
+    /* library */
+    getBooks (token) {
+        return this.apiClient.get('v1/books', {
+            headers: {token}
+        })
+    }
 }
