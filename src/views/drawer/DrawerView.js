@@ -21,14 +21,14 @@ class DrawerView extends BaseMVPView {
       return (
         <div>
           <AppBar></AppBar>
-          <Drawer></Drawer>
-          <Switch>
-            <Route path = '/benefits' render={props => <BenefitsPartial parent = { this } />} />
-              <Route path = '/' render={props =>
-                <LibraryView parent = { this } />
-                
-                 } />
-             </Switch>
+          <Drawer>
+            <Switch>
+              <Route path = '/benefits' render={props => <BenefitsPartial parent = { this } />} />
+                <Route path = '/' render={props =>
+                  <LibraryView parent = { this } />
+                   } />
+               </Switch>
+          </Drawer>
         </div>
     )
   }
