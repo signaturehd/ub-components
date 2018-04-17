@@ -9,7 +9,6 @@ import { GenericButton } from '../../ub-components/UButton/'
 import { Modal } from '../../ub-components/Modal/'
 
 class OtpModal extends BaseMVPView {
-
   constructor (props) {
     super(props)
 
@@ -19,14 +18,12 @@ class OtpModal extends BaseMVPView {
   }
 
   onOtpSuccess () {
-    //TODO redirect to login
-    console.log('otp success')
+    // TODO redirect to login
   }
 
   render () {
     const { transactionType, username, onClose } = this.props
     const { otp } = this.state
-    console.log(onClose)
     return (
 
       <Modal
@@ -41,6 +38,6 @@ class OtpModal extends BaseMVPView {
       )
   }
 }
-//TODO setup props that is required
+// TODO setup props that is required
 
 export default ConnectPartial(OtpModal, Presenter)

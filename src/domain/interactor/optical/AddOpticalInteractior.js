@@ -1,5 +1,4 @@
 export default class AddOpticalInteractor {
-
   constructor (client) {
     this.client = client
   }

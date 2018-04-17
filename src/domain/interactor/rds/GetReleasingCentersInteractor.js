@@ -1,5 +1,4 @@
 export default class GetReleasingCentersInteractor {
-
   constructor (client) {
     this.client = client
   }

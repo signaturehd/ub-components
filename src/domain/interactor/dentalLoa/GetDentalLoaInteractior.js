@@ -1,5 +1,4 @@
 export default class GetDentalLoaInteractor {
-
   constructor (client) {
     this.client = client
   }
