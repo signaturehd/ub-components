@@ -15,21 +15,18 @@ class DrawerView extends BaseMVPView {
   }
 
   render () {
-    //TODO render tru react router each partial page, (profile, settings, benefits, etc)
+    // TODO render tru react router each partial page, (profile, settings, benefits, etc)
     return (
       <div>
         TODO sidebar here lol
         <button onClick={ () => this.presenter.logout() }>Logout</button>
         <Switch>
-          <Route path = '/benefits' render={(props) => {
-            return <BenefitsPartial parent = { this } />
-          }} />
-          <Route path = '/library' render={(props) => {
-            console.log('showing library')
-            return <LibraryView parent = { this } />
-          }} />
+          <Route path = '/benefits' render={props => <BenefitsPartial parent = { this } />} />
+          <Route path = '/library' render={props => 
+             <LibraryView parent = { this } />
+          } />
         </Switch>
-        
+
       </div>
     )
   }
