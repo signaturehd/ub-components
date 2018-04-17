@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import './styles/styles.css'
+import './styles.css'
 
 class BookCardComponent extends Component {
   constructor (props) {
