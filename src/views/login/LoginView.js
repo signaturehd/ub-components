@@ -13,8 +13,7 @@ import './css/login.css'
 import OtpModal from '../otp/OtpModal'
 
 class LoginView extends BaseMVPView {
-
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {

@@ -5,11 +5,11 @@ import BaseMVPView from '../common/base/BaseMVPView'
 import ConnectView from '../../utils/ConnectView'
 
 import BenefitsPartial from '../benefits/BenefitsPartial'
+import LibraryView from '../Library/LibraryView'
 
 import Presenter from './presenter/DrawerPresenter'
 
 class DrawerView extends BaseMVPView {
-
   constructor (props) {
     super(props)
   }
@@ -24,7 +24,12 @@ class DrawerView extends BaseMVPView {
           <Route path = '/benefits' render={(props) => {
             return <BenefitsPartial parent = { this } />
           }} />
+          <Route path = '/library' render={(props) => {
+            console.log('showing library')
+            return <LibraryView parent = { this } />
+          }} />
         </Switch>
+        
       </div>
     )
   }
