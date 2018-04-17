@@ -57,7 +57,8 @@ class AppBar extends Component {
           <a className= {'_round-button'}
             onClick={this.toggleSideBar}>
             <img
-              src={ require('../../../../images/profile-picture.png')} >
+              src={ require('../../../../images/profile-picture.png')}
+              className= {'_img-ub-logo'} >
             </img>
           </a>
         }

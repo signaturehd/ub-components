@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {GenericCard} from '../../../../ub-components/Cards/'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import './styles/drawer.css'
+
 class Drawer extends Component {
   constructor(props) {
     super(props)

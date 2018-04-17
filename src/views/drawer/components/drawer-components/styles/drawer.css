@@ -1,16 +1,9 @@
 
 ._main-content {
-  display: grid;
-  grid-template-columns: 0.50fr 0.50fr;
-  grid-template-rows: 0.30fr 0.70fr;
-  grid-template-areas: "header header";
-  padding: 5px 5px 5px 5px;
   height: auto;
   width: 80%;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
   margin-left: 18%;
-  background: #ffffff;
-  grid-column-gap: 20px;
+  background: transparent;
   margin-top: 5%;
 }
 ._option-components {
