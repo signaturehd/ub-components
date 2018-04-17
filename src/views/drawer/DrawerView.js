@@ -9,6 +9,7 @@ import Presenter from './presenter/DrawerPresenter'
 import { GenericButton } from '../../ub-components/UButton/'
 import { GenericCard } from '../../ub-components/Cards/'
 import { AppBar } from './components/appbar/AppBar'
+import { SideBar } from './components/sidebar/SideBar'
 import { Drawer } from './components/drawer-components/Drawer'
 import './styles/drawerview.css'
 
@@ -17,18 +18,20 @@ class DrawerView extends BaseMVPView {
     super(props)
     }
   render () {
-
       return (
         <div>
           <AppBar></AppBar>
-          <Drawer>
+          <SideBar></SideBar>
+          <Drawer></Drawer>
+          <div className = {'_main-content'}>
             <Switch>
-              <Route path = '/benefits' render={props => <BenefitsPartial parent = { this } />} />
-                <Route path = '/' render={props =>
-                  <LibraryView parent = { this } />
+              <Route path = '/' render={props =>
+                <BenefitsPartial parent = { this } />} />
+              <Route path = '/library' render={props =>
+                <LibraryView parent = { this } />
                    } />
-               </Switch>
-          </Drawer>
+            </Switch>
+          </div>
         </div>
     )
   }

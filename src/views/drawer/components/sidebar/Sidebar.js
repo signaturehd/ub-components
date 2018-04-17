@@ -50,4 +50,4 @@ SideBar.defaultProps = {
   text : 'title',
   icon : "image",
 }
-export default SideBar
+export {SideBar}
