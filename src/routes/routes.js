@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
-import { Redirect, Link, Route, Switch } from "react-router-dom";
+import { Redirect, Link, Route, Switch } from 'react-router-dom'
 
 class RouterPane extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
   }
-  render() {
+  render () {
     const routes = [
       {
-        path: "/",
+        path: '/',
         components: Module1
       },
       {
-        path: "/module2",
+        path: '/module2',
         components: Module2
       }
     ]

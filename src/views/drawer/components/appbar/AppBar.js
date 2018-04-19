@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class AppBar extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
-
   }
 
-  render() {
-    let containerClass = 'container'
+  render () {
+    const containerClass = 'container'
     return (
       <div className = { containerClass }>
         <div className={'header'}>
@@ -24,4 +23,4 @@ class AppBar extends Component {
   }
 }
 
-export {AppBar}
+export { AppBar }

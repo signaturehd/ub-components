@@ -1,39 +1,35 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './styles/sidebar.css'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import LibraryView from '../../../Library/LibraryView'
 class SideBar extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
   }
-  render() {
-    const { textlink, icon , onClick, text, link, onNavigaionClick} = this.props
+  render () {
+    const { textlink, icon , onClick, text, link, onNavigaionClick } = this.props
     const modules =
     [
-      {id: 0 , title: "Benefits", path: '/benefits'},
-      {id: 1 , title: "News", path: '/news'},
-      {id: 2 , title: "Transactions", path: "/transations"},
-      {id: 4 , title: "Faqs", path: "/faqs"},
-      {id: 5 , title: "Settings", path: "/settings"},
-      {id: 6 , title: "Books", path: "/books"},
+      { id: 0 , title: 'Benefits', path: '/benefits' },
+      { id: 1 , title: 'News', path: '/news' },
+      { id: 2 , title: 'Transactions', path: '/transations' },
+      { id: 4 , title: 'Faqs', path: '/faqs' },
+      { id: 5 , title: 'Settings', path: '/settings' },
+      { id: 6 , title: 'Books', path: '/books' },
     ]
-    console.log(onNavigaionClick)
     return (
-      <div className = {'_sidebar-overlay'}>
-      <ul className = {'_link-list'}>
+      <div className = { '_sidebar-overlay' }>
+      <ul className = { '_link-list' }>
           {
-            modules.map(function(d, idx)
-            {
-             return (
+            modules.map((d, idx) => (
               <li
-                  className = {'_text-link'}
+                  className = { '_text-link' }
                   key={idx}
-                  onClick ={ () => onNavigaionClick( d.path ) }>
+                  onClick ={ () => onNavigaionClick(d.path) }>
                  {d.title}
               </li>
-              )
-           })
+              ))
          }
       </ul>
       </div>
@@ -49,6 +45,6 @@ SideBar.propTypes = {
 
 SideBar.defaultProps = {
   text : 'title',
-  icon : "image",
+  icon : 'image',
 }
-export {SideBar}
+export { SideBar }

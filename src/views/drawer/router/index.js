@@ -1,3 +1,3 @@
 import RouterLink from './Router'
 
-export {RouterLink}
+export { RouterLink }

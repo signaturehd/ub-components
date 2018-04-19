@@ -1,3 +1,3 @@
 import RouterPane from './routes'
 
-export {RouterPane, MenuLink}
+export { RouterPane, MenuLink }

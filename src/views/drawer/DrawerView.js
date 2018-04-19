@@ -14,48 +14,37 @@ import './styles/drawerview.css'
 
 class DrawerView extends BaseMVPView {
   constructor (props) {
-    super(props)
+    super (props)
   }
-
   render () {
-    let displayShow = 'isActive'
-    const display = {display : 'block'}
+    const displayShow = 'isActive'
+    const display = { display : 'block' }
       return (
-        <section className = {'grid-1'}>
-          <div className = {'item-1'}>
+        <section className = { 'grid-1' }>
+          <div className = { 'item-1'}>
             <AppBar></AppBar>
           </div>
-          <div className = {'displayShow'}
-               style = {display}>
+          <div className = { 'displayShow' }
+               style = { display }>
             <SideBar
-              onNavigaionClick={ path => this.props.history.push(path) }></SideBar>
+              onNavigaionClick = { path => this.props.history.push(path) } ></SideBar>
           </div>
-          <div className = {'item-3'}>
+          <div className = { 'item-3' }>
             <Drawer>
               <Switch>
-                  <Route path = '/benefits' render={(props) => {
-                     return <BenefitsPartial parent = { this } { ...props } />
-                   }} />
-                  <Route path = '/news' render={(props) => {
-                     return <News parent = { this } { ...props } />
-                   }} />
-                 <Route path = '/transaction' render={(props) => {
-                     return <Transaction parent = { this } { ...props } />
-                   }} />
-                 <Route path = '/faqs' render={(props) => {
-                     return <Faqs parent = { this } { ...props } />
-                   }} />
-                 <Route path = '/settings' render={(props) => {
-                     return <Settings parent = { this } { ...props } />
-                   }} />
-                 <Route path = '/books' render={(props) => {
-                     return <LibraryView parent = { this } { ...props } />
-                   }} />
+                  <Route path = '/benefits' render = { props => <BenefitsPartial parent = { this } { ...props } />
+                  }
+                />
+                  <Route path = '/news' render = { props => <News parent = { this } { ...props } />} />
+                 <Route path = '/transaction' render = { props => <Transaction parent = { this } { ...props } />} />
+                 <Route path = '/faqs' render = { props => <Faqs parent = { this } { ...props } />} />
+                 <Route path = '/settings' render = { props => <Settings parent = { this } { ...props } />} />
+                 <Route path = '/books' render = { props => <LibraryView parent = { this } { ...props } />} />
              </Switch>
             </Drawer>
           </div>
-          <div className = {'item-4'}>
-            <div className = {'_option-components'}>
+          <div className = { 'item-4' }>
+            <div className = { '_option-components' }>
             </div>
           </div>
         </section>
