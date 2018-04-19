@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 import LoginView from './login/LoginView'
 import DrawerView from './drawer/DrawerView'
@@ -26,11 +26,7 @@ class App extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.events.token) {
-      this.setState({ isLogin: true })
-    } else {
-      this.setState({ isLogin: false })
-    }
+    this.presenter.checkLogin()
   }
 
   componentWillMount () {
@@ -57,4 +53,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default withRouter(connect(mapStateToProps)(App))
