@@ -7,6 +7,7 @@
       grid-template-columns: repeat(1, 0fr);
       grid-template-rows: 50px auto auto;
       grid-template-areas: "header header"
+                           "sidebar head"
                            "sidebar main";
 }
 
@@ -20,11 +21,16 @@
 
 .item-1 {
   grid-area: header;
+  position: fixed;
 }
 .item-3 {
-  grid-area: main;
+  grid-area: head;
+  padding: 1%;
 }
-
+.item-4 {
+  grid-area: main;
+  padding: 1%;
+}
 .item-2 {
   grid-area: sidebar;
 }
@@ -40,6 +46,7 @@
   background-color: #FF8A00;
   width: 100%;
   overflow: hidden;
+  position: fixed;
   top: 0;
   padding-top: 15px;
   padding-bottom: 15px;

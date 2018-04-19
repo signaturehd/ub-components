@@ -1,6 +1,6 @@
 ._sidebar-overlay {
   background: #414D56;
-  height: 100rem;
+  height: 100VH;
   top: 0;
   width: 230px;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);

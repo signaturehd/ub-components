@@ -18,17 +18,33 @@ class DrawerView extends BaseMVPView {
     super(props)
     }
   render () {
+console.log(this.props)
       return (
         <section className = {'grid-1'}>
           <div className = {'item-1'}>
             <AppBar></AppBar>
           </div>
           <div className = {'item-2'}>
-            <SideBar></SideBar>
+            <SideBar onNavigaionClick={ path => this.props.history.push(path) }></SideBar>
+
           </div>
           <div className = {'item-3'}>
-            <Drawer></Drawer>
+            <Drawer>
+              <Switch>
+               <Route path = '/library' render={(props) => {
+                 return <LibraryView parent = { this } { ...props } />
+               }} />
+             <Route path = '/benefits' render={(props) => {
+                 return <BenefitsPartial parent = { this } { ...props } />
+               }} />
+             </Switch>
+            </Drawer>
           </div>
+          <div className = {'item-4'}>
+            <div className = {'_option-components'}>
+            </div>
+          </div>
+
         </section>
     )
   }
