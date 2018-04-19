@@ -10,12 +10,6 @@ class Drawer extends Component {
     super(props)
   }
   render() {
-  const Module1 = () => {
-    return(<h2></h2>)
-  }
-  const Module2 = () => {
-    return(<h2></h2>)
-  }
     return (
       <div className = {'_main-content'}>
         <div className = {'_option-components'}>

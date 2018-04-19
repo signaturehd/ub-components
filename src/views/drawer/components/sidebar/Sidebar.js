@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './styles/sidebar.css'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-
+import LibraryView from '../../../Library/LibraryView'
 class SideBar extends Component {
   constructor(props) {
     super(props)
@@ -11,11 +11,14 @@ class SideBar extends Component {
     const { textlink, icon , onClick, text, link, onNavigaionClick} = this.props
     const modules =
     [
-      {id: 0 , title: "Module 1", link: "/"},
-      {id: 1 , title: "Module 2", link: "/library"},
-      {id: 2 , title: "Module 3", link: "/benefits"},
-      {id: 3 , title: "Module 4", link: "/module4"},
+      {id: 0 , title: "Benefits", path: '/benefits'},
+      {id: 1 , title: "News", path: '/news'},
+      {id: 2 , title: "Transactions", path: "/transations"},
+      {id: 4 , title: "Faqs", path: "/faqs"},
+      {id: 5 , title: "Settings", path: "/settings"},
+      {id: 6 , title: "Books", path: "/books"},
     ]
+    console.log(onNavigaionClick)
     return (
       <div className = {'_sidebar-overlay'}>
       <ul className = {'_link-list'}>
@@ -23,13 +26,11 @@ class SideBar extends Component {
             modules.map(function(d, idx)
             {
              return (
-              <li className = {'_text-link'}
+              <li
+                  className = {'_text-link'}
                   key={idx}
-                  onClick ={ () => onNavigaionClick(d.link) }>
-                  <a>
-                    <i className = { '_icon' }></i>
-                    <span className = {'_side-text'}>{d.title}</span>
-                  </a>
+                  onClick ={ () => onNavigaionClick( d.path ) }>
+                 {d.title}
               </li>
               )
            })

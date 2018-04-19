@@ -10,36 +10,22 @@
                            "sidebar head"
                            "sidebar main";
 }
-
-/* items */
-
 .grid-1 div {
   font-size: 20px;
   }
-
-/* specific item styles */
-
 .item-1 {
   grid-area: header;
   position: fixed;
 }
 .item-3 {
   grid-area: head;
-  padding: 1%;
 }
 .item-4 {
   grid-area: main;
   padding: 1%;
 }
-.item-2 {
+.displayShow {
   grid-area: sidebar;
-}
-.mobileview {
-  grid-template-columns: 0fr 1fr;
-}
-
-.mobileview.sidebar {
-  float: left;
 }
 .header {
   grid-area: header;
@@ -52,24 +38,17 @@
   padding-bottom: 15px;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
 }
-.flexitem {
-    display: flex;
-}
-#canvas-left {
-    order: -1;
-    flex: auto;
-}
-#content p {
-    display: block;
-}
-.fixed {
-    position: fixed;
-    top: 7.2%;
-}
 ._img-ub-logo {
   width: auto;
   height: 20px;
   float: left;
   margin-left: 2%;
   width: auto;
+}
+.sidebar{
+  grid-area: sidebar;
+  background: #414D56;
+  height: 100rem;
+  width: 100%;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
 }
