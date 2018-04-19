@@ -19,15 +19,15 @@ class DrawerView extends BaseMVPView {
     }
   render () {
       return (
-        <section className = {'gird-1'}>
+        <section className = {'grid-1'}>
           <div className = {'item-1'}>
             <AppBar></AppBar>
           </div>
-          <div className = {'item-3'}>
-            <SideBar></SideBar>
-        </div>
           <div className = {'item-2'}>
-              <Drawer></Drawer>
+            <SideBar></SideBar>
+          </div>
+          <div className = {'item-3'}>
+            <Drawer></Drawer>
           </div>
         </section>
     )

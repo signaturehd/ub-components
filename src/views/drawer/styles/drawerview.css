@@ -3,16 +3,16 @@
   display: grid;
       width: 100%;
       margin: 0 auto;
-      height: 100%;
+      height: auto;
       grid-template-columns: repeat(1, 0fr);
-      grid-template-rows: 50px auto 80px;
+      grid-template-rows: 50px auto auto;
       grid-template-areas: "header header"
-                           "sidebar main"
                            "sidebar main";
 }
+
 /* items */
+
 .grid-1 div {
-  color: white;
   font-size: 20px;
   }
 
@@ -21,14 +21,11 @@
 .item-1 {
   grid-area: header;
 }
-.item-2 {
-  grid-area: main;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  grid-gap: 20px;
-}
 .item-3 {
+  grid-area: main;
+}
+
+.item-2 {
   grid-area: sidebar;
 }
 .mobileview {
@@ -68,7 +65,4 @@
   float: left;
   margin-left: 2%;
   width: auto;
-}
-.sidebar{
-  grid-area: sidebar;
 }

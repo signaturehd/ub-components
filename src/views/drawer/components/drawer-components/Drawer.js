@@ -16,10 +16,6 @@ class Drawer extends Component {
   }
     return (
       <div className = {'_main-content'}>
-        <GenericButton
-       text = "logout"
-       onClick={ () => this.presenter.logout() }>
-     </GenericButton>
         <div className = {'_option-components'}>
         </div>
       </div>
