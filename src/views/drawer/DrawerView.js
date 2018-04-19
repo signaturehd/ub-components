@@ -19,21 +19,20 @@ class DrawerView extends BaseMVPView {
     }
   render () {
       return (
-        <div>
-          <AppBar></AppBar>
-          <SideBar></SideBar>
-          <Drawer></Drawer>
-          <div className = {'_main-content'}>
-            <Switch>
-              <Route path = '/' render={props =>
-                <BenefitsPartial parent = { this } />} />
-              <Route path = '/library' render={props =>
-                <LibraryView parent = { this } />
-                   } />
-            </Switch>
+        <section className = {'gird-1'}>
+          <div className = {'item-1'}>
+            <AppBar></AppBar>
           </div>
+          <div className = {'item-3'}>
+            <SideBar></SideBar>
         </div>
+          <div className = {'item-2'}>
+              <Drawer></Drawer>
+          </div>
+        </section>
     )
   }
 }
+
+
 export default ConnectView(DrawerView, Presenter)

@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import './styles/drawer.css'
-import ConnectView from '../../../../utils/ConnectView'
-import BenefitsPartial from '../../../benefits/BenefitsPartial'
+import { GenericButton } from '../../../../ub-components/UButton/'
 class Drawer extends Component {
   constructor(props) {
     super(props)
@@ -17,6 +16,10 @@ class Drawer extends Component {
   }
     return (
       <div className = {'_main-content'}>
+        <GenericButton
+       text = "logout"
+       onClick={ () => this.presenter.logout() }>
+     </GenericButton>
         <div className = {'_option-components'}>
         </div>
       </div>
