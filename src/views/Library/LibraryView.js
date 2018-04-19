@@ -6,18 +6,19 @@ import ConnectView from '../../utils/ConnectView'
 import Interactor from '../../domain/interactor/library/GetbooksInteractor'
 
 import Presenter from './presenter/LibraryPresenter'
-import BaseMVPView from '../common/base/BaseMVPView';
-import ConnectPartial from '../../utils/ConnectPartial';
+import BaseMVPView from '../common/base/BaseMVPView'
+import ConnectPartial from '../../utils/ConnectPartial'
 
-import { GenericCard } from '../../ub-components/Cards'
+import { BookCardComponent } from './components'
+
 
 import './css/styles.css'
 
 class LibraryView extends BaseMVPView {
   constructor (props) {
     super(props)
-    this.state= {
-        showBooks: []
+    this.state = {
+        books : []
     }
   }
 
@@ -26,16 +27,23 @@ class LibraryView extends BaseMVPView {
       this.presenter.getBooks()
   }
 
+<<<<<<< HEAD
   showBooks (books) {
     
     this.setState({showBooks:books})}
+=======
+  books (books) {
+this.setState({ books })
+}
+>>>>>>> 49cf8e1339f4db9f2b5b50b3f6d949a1c184608c
 
   render () {
-    const { showBooks } = this.state
+    const { books } = this.state
 
     return (
       <div className = {'library-container'}>
         {
+<<<<<<< HEAD
           showBooks.map((book, key) => {
             return (
               <GenericCard
@@ -44,6 +52,16 @@ class LibraryView extends BaseMVPView {
               />
             )
           })
+=======
+          books.map((book, key) => (
+              <BookCardComponent
+                title = { book.title }
+                author = { book.author }
+                image = { book.image }
+                description = { book.description }
+              />
+            ))
+>>>>>>> 49cf8e1339f4db9f2b5b50b3f6d949a1c184608c
         }
       </div>
     )

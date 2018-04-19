@@ -8,21 +8,55 @@ export default class HRBenefitsService {
   }
 
   /* user */
-  login(loginParam) {
-    return this.apiClient.post('v1/login', loginParam, {
-      headers: {
-        'X-IBM-Client-Id': CLIENT_ID,
-        'X-IBM-Client-Secret': CLIENT_SECRET,
-      },
+  login (loginParam) {
+    return this.apiClient.post('v1/login', loginParam)
+  }
+
+  otp (otpParam) {
+    return this.apiClient.post('v1/otp', otpParam)
+  }
+
+  /* dental loa */
+  validateDentalLoa (token) {
+    return this.apiClient.get('v1/issuances/dental/loa/validate?type=1', {
+      headers: { token }
     })
   }
 
-  otp(otpParam) {
-    return this.apiClient.post('v1/otp', otpParam, {
-      headers: {
-        'X-IBM-Client-Id': CLIENT_ID,
-        'X-IBM-Client-Secret': CLIENT_SECRET,
-      },
+  addDentalLoa (token, dentalLoaParam) {
+    const formData = DentalLoaParam
+    return this.apiClient.post('v1/issuances/dental/loa/submit', formData, {
+      headers : { token }
+    })
+  }
+
+  /* dental reimbursements */
+
+  validateDentalReimbursement (token) {
+    return this.apiClient.get('v1/reimbursements/dental/validate?type=1', {
+      headers: { token }
+    })
+  }
+
+  addDentalReimbursement (token, dentalLoaParam) {
+    const formData = new FormData()
+    return this.apiClient.post('v2/reimbursements/dental/submit', formData, {
+      headers : { token }
+    })
+  }
+
+  /* Optical */
+  validateOptical (token) {
+    return this.apiClient.get('v1/reimbursements/optical/validate', {
+      headers : { token }
+    })
+  }
+
+  addOptical (token, opticalParam) {
+    const formData = new FormData()
+
+    return this.apiClient.post('v2/reimbursements/optical/submit', formData, {
+      headers : { token }
     })
   }
 
@@ -37,9 +71,15 @@ export default class HRBenefitsService {
   }
 
   /* rds */
-  getReleasingCenters () {
+  getReleasingCenters (token) {
     return this.apiClient.get('v1/rds/centers', {
-      json: true,
+      headers: { token }
     })
   }
+    /* library */
+    getBooks (token) {
+        return this.apiClient.get('v1/books', {
+            headers: { token }
+        })
+    }
 }
