@@ -1,10 +1,10 @@
-var ReactDOM = require('react-dom');
-var React = require('react');
+const ReactDOM = require('react-dom')
+const React = require('react')
 
-import { GenericButton } from './UButton';
+import { GenericButton } from './UButton'
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
       <div>
         UB Components
@@ -23,4 +23,4 @@ class App extends React.Component {
 ReactDOM.render(
   <App />,
   document.getElementById('app')
-);
+)

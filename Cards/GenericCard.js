@@ -9,14 +9,13 @@ class GenericCard extends Component {
   }
 
   render () {
-
     const { onClick, title, description, image, author, rating } = this.props
 
     const style = {
       cardStyle : {
         background : `url(${image}) rgba(0,0,0,0.4)`,
-        backgroundSize : "contain",
-        height: "100px"
+        backgroundSize : 'contain',
+        height: '100px'
       }
     }
 
@@ -50,8 +49,8 @@ GenericCard.propTypes = {
 GenericCard.defaultProps = {
   title : 'title',
   description : 'description',
-  author : "author",
-  image : "image",
+  author : 'author',
+  image : 'image',
   rating : 1,
 }
 

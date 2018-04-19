@@ -4,20 +4,19 @@ import PropTypes from 'prop-types'
 import './css/modal.css'
 
 class Modal extends Component {
-
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.handleKeyUp = this.handleKeyUp.bind(this)
     this.handleOutsideClick = this.handleOutsideClick.bind(this)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     window.addEventListener('keyup', this.handleKeyUp, false)
     document.addEventListener('click', this.handleOutsideClick, false)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('keyup', this.handleKeyUp, false)
     document.removeEventListener('click', this.handleOutsideClick, false)
   }
@@ -25,7 +24,7 @@ class Modal extends Component {
   /**
   * allow escape button
   */
-  handleKeyUp(e) {
+  handleKeyUp (e) {
     const { onClose } = this.props
     const keys = {
       27: () => {
@@ -38,7 +37,7 @@ class Modal extends Component {
     if (keys[e.keyCode]) keys[e.keyCode]()
   }
 
-  handleOutsideClick(e) {
+  handleOutsideClick (e) {
     const { onClose } = this.props
 
     if (e.target === this.modalOverlay) {
@@ -50,15 +49,15 @@ class Modal extends Component {
   render () {
     const { onClose, children, fullHeight, width } = this.props
 
-    const modalClass = 'modal' + (fullHeight ? ' full-height' : '')
+    const modalClass = `modal${  fullHeight ? ' full-height' : ''}`
 
     return (
       <div className='modal-overlay'
-        ref={ node => ( this.modalOverlay = node) }>
+        ref={ node => (this.modalOverlay = node) }>
         <div
           style={{ width: `${width}%` }}
           className={ modalClass }
-          ref={ node => ( this.modal = node) }>
+          ref={ node => (this.modal = node) }>
           <img
             src={ require('./images/x-circle.png') }
             className='close-button'
@@ -71,7 +70,7 @@ class Modal extends Component {
 
 
       </div>
-    );
+    )
   }
 }
 

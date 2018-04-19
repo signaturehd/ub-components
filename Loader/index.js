@@ -6,10 +6,9 @@ import './styles/style.css'
 
 class Loader extends Component {
   render () {
-
     const { width, show } = this.props
 
-    return(
+    return (
       <div>
         {
           show &&
