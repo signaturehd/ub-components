@@ -9,14 +9,13 @@ class AppBar extends Component {
     }
 
     render () {
-
         const { onClick, title, description, image, author, rating } = this.props
 
         const style = {
             cardStyle : {
                 background : `url(${image}) rgba(0,0,0,0.4)`,
-                backgroundSize : "contain",
-                height: "20px"
+                backgroundSize : 'contain',
+                height: '20px'
             }
         }
         return (
@@ -53,9 +52,9 @@ AppBar.propTypes = {
 AppBar.defaultProps = {
     title : 'title',
     description : 'description',
-    author : "author",
-    image : "image",
+    author : 'author',
+    image : 'image',
     rating : 1,
 }
 
-export {AppBar}
+export { AppBar }
