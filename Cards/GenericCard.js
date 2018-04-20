@@ -8,29 +8,30 @@ class GenericCard extends Component {
     super(props)
   }
 
+  successConsole () {
+    console.log('success')
+  }
   render () {
-    const { onClick, title, description, image, author, rating } = this.props
+    const { onClick, title, image } = this.props
 
     const style = {
       cardStyle : {
         background : `url(${image}) rgba(0,0,0,0.4)`,
         backgroundSize : 'contain',
-        height: '100px'
+        height: '200px'
+      },
+      fontStyle : {
+        fontFamily : 'Roboto, sans-serif',
+        fontSize : '25px'
       }
     }
-
     return (
       <div className = {'card'} onClick = { onClick } >
         <div
-          style = { style.cardStyle }
-        ></div>
-        <div className = {'card-body'}>
-          <h5>{ title }</h5>
-          <h6>{ author }</h6>
-          <p>{ description }</p>
+          style = { style.cardStyle } >
         </div>
+        <small style = { style.fontStyle } > { title } </small>
         <div className = {'card-footer'}>
-          <small>{ author }</small>
         </div>
       </div>
     )
@@ -40,18 +41,12 @@ class GenericCard extends Component {
 GenericCard.propTypes = {
   onClick : PropTypes.func,
   title : PropTypes.string,
-  description : PropTypes.string,
   image : PropTypes.string,
-  author : PropTypes.string,
-  rating : PropTypes.number,
 }
 
 GenericCard.defaultProps = {
   title : 'title',
-  description : 'description',
-  author : 'author',
   image : 'image',
-  rating : 1,
 }
 
 export default GenericCard
