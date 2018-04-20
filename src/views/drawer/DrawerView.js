@@ -5,11 +5,10 @@ import ConnectView from '../../utils/ConnectView'
 import LibraryView from '../Library/LibraryView'
 import BenefitsPartial from '../benefits/BenefitsPartial'
 import Presenter from './presenter/DrawerPresenter'
-import { GenericButton } from '../../ub-components/UButton/'
-import { GenericCard } from '../../ub-components/Cards/'
 import { AppBar } from './components/appbar/AppBar'
 import { SideBar } from './components/sidebar/SideBar'
 import { Drawer } from './components/drawer-components/Drawer'
+import { PageHeaderView } from './components/default-page-header/PageHeaderView'
 import './styles/drawerview.css'
 
 class DrawerView extends BaseMVPView {
@@ -21,30 +20,30 @@ class DrawerView extends BaseMVPView {
     const display = { display : 'block' }
       return (
         <section className = { 'grid-1' }>
-          <div className = { 'item-1'}>
+          <div className = { '_drawer-header'}>
             <AppBar></AppBar>
           </div>
-          <div className = { 'displayShow' }
+          <div className = { '_drawer-sidebar' }
                style = { display }>
             <SideBar
               onNavigaionClick = { path => this.props.history.push(path) } ></SideBar>
           </div>
-          <div className = { 'item-3' }>
-            <Drawer>
-              <Switch>
-                  <Route path = '/benefits' render = { props => <BenefitsPartial parent = { this } { ...props } />
-                  }
-                />
-                  <Route path = '/news' render = { props => <News parent = { this } { ...props } />} />
-                 <Route path = '/transaction' render = { props => <Transaction parent = { this } { ...props } />} />
-                 <Route path = '/faqs' render = { props => <Faqs parent = { this } { ...props } />} />
-                 <Route path = '/settings' render = { props => <Settings parent = { this } { ...props } />} />
-                 <Route path = '/books' render = { props => <LibraryView parent = { this } { ...props } />} />
-             </Switch>
-            </Drawer>
-          </div>
-          <div className = { 'item-4' }>
-            <div className = { '_option-components' }>
+          <div className = { '_drawer-main' }>
+            { super.render() }
+            <div className = { '_default-page-header' }>
+              <PageHeaderView></PageHeaderView>
+            </div>
+            <div className = { '_dynamic-component' }>
+                <Drawer>
+                  <Switch>
+                    <Route path = '/benefits' render = { props => <BenefitsPartial parent = { this } { ...props } />}/>
+                     <Route path = '/news' render = { props => <NewsView parent = { this } { ...props } />} />
+                     <Route path = '/transactions' render = { props => <TransactionView parent = { this } { ...props } />} />
+                     <Route path = '/faqs' render = { props => <Faqs parent = { this } { ...props } />} />
+                     <Route path = '/settings' render = { props => <Settings parent = { this } { ...props } />} />
+                     <Route path = '/books' render = { props => <LibraryView parent = { this } { ...props } />} />
+                 </Switch>
+                </Drawer>
             </div>
           </div>
         </section>

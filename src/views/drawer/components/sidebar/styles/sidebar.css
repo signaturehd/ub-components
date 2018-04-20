@@ -23,15 +23,9 @@
   background: transparent;
   outline: none;
 }
-._active-text-link {
-  font-family: Montserrat-Light;
+._text-link {
   font-size:  16px;
   color: #ffffff;
-}
-a:hover,a:focus {
-text-decoration:none;
-vertical-align: middle;
-color: #ffffff;
 }
 ._icon {
   position: relative;

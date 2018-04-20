@@ -35,7 +35,6 @@ this.setState({ books })
 
     return (
       <div className = {'library-container'}>
-        <h1>hello world</h1>
         {
           books.map((book, key) => (
               <BookCardComponent

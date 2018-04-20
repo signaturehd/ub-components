@@ -7,24 +7,35 @@
       grid-template-columns: repeat(1, 0fr);
       grid-template-rows: 50px auto auto;
       grid-template-areas: "header header"
-                           "sidebar head"
                            "sidebar main";
 }
 .grid-1 div {
   font-size: 20px;
   }
-.item-1 {
+._drawer-header {
   grid-area: header;
   position: fixed;
 }
-.item-3 {
-  grid-area: head;
+
+._drawer-default-header {
+  grid-area: def;
 }
-.item-4 {
+._drawer-main{
   grid-area: main;
-  padding: 1%;
+  width: 100%;
+  grid-template-rows: 20px auto auto;
+  grid-template-areas: "page-header"
+                       "drawer-components";
 }
-.displayShow {
+  ._default-page-header {
+    grid-area: page-header;
+  }
+  ._dynamic-component {
+    grid-area: drawer-components;
+    padding: 1%;
+    height: 20px;
+  }
+._drawer-sidebar {
   grid-area: sidebar;
 }
 .header {
@@ -44,11 +55,4 @@
   float: left;
   margin-left: 2%;
   width: auto;
-}
-.sidebar{
-  grid-area: sidebar;
-  background: #414D56;
-  height: 100rem;
-  width: 100%;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
 }
