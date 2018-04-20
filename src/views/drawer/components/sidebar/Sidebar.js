@@ -25,9 +25,9 @@ class SideBar extends Component {
             modules.map((d, idx) => (
               <li
                   className = { '_text-link' }
-                  key={idx}
-                  onClick ={ () => onNavigaionClick(d.path) }>
-                 {d.title}
+                  key = { idx }
+                  onClick = { () => onNavigaionClick(d.path) }>
+                  { d.title }
               </li>
               ))
          }

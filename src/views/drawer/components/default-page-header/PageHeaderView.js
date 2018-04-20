@@ -13,10 +13,10 @@ class PageHeaderView extends Component {
 
     const style = {
       _pageheader : {
-        height: '20px',
+        height: 'auto',
         color: 'black',
-        width: '100%',
-        padding: '4%',
+        width: 'auto',
+        padding: '1px',
         background: '#fefefe',
         boxShadow: '0 1px 4px 0 rgba(0,0,0,0.20)',
       }
