@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 import LoginView from './login/LoginView'
 import DrawerView from './drawer/DrawerView'
-
 import Presenter from './AppPresenter'
 
 import { connect } from 'react-redux'
@@ -27,11 +26,7 @@ class App extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.events.token) {
-      this.setState({ isLogin: true })
-    } else {
-      this.setState({ isLogin: false })
-    }
+    this.presenter.checkLogin()
   }
 
   componentWillMount () {
@@ -48,9 +43,9 @@ class App extends Component {
         <Switch>
           <Route path = '/' render={props => {
             if (this.state.isLogin) {
-              return <DrawerView container = { this.props.container } />
-            } 
-              return <LoginView container = { this.props.container } />
+              return <DrawerView container = { this.props.container } { ...props } />
+            }
+              return <LoginView container = { this.props.container } { ...props } />
           }} />
         </Switch>
       </div>
@@ -58,4 +53,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default withRouter(connect(mapStateToProps)(App))

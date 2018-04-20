@@ -42,6 +42,7 @@ this.setState({ books })
 
     return (
       <div className = {'library-container'}>
+        <h2>Books</h2>
         {
 <<<<<<< HEAD
           showBooks.map((book, key) => {
