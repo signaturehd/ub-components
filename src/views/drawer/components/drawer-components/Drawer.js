@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import './styles/drawer.css'
 import Presenter from './presenter/ComponentsPresenter'
 import BenefitsPartial from '../../../benefits/BenefitsPartial'
-import LibraryView from '../../../Library/LibraryView'
+import LibraryView from '../../../library/LibraryView'
 class Drawer extends Component {
   constructor (props) {
     super (props)
