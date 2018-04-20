@@ -9,7 +9,7 @@ import Presenter from './presenter/LibraryPresenter'
 import BaseMVPView from '../common/base/BaseMVPView'
 import ConnectPartial from '../../utils/ConnectPartial'
 
-import { BookCardComponent } from './component'
+import { BookCardComponent } from './components'
 
 
 import './css/styles.css'
@@ -35,6 +35,7 @@ this.setState({ books })
 
     return (
       <div className = {'library-container'}>
+        <h2>Books</h2>
         {
           books.map((book, key) => (
               <BookCardComponent

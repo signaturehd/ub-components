@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './styles/sidebar.css'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import LibraryView from '../../../Library/LibraryView'
+import LibraryView from '../../../library/LibraryView'
 class SideBar extends Component {
   constructor (props) {
     super(props)
@@ -25,9 +25,9 @@ class SideBar extends Component {
             modules.map((d, idx) => (
               <li
                   className = { '_text-link' }
-                  key={idx}
-                  onClick ={ () => onNavigaionClick(d.path) }>
-                 {d.title}
+                  key = { idx }
+                  onClick = { () => onNavigaionClick(d.path) }>
+                  { d.title }
               </li>
               ))
          }
