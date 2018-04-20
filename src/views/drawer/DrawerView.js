@@ -8,7 +8,6 @@ import Presenter from './presenter/DrawerPresenter'
 import { AppBar } from './components/appbar/AppBar'
 import { SideBar } from './components/sidebar/SideBar'
 import { Drawer } from './components/drawer-components/Drawer'
-import { PageHeaderView } from './components/default-page-header/PageHeaderView'
 import './styles/drawerview.css'
 
 class DrawerView extends BaseMVPView {
@@ -30,9 +29,6 @@ class DrawerView extends BaseMVPView {
           </div>
           <div className = { '_drawer-main' }>
             { super.render() }
-            <div className = { '_default-page-header' }>
-              <PageHeaderView></PageHeaderView>
-            </div>
             <div className = { '_dynamic-component' }>
                 <Drawer>
                   <Switch>
