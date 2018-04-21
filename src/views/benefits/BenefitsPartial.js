@@ -4,7 +4,6 @@ import BaseMVPView from '../common/base/BaseMVPView'
 import Presenter from './presenter/BenefitsPresenter'
 import './styles/benefits.css'
 import ConnectPartial from '../../utils/ConnectPartial'
-import { GenericCards } from '../../ub-components/Cards'
 import { GenericButton } from '../../ub-components/UButton'
 
 class BenefitsPartial extends BaseMVPView {
@@ -48,9 +47,9 @@ class BenefitsPartial extends BaseMVPView {
         </div>
         <h1> Benefits</h1>
         <div className = { '_benefits-container' }>
-            <GenericCards className = { '_option-1' } ></GenericCards>
-            <GenericCards className = { '_option-1' } ></GenericCards>
-            <GenericCards className = { '_option-1' } ></GenericCards>
+            <Cards className = { '_option-1' } ></Cards>
+            <Cards className = { '_option-1' } ></Cards>
+            <Cards className = { '_option-1' } ></Cards>
         </div>
       </div>
     )
