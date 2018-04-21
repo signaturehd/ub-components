@@ -9,15 +9,16 @@ import Presenter from './presenter/NewsPresenter'
 import BaseMVPView from '../common/base/BaseMVPView';
 import ConnectPartial from '../../utils/ConnectPartial';
 
-import { GenericCard } from '../../ub-components/Cards'
+import { NewsCardsComponent, NewsModalComponent } from './components'
 
-
+import './css/styles.css'
 
 class NewsView extends BaseMVPView {
   constructor (props) {
     super(props)
     this.state= {
-        showNews: []
+        news: [],
+        show : true
     }
   }
 
@@ -25,22 +26,19 @@ class NewsView extends BaseMVPView {
       this.presenter.getNews()
   }
 
-  showNews (news) {this.setState({showNews:news})}
+  news (news) {this.setState({news})}
+
+
 
   render () {
-    const { showNews } = this.state
-
+    const { news, show } = this.state
     return (
-      <div className = {'library-container'}>
+      <div className = {'container'}>
+        <h2>News Feed</h2>
+        <NewsCardsComponent news = { news } />
         {
-          showNews.map((news, key) => {
-            return (
-              <GenericCard
-                title = { news.title }
-                description = { news.Author }
-              />
-            )
-          })
+          show &&
+          <NewsModalComponent onClose = { () => this.setState({ show: false })} />
         }
       </div>
     )
@@ -48,5 +46,3 @@ class NewsView extends BaseMVPView {
 }
 
 export default ConnectPartial(NewsView, Presenter)
-
-
