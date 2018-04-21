@@ -11,3 +11,6 @@
   grid-area: cards;
   padding: 1%;
 }
+.page-header-buttons {
+  text-align : right;
+}

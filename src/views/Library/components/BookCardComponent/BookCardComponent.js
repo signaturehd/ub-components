@@ -9,10 +9,10 @@ class BookCardComponent extends Component {
   }
 
   render () {
-    const { } = this.props
+    const { title, author, description } = this.props
 
     return (
-      <div className = {'card'} onClick = { onClick } >
+      <div className = {'card'}  >
         <div className = {'card-header'} >
         </div>
         <div className = {'card-body'}>

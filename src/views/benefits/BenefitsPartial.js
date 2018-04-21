@@ -4,7 +4,8 @@ import BaseMVPView from '../common/base/BaseMVPView'
 import Presenter from './presenter/BenefitsPresenter'
 import './styles/benefits.css'
 import ConnectPartial from '../../utils/ConnectPartial'
-import { GenericCard } from '../../ub-components/Cards'
+import { GenericCards } from '../../ub-components/Cards'
+import { GenericButton } from '../../ub-components/UButton'
 
 class BenefitsPartial extends BaseMVPView {
   constructor (props) {
@@ -25,11 +26,32 @@ class BenefitsPartial extends BaseMVPView {
 
   render () {
     const { accountNumber } = this.state
+    const style = {
+          _pageheader : {
+            height: 'auto',
+            color: 'black',
+            width: 'auto',
+            padding: '1%',
+            background: '#fefefe',
+            boxShadow: '0 0 4px 0 rgba(0,0,0,0.20)',
+          }
+        }
     return (
-      <div className = { '_benefits-container' }>
-          <GenericCard className = { '_option-1' } ></GenericCard>
-          <GenericCard className = { '_option-1' } ></GenericCard>
-          <GenericCard className = { '_option-1' } ></GenericCard>
+      <div>
+        <div style = { style._pageheader }>
+          <div className = { 'page-header-buttons' }>
+            <GenericButton
+              text = "logout"
+              onClick={ () => this.presenter.logout() }>
+            </GenericButton>
+          </div>
+        </div>
+        <h1> Benefits</h1>
+        <div className = { '_benefits-container' }>
+            <GenericCards className = { '_option-1' } ></GenericCards>
+            <GenericCards className = { '_option-1' } ></GenericCards>
+            <GenericCards className = { '_option-1' } ></GenericCards>
+        </div>
       </div>
     )
   }
