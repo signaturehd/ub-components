@@ -24,10 +24,8 @@ class SideBar extends Component {
                 <li className = {'_text-link'}
                     onClick = { onClick }
                     key={idx}>
-                    <a>
                       <i className = { '_icon' }></i>
                         <span className = {'_side-text'}>{d.title}</span>
-                    </a>
                 </li>
                 ))
            }
