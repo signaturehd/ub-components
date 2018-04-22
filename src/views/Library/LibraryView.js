@@ -58,7 +58,6 @@ class LibraryView extends BaseMVPView {
           <BookTabsComponent></BookTabsComponent>
         </div>
         <div className = {'library-container'}>
-          <h2>dwada</h2>
           {
             books.map((book, key) => (
                 <BookCardComponent

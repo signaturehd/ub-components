@@ -18,7 +18,7 @@ class DrawerView extends BaseMVPView {
     const displayShow = 'isActive'
     const display = { display : 'block' }
       return (
-        <section className = { 'grid-1' }>
+        <div className = { 'grid-1' }>
           <div className = { '_drawer-header'}>
             <AppBar></AppBar>
           </div>
@@ -42,7 +42,7 @@ class DrawerView extends BaseMVPView {
                 </Drawer>
             </div>
           </div>
-        </section>
+        </div>
     )
   }
 }

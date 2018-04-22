@@ -32,7 +32,7 @@ main {
   margin: 0 auto;
 }
 
-.section-content {
+section {
   display: none;
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
