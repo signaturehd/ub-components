@@ -27,9 +27,9 @@ class LibraryView extends BaseMVPView {
       this.presenter.getBooks()
   }
 
-  books (books) {
+  showBooks (books) {
     this.setState({ books })
-    }
+  }
 
   render () {
     const { books, tabs } = this.state
@@ -47,27 +47,13 @@ class LibraryView extends BaseMVPView {
       <div>
         <div style = { style._pageheader }>
           <div className = { 'page-header-buttons' }>
-              <GenericButton
-                text = "logout"
-                onClick={ () => this.presenter.logout() }>
-              </GenericButton>
           </div>
         </div>
         <h1>Library</h1>
         <div className = { 'tabs-container' }>
-          <BookTabsComponent></BookTabsComponent>
+          <BookTabsComponent books={ books } />
         </div>
         <div className = {'library-container'}>
-          {
-            books.map((book, key) => (
-                <BookCardComponent
-                  title = { book.title }
-                  author = { book.author }
-                  image = { book.image }
-                  description = { book.description }
-                />
-              ))
-          }
         </div>
       </div>
     )

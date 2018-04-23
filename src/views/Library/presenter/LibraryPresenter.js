@@ -12,7 +12,6 @@ export default class LibraryPresenter {
 
   getBooks () {
     this.view.showLoading()
-
     this.getbooksInteractor.execute()
     .subscribe(books => {
         this.view.hideLoading()

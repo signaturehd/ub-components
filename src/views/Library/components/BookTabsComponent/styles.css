@@ -38,8 +38,8 @@ section {
   border-top: 1px solid #ddd;
 }
 
-input {
-  display: none;
+.input-tab {
+  display: none !important;
 }
 
 label {
@@ -53,21 +53,21 @@ label {
 }
 
 label:before {
-  font-family: fontawesome;
+  font-family: 'Roboto';
   font-weight: normal;
   margin-right: 10px;
 }
 
-label[for*='1']:before { content: '\f1cb'; }
-label[for*='2']:before { content: '\f17d'; }
-label[for*='3']:before { content: '\f16b'; }
+label[htmlFor*='1']:before { content: '\f1cb'; }
+label[htmlFor*='2']:before { content: '\f17d'; }
+label[htmlFor*='3']:before { content: '\f16b'; }
 
 label:hover {
   color: #888;
   cursor: pointer;
 }
 
-input:checked + label {
+.input-tab:checked + label {
   color: #555;
   border-bottom: 4px solid #ffa800;
 }
