@@ -9,10 +9,10 @@ class BookCardComponent extends Component {
   }
 
   render () {
-    const { title, author, description } = this.props
+    const { title, author, description, onClick } = this.props
 
     return (
-      <div className = {'card'}  >
+      <div className = {'card'} >
         <div className = {'card-header'} >
         </div>
         <div className = {'card-body'}>
@@ -22,6 +22,8 @@ class BookCardComponent extends Component {
         </div>
         <div className = {'card-footer'}>
           <small>{ author }</small>
+          <button onClick = { () => onClick(this.props, false , true) }>Read More</button>
+          <button onClick = { () => onClick(this.props, true, false) }>Rate this Book</button>
         </div>
       </div>
     )

@@ -26,9 +26,7 @@ class BookTabsComponent extends Component {
         <label htmlFor = 'tab3' >Tab 3</label>
 
         <section id="content1">
-          <div className = {'library-container'}>
             <Tab1 books={ books }></Tab1>
-          </div>
         </section>
         <section id="content2">
           <div className = {'library-container'}>

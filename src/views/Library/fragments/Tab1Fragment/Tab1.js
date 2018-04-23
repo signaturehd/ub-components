@@ -3,21 +3,38 @@ import PropTypes from 'prop-types'
 
 import './styles.css'
 
-import { BookCardComponent } from '../../components'
+import { BookCardComponent,
+  BookRatingModalComponent,
+  BookViewModalComponent,
+ } from '../../components'
 
 class Tab1 extends Component {
   constructor (props) {
     super(props)
+    this.state = {
+      rating : false,
+      view : false,
+      details : null
+    }
   }
   render () {
-    const { books } = this.props
+    const { books, details } = this.props
     return (
-      <div className = { 'container-option1' }>
+      <div className = {'library-container'}>
         {
-          books.map((book, key) => {
-              return <BookCardComponent/>
-          })
+          books.map((book, key) => <BookCardComponent key = { key } onClick = {(details, rating, view) => this.setState({details, rating, view}) } />)
         }
+
+        {
+          this.state.rating &&
+          <BookRatingModalComponent details = { details } onClose = { () => this.setState({rating : false}) }/>
+        }
+
+        {
+          this.state.view &&
+          <BookViewModalComponent details = { details } onClose = { () => this.setState({view : false}) }/>
+        }
+
       </div>
     )
   }
