@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import './styles.css'
 
-class BookCardComponent extends Component {
+class Tab2 extends Component {
   constructor (props) {
     super(props)
   }
@@ -12,23 +12,14 @@ class BookCardComponent extends Component {
     const { title, author, description } = this.props
 
     return (
-      <div className = {'card'}  >
-        <div className = {'card-header'} >
-        </div>
-        <div className = {'card-body'}>
-          <h5>{ title }</h5>
-          <h6>{ author }</h6>
-          <p>{ description }</p>
-        </div>
-        <div className = {'card-footer'}>
-          <small>{ author }</small>
-        </div>
+      <div className = { 'container-option1' }  >
+      <h1> Tab 2 </h1>
       </div>
     )
   }
 }
 
-BookCardComponent.propTypes = {
+Tab2.propTypes = {
   onClick : PropTypes.func,
   title : PropTypes.string,
   description : PropTypes.string,
@@ -38,7 +29,7 @@ BookCardComponent.propTypes = {
   id : PropTypes.string
 }
 
-BookCardComponent.defaultProps = {
+Tab2.defaultProps = {
   title : 'title',
   description : 'description',
   author : 'author',
@@ -47,4 +38,4 @@ BookCardComponent.defaultProps = {
 }
 
 
-export default BookCardComponent
+export default Tab2

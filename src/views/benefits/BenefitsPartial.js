@@ -1,10 +1,16 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import BaseMVPView from '../common/base/BaseMVPView'
 
 import Presenter from './presenter/BenefitsPresenter'
 import './styles/benefits.css'
 import ConnectPartial from '../../utils/ConnectPartial'
-import { GenericCard } from '../../ub-components/Cards'
+import { GenericButton } from '../../ub-components/UButton'
+import { GenericCards } from '../../ub-components/Cards'
+import Option1 from './fragments/option1/Option1'
+import Option2 from './fragments/option2/Option2'
+import Option3 from './fragments/option3/Option3'
 
 class BenefitsPartial extends BaseMVPView {
   constructor (props) {
@@ -22,17 +28,63 @@ class BenefitsPartial extends BaseMVPView {
   onValidAccountNumber () {
     // TODO dismiss account number dialog
   }
-
   render () {
+    const { onClick, text, path, icon, onOptionsLink, history } = this.props
+    const benefitsOptions =
+    [
+      { id: 0 , title: 'Option 1', path: '/benefits/option1' },
+      { id: 1 , title: 'Option 2', path: '/benefits/option2' },
+      { id: 2 , title: 'Option 3', path: '/benefits/option3' }
+    ]
     const { accountNumber } = this.state
+    const style = {
+          _pageheader : {
+            height: 'auto',
+            color: 'black',
+            width: 'auto',
+            padding: '1%',
+            background: '#fefefe',
+            boxShadow: '0 0 4px 0 rgba(0,0,0,0.20)',
+          }
+        }
+
     return (
-      <div className = { '_benefits-container' }>
-          <GenericCard className = { '_option-1' } ></GenericCard>
-          <GenericCard className = { '_option-1' } ></GenericCard>
-          <GenericCard className = { '_option-1' } ></GenericCard>
+      <div>
+        <div style = { style._pageheader }>
+          <div className = { 'page-header-buttons' }>
+          </div>
+        </div>
+        <h1> Benefits</h1>
+        <div className = { '_benefits-container' }>
+          {
+            benefitsOptions.map( ( value, idx ) => (
+              <GenericCards className = { 'options-1' } >
+                <div
+                  className = { 'option-cards' }
+                  text = { value.title }
+                  key = { idx }
+                  onClick = { () => onOptionsLink( history.push(value.path) ) } >
+                  <span> { value.title } </span></div>
+              </GenericCards>
+            ))
+          }
+          </div>
+          <div className = { '_benefits-container' }>
+            <Switch>
+              <Route path = '/benefits/option1' render = { props => <Option1 parent = { this } />}/>
+              <Route path = '/benefits/option2' render = { props => <Option2 parent = { this } />}/>
+              <Route path = '/benefits/option3' render = { props => <Option3 parent = { this } />}/>
+           </Switch>
+         </div>
       </div>
     )
   }
+}
+BenefitsPartial.propTypes = {
+  text : PropTypes.string,
+  icon : PropTypes.string,
+  path : PropTypes.string,
+  onClick : PropTypes.func,
 }
 
 export default ConnectPartial(BenefitsPartial, Presenter)

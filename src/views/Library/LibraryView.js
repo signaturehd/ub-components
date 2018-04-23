@@ -9,8 +9,9 @@ import Presenter from './presenter/LibraryPresenter'
 import BaseMVPView from '../common/base/BaseMVPView'
 import ConnectPartial from '../../utils/ConnectPartial'
 
-import { BookCardComponent } from './components'
+import { BookCardComponent , BookTabsComponent} from './components'
 
+import { GenericButton } from '../../ub-components/UButton'
 
 import './css/styles.css'
 
@@ -26,26 +27,34 @@ class LibraryView extends BaseMVPView {
       this.presenter.getBooks()
   }
 
-  books (books) {
-this.setState({ books })
-}
+  showBooks (books) {
+    this.setState({ books })
+  }
 
   render () {
-    const { books } = this.state
-
-    return (
-      <div className = {'library-container'}>
-        <h2>Books</h2>
-        {
-          books.map((book, key) => (
-              <BookCardComponent
-                title = { book.title }
-                author = { book.author }
-                image = { book.image }
-                description = { book.description }
-              />
-            ))
+    const { books, tabs } = this.state
+    const style = {
+          _pageheader : {
+            height: 'auto',
+            color: 'black',
+            width: 'auto',
+            padding: '1%',
+            background: '#fefefe',
+            boxShadow: '0 0 4px 0 rgba(0,0,0,0.20)'
+          }
         }
+    return (
+      <div>
+        <div style = { style._pageheader }>
+          <div className = { 'page-header-buttons' }>
+          </div>
+        </div>
+        <h1>Library</h1>
+        <div className = { 'tabs-container' }>
+          <BookTabsComponent books={ books } />
+        </div>
+        <div className = {'library-container'}>
+        </div>
       </div>
     )
   }

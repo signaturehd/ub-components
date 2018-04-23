@@ -4,6 +4,7 @@ import BaseMVPView from '../common/base/BaseMVPView'
 import ConnectView from '../../utils/ConnectView'
 import LibraryView from '../library/LibraryView'
 import BenefitsPartial from '../benefits/BenefitsPartial'
+import TransactionView from '../transaction/TransactionView'
 import Presenter from './presenter/DrawerPresenter'
 import { AppBar } from './components/appbar/AppBar'
 import { SideBar } from './components/sidebar/SideBar'
@@ -18,7 +19,7 @@ class DrawerView extends BaseMVPView {
     const displayShow = 'isActive'
     const display = { display : 'block' }
       return (
-        <section className = { 'grid-1' }>
+        <div className = { 'grid-1' }>
           <div className = { '_drawer-header'}>
             <AppBar></AppBar>
           </div>
@@ -42,7 +43,7 @@ class DrawerView extends BaseMVPView {
                 </Drawer>
             </div>
           </div>
-        </section>
+        </div>
     )
   }
 }

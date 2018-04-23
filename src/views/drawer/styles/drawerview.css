@@ -32,8 +32,7 @@
   }
   ._dynamic-component {
     grid-area: drawer-components;
-    padding: 1%;
-    height: 20px;
+    height: auto;
   }
 ._drawer-sidebar {
   grid-area: sidebar;
