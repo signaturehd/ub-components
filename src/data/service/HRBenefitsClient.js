@@ -9,6 +9,7 @@ export default class HRBenefitsClient {
   }
 
   /* User */
+  // HTTP status code
   login (loginParam) {
     return this.service.login(loginParam)
       .pipe(ServiceErrorOperator())
@@ -73,6 +74,4 @@ export default class HRBenefitsClient {
   /* dental reimbursement */
 
   /* dental loa */
-
-
 }
