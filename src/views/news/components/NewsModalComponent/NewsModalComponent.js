@@ -12,7 +12,6 @@ class NewsModalComponent extends Component {
 
   render () {
     const { onClose, title, image, description, link, details } = this.props
-    console.log(details)
     return (
       <Modal
         onClose = { onClose }
