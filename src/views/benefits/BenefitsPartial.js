@@ -8,9 +8,9 @@ import './styles/benefits.css'
 import ConnectPartial from '../../utils/ConnectPartial'
 import { GenericButton } from '../../ub-components/UButton'
 import { GenericCards } from '../../ub-components/Cards'
-import Option1 from './components/option1/Option1'
-import Option2 from './components/option2/Option2'
-import Option3 from './components/option3/Option3'
+import Option1 from './fragments/option1/Option1'
+import Option2 from './fragments/option2/Option2'
+import Option3 from './fragments/option3/Option3'
 
 class BenefitsPartial extends BaseMVPView {
   constructor (props) {
@@ -52,10 +52,6 @@ class BenefitsPartial extends BaseMVPView {
       <div>
         <div style = { style._pageheader }>
           <div className = { 'page-header-buttons' }>
-            <GenericButton
-              text = "logout"
-              onClick={ () => this.presenter.logout() }>
-            </GenericButton>
           </div>
         </div>
         <h1> Benefits</h1>

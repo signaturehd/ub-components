@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { Switch, Route, Link } from 'react-router-dom'
-import Tab1 from '../Tab1Component/Tab1'
-import Tab2 from '../Tab2Component/Tab2'
-import Tab3 from '../Tab3Component/Tab3'
+import Tab1 from '../../fragments/Tab1Fragment/Tab1'
+import Tab2 from '../../fragments/Tab2Fragment/Tab2'
+import Tab3 from '../../fragments/Tab3Fragment/Tab3'
 import './styles.css'
 
 class BookTabsComponent extends Component {

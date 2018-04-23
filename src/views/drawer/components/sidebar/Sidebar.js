@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './styles/sidebar.css'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import LibraryView from '../../../library/LibraryView'
 
 class SideBar extends Component {
   constructor (props) {
@@ -14,7 +13,7 @@ class SideBar extends Component {
     [
       { id: 0 , title: 'Benefits', path: '/benefits' },
       { id: 1 , title: 'News', path: '/news' },
-      { id: 2 , title: 'Transactions', path: '/transations' },
+      { id: 2 , title: 'Transactions', path: '/transactions' },
       { id: 4 , title: 'Faqs', path: '/faqs' },
       { id: 5 , title: 'Settings', path: '/settings' },
       { id: 6 , title: 'Books', path: '/books' },
