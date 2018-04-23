@@ -31,14 +31,18 @@ class BookListFragment extends BaseMVPView {
       <div>
       { super.render() }
       <div className = {'library-container'}>
-
         {
-          books.map((book, key) => <BookCardComponent rateBook = { (id, rating) => this.addRating(id, rating) } detail = { book } key = { key } onClick = {(details, view) => this.setState({details, view}) } />)
+          books.map((book, key) =>
+            <BookCardComponent
+              rateBook = { (id, rating) => this.addRating(id, rating) }
+              detail = { book } key = { key }
+              onClick = { (details, view) => this.setState({ details, view }) }
+            />
+          )
         }
-
         {
           this.state.view &&
-          <BookViewModal details = { details } onClose = { () => this.setState({view : false}) }/>
+          <BookViewModal details = { details } onClose = { () => this.setState({ view : false }) }/>
         }
       </div>
       </div>

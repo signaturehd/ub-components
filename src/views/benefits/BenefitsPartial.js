@@ -57,13 +57,13 @@ class BenefitsPartial extends BaseMVPView {
         <h1> Benefits</h1>
         <div className = { '_benefits-container' }>
           {
-            benefitsOptions.map( ( value, idx ) => (
+            benefitsOptions.map((value, idx) => (
               <GenericCards className = { 'options-1' } >
                 <div
                   className = { 'option-cards' }
                   text = { value.title }
                   key = { idx }
-                  onClick = { () => onOptionsLink( history.push(value.path) ) } >
+                  onClick = { () => onOptionsLink(history.push(value.path)) } >
                   <span> { value.title } </span></div>
               </GenericCards>
             ))

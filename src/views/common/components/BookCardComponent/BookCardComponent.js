@@ -28,8 +28,10 @@ class BookCardComponent extends Component {
         <div className = {'card-footer'}>
           <center>
             <Rating
-              onChange = {(e) => {rateBook(detail.id, e), this.setState({rating : e})}}
-              fractions={2}
+              onChange = { e => {
+ rateBook(detail.id, e), this.setState({ rating : e }) 
+}}
+              fractions = { 2 }
               initialRating = { rating ? rating : detail.rating }
             />
             <button onClick = { () => onClick(detail, true) }>Read More</button>

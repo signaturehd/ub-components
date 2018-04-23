@@ -21,6 +21,4 @@ export default class LibraryPresenter {
         // TODO prompt generic error
       })
   }
-
-
 }
