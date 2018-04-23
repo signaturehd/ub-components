@@ -88,7 +88,7 @@ export default class HRBenefitsService {
   getNews (token) {
     return this.apiClient.get('v1/news', {
         headers: {
-          token : '5f1ae8a0a239bc16f89cc6d417872c8dab0e93222544fc44823c5b03f497f1edfe6a98c7f20c6e21b18b7ee7366aa960778cab6360cb79503b5b6c00d349c85d' 
+          token
         }
     })
   }

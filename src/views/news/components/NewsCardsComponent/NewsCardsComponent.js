@@ -11,8 +11,7 @@ class NewsCardsComponent extends Component {
   }
 
   render () {
-    const { news } = this.props
-    console.log('cards' + JSON.stringify(news))
+    const { news, onClick } = this.props
     return (
       <div className = {'card-container'}>
         {
@@ -25,6 +24,7 @@ class NewsCardsComponent extends Component {
               </div>
               <div className = {'card-footer'}>
                 <small><a href = {news.linkUrl}>See More</a></small>
+                <small><a onClick = { () => onClick(news) }>Read More</a></small>
               </div>
             </Cards>
           ))
@@ -35,7 +35,8 @@ class NewsCardsComponent extends Component {
 }
 
 NewsCardsComponent.propTypes = {
-  news : PropTypes.array.isRequired
+  news : PropTypes.array.isRequired,
+  onClick : PropTypes.func
 }
 
 NewsCardsComponent.defaultProps = {

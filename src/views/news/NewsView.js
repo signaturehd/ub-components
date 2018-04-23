@@ -18,7 +18,7 @@ class NewsView extends BaseMVPView {
     super(props)
     this.state= {
         news: [],
-        show : true
+        show : false
     }
   }
 
@@ -31,14 +31,14 @@ class NewsView extends BaseMVPView {
 
 
   render () {
-    const { news, show } = this.state
+    const { news, show, details } = this.state
     return (
       <div className = {'container'}>
         <h2>News Feed</h2>
-        <NewsCardsComponent news = { news } />
+        <NewsCardsComponent news = { news } onClick = { details => {this.setState({details, show: true})} } />
         {
           show &&
-          <NewsModalComponent onClose = { () => this.setState({ show: false })} />
+          <NewsModalComponent onClose = { () => this.setState({ show: false })} details = { details } />
         }
       </div>
     )

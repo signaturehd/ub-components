@@ -71,8 +71,8 @@ export default class HRBenefitsClient {
       .pipe(ServiceErrorOperator())
   }
   /* News */
-  getNews () {
-    return this.service.getNews()
+  getNews (token) {
+    return this.service.getNews(token)
       .pipe(ServiceErrorOperator())
   }
 }
