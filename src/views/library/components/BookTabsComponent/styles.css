@@ -8,12 +8,6 @@
   padding: 0 4% 0 4%;
 }
 
-body {
-  font: 14px/1 'Roboto Sans', sans-serif;
-  color: #555;
-  background: #eee;
-}
-
 h1 {
   font-weight: 350;
   text-align: left;
@@ -76,6 +70,8 @@ label:hover {
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3{
   display: block;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 @media screen and (max-width: 650px) {

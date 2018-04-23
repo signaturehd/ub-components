@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { Switch, Route, Link } from 'react-router-dom'
-import Tab1 from '../../fragments/Tab1Fragment/Tab1'
-import Tab2 from '../../fragments/Tab2Fragment/Tab2'
-import Tab3 from '../../fragments/Tab3Fragment/Tab3'
+import BookList from '../../../booklist/BookListFragment'
+import BookOwned from '../../../bookowned/BookOwnedFragment'
+import BookRecommendation from '../../../bookrecommendation/BookRecommendationFragment'
 import './styles.css'
 
 class BookTabsComponent extends Component {
@@ -16,27 +16,23 @@ class BookTabsComponent extends Component {
     const { onTabLink, history , htmlFor, books } = this.props
     return (
     <main>
-        <input className = { 'input-tab' } id="tab1" checked  type="radio" name="tabs" />
-        <label htmlFor = 'tab1'  > Tab 1</label>
+        <input className = { 'input-tab' } id="tab1" defaultChecked  type="radio" name="tabs" />
+        <label htmlFor = 'tab1'>All Books</label>
 
         <input className = { 'input-tab' } id="tab2" type="radio" name="tabs" />
-        <label  htmlFor = 'tab2' >Tab 2</label>
+        <label  htmlFor = 'tab2'>Recommended</label>
 
         <input className = { 'input-tab' } id="tab3"  type="radio" name="tabs" />
-        <label htmlFor = 'tab3' >Tab 3</label>
+        <label htmlFor = 'tab3' >My Library</label>
 
         <section id="content1">
-            <Tab1 books={ books }></Tab1>
+            <BookList books={ books }/>
         </section>
         <section id="content2">
-          <div className = {'library-container'}>
-            <Tab2></Tab2>
-          </div>
+            <BookRecommendation/>
         </section>
         <section  id="content3">
-          <div className = {'library-container'}>
-            <Tab3></Tab3>
-          </div>
+            <BookOwned/>
         </section>
     </main>
     )

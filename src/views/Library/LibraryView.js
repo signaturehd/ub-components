@@ -1,10 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-
-import ConnectView from '../../utils/ConnectView'
-import Interactor from '../../domain/interactor/library/GetbooksInteractor'
-
 import Presenter from './presenter/LibraryPresenter'
 import BaseMVPView from '../common/base/BaseMVPView'
 import ConnectPartial from '../../utils/ConnectPartial'
@@ -36,17 +32,19 @@ class LibraryView extends BaseMVPView {
     this.setState({ books })
   }
 
+
   render () {
     const { books, tabs } = this.state
     return (
       <div>
+      { super.render() }
         <div>
           <div className = { 'page-header-buttons' }>
           </div>
         </div>
         <h1>Library</h1>
         <div className = { 'tabs-container' }>
-          <BookTabsComponent books={ books } />
+          <BookTabsComponent  books={ books } />
         </div>
       </div>
     )

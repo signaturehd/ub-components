@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import './styles.css'
 
-class Tab2 extends Component {
+class BookRecommendationFragment extends Component {
   constructor (props) {
     super(props)
   }
@@ -19,7 +19,7 @@ class Tab2 extends Component {
   }
 }
 
-Tab2.propTypes = {
+BookRecommendationFragment.propTypes = {
   onClick : PropTypes.func,
   title : PropTypes.string,
   description : PropTypes.string,
@@ -29,7 +29,7 @@ Tab2.propTypes = {
   id : PropTypes.string
 }
 
-Tab2.defaultProps = {
+BookRecommendationFragment.defaultProps = {
   title : 'title',
   description : 'description',
   author : 'author',
@@ -38,4 +38,4 @@ Tab2.defaultProps = {
 }
 
 
-export default Tab2
+export default BookRecommendationFragment

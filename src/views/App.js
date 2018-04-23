@@ -5,6 +5,9 @@ import LoginView from './login/LoginView'
 import DrawerView from './drawer/DrawerView'
 import Presenter from './AppPresenter'
 
+import ConnectView from '../utils/ConnectView'
+import BaseMVPView from './common/base/BaseMVPView'
+
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { EventActions } from '../actions'
@@ -13,16 +16,13 @@ const mapStateToProps = state => ({
   events: state.events,
 })
 
-class App extends Component {
+class App extends BaseMVPView {
   constructor (props) {
     super(props)
 
     this.state = {
       isLogin: false,
     }
-
-    this.presenter = new Presenter(this.props.container)
-    this.presenter.setView(this)
   }
 
   componentWillReceiveProps (nextProps) {
@@ -53,4 +53,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(App))
+export default withRouter(ConnectView(connect(mapStateToProps)(App), Presenter))
