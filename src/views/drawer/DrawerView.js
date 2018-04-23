@@ -33,12 +33,12 @@ class DrawerView extends BaseMVPView {
             <div className = { '_dynamic-component' }>
                 <Drawer>
                   <Switch>
-                    <Route path = '/benefits' render = { props => <BenefitsPartial parent = { this } { ...props } />}/>
-                     <Route path = '/news' render = { props => <NewsView parent = { this } { ...props } />} />
-                     <Route path = '/transactions' render = { props => <TransactionView parent = { this } { ...props } />} />
-                     <Route path = '/faqs' render = { props => <Faqs parent = { this } { ...props } />} />
-                     <Route path = '/settings' render = { props => <Settings parent = { this } { ...props } />} />
-                     <Route path = '/books' render = { props => <LibraryView parent = { this } { ...props } />} />
+                    <Route path = '/benefits' render = { props => <BenefitsPartial { ...props } />}/>
+                     <Route path = '/news' render = { props => <NewsView { ...props } />} />
+                     <Route path = '/transactions' render = { props => <TransactionView { ...props } />} />
+                     <Route path = '/faqs' render = { props => <Faqs { ...props } />} />
+                     <Route path = '/settings' render = { props => <Settings { ...props } />} />
+                     <Route path = '/books' render = { props => <LibraryView { ...props } />} />
                  </Switch>
                 </Drawer>
             </div>

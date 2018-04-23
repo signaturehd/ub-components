@@ -43,9 +43,9 @@ class App extends BaseMVPView {
         <Switch>
           <Route path = '/' render={props => {
             if (this.state.isLogin) {
-              return <DrawerView container = { this.props.container } { ...props } />
+              return <DrawerView  { ...props } />
             }
-              return <LoginView container = { this.props.container } { ...props } />
+              return <LoginView { ...props } />
           }} />
         </Switch>
       </div>
