@@ -1,69 +1,50 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-
-import ConnectView from '../../utils/ConnectView'
-import Interactor from '../../domain/interactor/library/GetbooksInteractor'
-
 import Presenter from './presenter/LibraryPresenter'
 import BaseMVPView from '../common/base/BaseMVPView'
 import ConnectPartial from '../../utils/ConnectPartial'
 
-import { BookCardComponent } from './components'
+import {
+    BookCardComponent,
+    BookTabsComponent
+  } from './components'
 
+import { GenericButton } from '../../ub-components/UButton'
 
-import './css/styles.css'
 
 class LibraryView extends BaseMVPView {
   constructor (props) {
     super(props)
     this.state = {
-        books : []
+      books : [],
+      showRating : false,
+      showBook : false
     }
   }
 
   componentDidMount () {
-    
       this.presenter.getBooks()
   }
 
-<<<<<<< HEAD
   showBooks (books) {
-    
-    this.setState({showBooks:books})}
-=======
-  books (books) {
-this.setState({ books })
-}
->>>>>>> 49cf8e1339f4db9f2b5b50b3f6d949a1c184608c
+    this.setState({ books })
+  }
+
 
   render () {
-    const { books } = this.state
-
+    const { books, tabs } = this.state
     return (
-      <div className = {'library-container'}>
-        <h2>Books</h2>
-        {
-<<<<<<< HEAD
-          showBooks.map((book, key) => {
-            return (
-              <GenericCard
-                title = { book.title }
-                description = { book.Author }
-              />
-            )
-          })
-=======
-          books.map((book, key) => (
-              <BookCardComponent
-                title = { book.title }
-                author = { book.author }
-                image = { book.image }
-                description = { book.description }
-              />
-            ))
->>>>>>> 49cf8e1339f4db9f2b5b50b3f6d949a1c184608c
-        }
+      <div>
+      { super.render() }
+        <div>
+          <div className = { 'page-header-buttons' }>
+          </div>
+        </div>
+        <h1>Library</h1>
+        <div className = { 'tabs-container' }>
+          <BookTabsComponent  books={ books } />
+        </div>
       </div>
     )
   }

@@ -64,9 +64,9 @@ export default class HRBenefitsService {
   validateAccountNumber (accountNumber) {
     return this.accountClient.get('accounts/v1/' + accountNumber, {
       headers: {
-        referenceid: Math.random().toString(36).substring(7)
-      },
-      json: true,
+        referenceId : Math.random().toString(36)
+          .substring(7)
+      }
     })
   }
 
@@ -84,12 +84,20 @@ export default class HRBenefitsService {
     })
   }
 
-  /* library */
+
+  addRating (token, bookParam) {
+    return this.apiClient.post('v1/books/rate', bookParam, {
+      headers : { token }
+    })
+  }
+
+
+  // news
   getNews (token) {
     return this.apiClient.get('v1/news', {
-        headers: {
-          token
-        }
+      headers: {
+        token
+      }
     })
   }
 }
