@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import './styles/styles.css'
 
 class GenericCards extends Component {
-
   constructor (props) {
     super(props)
   }
