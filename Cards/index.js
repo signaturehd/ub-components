@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import './styles/styles.css'
 
 class Cards extends Component {
-
   constructor (props) {
     super(props)
   }
