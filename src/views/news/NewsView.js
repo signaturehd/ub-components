@@ -28,12 +28,11 @@ class NewsView extends BaseMVPView {
 
   news (news) {this.setState({news})}
 
-
-
   render () {
     const { news, show, details } = this.state
     return (
       <div className = {'container'}>
+        { super.render() }
         <h2>News Feed</h2>
         <NewsCardsComponent news = { news } onClick = { details => {this.setState({details, show: true})} } />
         {
