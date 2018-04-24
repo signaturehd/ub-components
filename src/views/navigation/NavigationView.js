@@ -8,10 +8,10 @@ import TransactionView from '../transaction/TransactionView'
 import Presenter from './presenter/DrawerPresenter'
 import { AppBar } from './components/appbar/AppBar'
 import { SideBar } from './components/sidebar/SideBar'
-import { Drawer } from './components/drawer-components/Drawer'
+import { Drawer } from './components/drawer/Drawer'
 import './styles/drawerview.css'
 
-class DrawerView extends BaseMVPView {
+class NavigationView extends BaseMVPView {
   constructor (props) {
     super (props)
   }
@@ -48,4 +48,4 @@ class DrawerView extends BaseMVPView {
   }
 }
 
-export default ConnectView(DrawerView, Presenter)
+export default ConnectView(NavigationView, Presenter)

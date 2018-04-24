@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import './styles.css'
-
-class Option1 extends Component {
+class EducationView extends Component {
   constructor (props) {
     super(props)
   }
@@ -13,13 +11,13 @@ class Option1 extends Component {
 
     return (
       <div className = { 'container-option1' }  >
-      <h1> Option 1 </h1>
+        <h1> Education </h1>
       </div>
     )
   }
 }
 
-Option1.propTypes = {
+EducationView.propTypes = {
   onClick : PropTypes.func,
   title : PropTypes.string,
   description : PropTypes.string,
@@ -29,7 +27,7 @@ Option1.propTypes = {
   id : PropTypes.string
 }
 
-Option1.defaultProps = {
+EducationView.defaultProps = {
   title : 'title',
   description : 'description',
   author : 'author',
@@ -38,4 +36,4 @@ Option1.defaultProps = {
 }
 
 
-export default Option1
+export default EducationView

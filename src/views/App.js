@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
 
 import LoginView from './login/LoginView'
-import DrawerView from './drawer/DrawerView'
+import NavigationView from './navigation/NavigationView'
 import Presenter from './AppPresenter'
 
 import ConnectView from '../utils/ConnectView'
@@ -43,7 +43,7 @@ class App extends BaseMVPView {
         <Switch>
           <Route path = '/' render={props => {
             if (this.state.isLogin) {
-              return <DrawerView  { ...props } />
+              return <NavigationView  { ...props } />
             }
               return <LoginView { ...props } />
           }} />

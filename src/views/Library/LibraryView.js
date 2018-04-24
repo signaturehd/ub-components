@@ -12,7 +12,6 @@ import {
 
 import { GenericButton } from '../../ub-components/UButton'
 
-import './css/styles.css'
 
 class LibraryView extends BaseMVPView {
   constructor (props) {

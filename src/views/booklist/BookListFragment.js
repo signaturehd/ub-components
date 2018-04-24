@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './styles.css'
 
 import BookCardComponent from '../common/components/BookCardComponent/BookCardComponent'
 import BookViewModal from '../bookview/BookViewModal'

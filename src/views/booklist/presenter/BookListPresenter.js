@@ -1,5 +1,5 @@
 import AddBookRatingInteractor from '../../../domain/interactor/library/AddBookRatingInteractor'
-import BookParam from '../../../domain/param/BookParam'
+import BookRateParam from '../../../domain/param/BookRateParam'
 
 export default class BookListPresenter {
   constructor (container) {
@@ -12,7 +12,7 @@ export default class BookListPresenter {
 
   rateBook (id, rating) {
     this.view.showLoading()
-    this.addBookInteractor.execute(BookParam(id, rating))
+    this.addBookInteractor.execute(BookRateParam(id, rating))
     .subscribe(
       data => {
         this.view.hideLoading()
