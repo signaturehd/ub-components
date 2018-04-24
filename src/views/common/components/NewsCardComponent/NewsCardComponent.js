@@ -5,7 +5,7 @@ import { Cards } from '../../../../ub-components/'
 
 import './styles.css'
 
-class NewsCardsComponent extends Component {
+class NewsCardComponent extends Component {
   constructor (props) {
     super(props)
   }
@@ -13,7 +13,6 @@ class NewsCardsComponent extends Component {
   render () {
     const { news, onClick } = this.props
     return (
-      <div className = {'card-container'}>
         <Cards>
           <div></div>
           <div className = {'card-body'}>
@@ -25,18 +24,17 @@ class NewsCardsComponent extends Component {
             <small><a onClick = { () => onClick(news) }>Read More</a></small>
           </div>
         </Cards>
-      </div>
     )
   }
 }
 
-NewsCardsComponent.propTypes = {
+NewsCardComponent.propTypes = {
   news : PropTypes.array.isRequired,
   onClick : PropTypes.func
 }
 
-NewsCardsComponent.defaultProps = {
+NewsCardComponent.defaultProps = {
   news : []
 }
 
-export default NewsCardsComponent
+export default NewsCardComponent

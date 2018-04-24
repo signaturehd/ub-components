@@ -9,7 +9,7 @@ import Presenter from './presenter/NewsPresenter'
 import BaseMVPView from '../common/base/BaseMVPView';
 import ConnectPartial from '../../utils/ConnectPartial';
 
-import NewsCardsComponent from '../common/components/NewsCardsComponent/NewsCardsComponent'
+import NewsCardComponent from '../common/components/NewsCardComponent/NewsCardComponent'
 import NewsModalComponent from '../newsview/NewsModalComponent'
 
 import './css/styles.css'
@@ -37,7 +37,7 @@ class NewsView extends BaseMVPView {
         <h2>News Feed</h2>
         <div className = {'card-container'}>
         {
-          news.map((news, i) => <NewsCardsComponent news = { news } onClick = { details => {this.setState({details, show: true})} } /> )
+          news.map((news, i) => <NewsCardComponent news = { news } onClick = { details => {this.setState({details, show: true})} } /> )
         }
         </div>
         {
