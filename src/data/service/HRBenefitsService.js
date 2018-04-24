@@ -65,7 +65,7 @@ export default class HRBenefitsService {
     `accounts/v1/${  accountNumber}`, {
       headers: {
         referenceId : Math.random().toString(36)
-.substring(7)
+          .substring(7)
       }
     })
   }
@@ -76,10 +76,16 @@ export default class HRBenefitsService {
       headers: { token }
     })
   }
-    /* library */
-    getBooks (token) {
-        return this.apiClient.get('v1/books', {
-            headers: { token }
-        })
-    }
+  /* library */
+  getBooks (token) {
+    return this.apiClient.get('v1/books', {
+        headers: { token }
+    })
+  }
+
+  addRating (token, bookParam) {
+    return this.apiClient.post('v1/books/rate', bookParam, {
+      headers : { token }
+    })
+  }
 }
