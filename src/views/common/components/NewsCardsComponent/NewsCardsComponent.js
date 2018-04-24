@@ -14,21 +14,17 @@ class NewsCardsComponent extends Component {
     const { news, onClick } = this.props
     return (
       <div className = {'card-container'}>
-        {
-          news.map((news, i) => (
-            <Cards>
-              <div></div>
-              <div className = {'card-body'}>
-                <h3>{news.Title}</h3>
-                <h5 dangerouslySetInnerHTML= {{__html : news.details.replace(/\r\n/g, '<br/>') }} ></h5>
-              </div>
-              <div className = {'card-footer'}>
-                <small><a href = {news.linkUrl}>See More</a></small>
-                <small><a onClick = { () => onClick(news) }>Read More</a></small>
-              </div>
-            </Cards>
-          ))
-        }
+        <Cards>
+          <div></div>
+          <div className = {'card-body'}>
+            <h3>{news.Title}</h3>
+            <h5 dangerouslySetInnerHTML= {{__html : news.details.replace(/\r\n/g, '<br/>') }} ></h5>
+          </div>
+          <div className = {'card-footer'}>
+            <small><a href = {news.linkUrl}>See More</a></small>
+            <small><a onClick = { () => onClick(news) }>Read More</a></small>
+          </div>
+        </Cards>
       </div>
     )
   }
