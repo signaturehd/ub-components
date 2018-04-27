@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
-export default class Uploader extends Component {
+class Uploader extends Component {
  constructor (props) {
   super(props)
   this.handleSubmit = this.handleSubmit.bind(this)
@@ -17,7 +17,6 @@ export default class Uploader extends Component {
  render () {
   return (
     <label>
-     Upload file:
      <input
       type="file"
       ref={input => {
@@ -29,8 +28,4 @@ export default class Uploader extends Component {
  }
 }
 
-
-
-
-
-
+export default Uploader
