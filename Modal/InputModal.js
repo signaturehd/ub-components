@@ -16,8 +16,7 @@ class InputModal extends Component {
   }
 
   render () {
-
-    const { onClose, type, maxLength, onChange, placeholder, onSubmit} = this.props
+    const { onClose, type, maxLength, onChange, placeholder, onSubmit } = this.props
 
     return (
       <form onSubmit = { onSubmit }>
