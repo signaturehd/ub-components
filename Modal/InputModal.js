@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 
 import Modal from './Modal'
 import GenericTextBox from '../TextBox/GenericTextBox'
+import { GenericButton } from '../UButton'
 
 
 class InputModal extends Component {
@@ -16,9 +17,10 @@ class InputModal extends Component {
 
   render () {
 
-    const {} = this.props
+    const { onClose, type, maxLength, onChange, placeholder} = this.props
 
     return (
+      <div>
       <Modal
         onClose = { onClose }
       >
@@ -28,7 +30,13 @@ class InputModal extends Component {
           onChange = { onChange }
           placeholder = { placeholder }
         />
+        <br/>
+        <GenericButton
+          type = {'submit'}
+          text = {'Submit'}
+        />
       </Modal>
+      </div>
     )
   }
 }
@@ -36,14 +44,15 @@ class InputModal extends Component {
 InputModal.propTypes = {
   onClose : PropTypes.func.important,
   onChange : PropTypes.func.important,
-  type : PropTypes.string.important,
+  type : PropTypes.string,
   placeholder : PropTypes.string,
   maxLength : PropTypes.number,
 }
 
 InputModal.defaultProps = {
-  placeholder : 'input text'
+  placeholder : 'input text',
   type : 'text',
   maxLength : 100
 }
+
 export default InputModal
