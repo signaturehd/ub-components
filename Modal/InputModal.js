@@ -17,26 +17,26 @@ class InputModal extends Component {
 
   render () {
 
-    const { onClose, type, maxLength, onChange, placeholder} = this.props
+    const { onClose, type, maxLength, onChange, placeholder, onSubmit} = this.props
 
     return (
-      <div>
-      <Modal
-        onClose = { onClose }
-      >
-        <GenericTextBox
-          type = { type }
-          maxLength = { maxLength }
-          onChange = { onChange }
-          placeholder = { placeholder }
-        />
-        <br/>
-        <GenericButton
-          type = {'submit'}
-          text = {'Submit'}
-        />
-      </Modal>
-      </div>
+      <form onSubmit = { onSubmit }>
+        <Modal
+          onClose = { onClose }
+        >
+          <GenericTextBox
+            type = { type }
+            maxLength = { maxLength }
+            onChange = { onChange }
+            placeholder = { placeholder }
+          />
+          <br/>
+          <GenericButton
+            type = {'submit'}
+            text = {'Submit'}
+          />
+        </Modal>
+      </form>
     )
   }
 }
@@ -44,6 +44,7 @@ class InputModal extends Component {
 InputModal.propTypes = {
   onClose : PropTypes.func.important,
   onChange : PropTypes.func.important,
+  onSubmit : PropTypes.func,
   type : PropTypes.string,
   placeholder : PropTypes.string,
   maxLength : PropTypes.number,
