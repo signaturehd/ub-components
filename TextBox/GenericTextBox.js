@@ -8,20 +8,25 @@ class GenericTextBox extends Component {
     const { placeholder, onChange, type, maxLength } = this.props
 
     return (
-      <div className = { '_input-container' } >
-        <input type = { type }
-          placeholder = { placeholder }
-          onChange = { onChange }
-          maxLength = { maxLength }
-          className = {' _generic-textbox '}
-        />
+      <div className = {'container'}>
+        <div className ="group">
+          <input
+            type = { type }
+            className = { 'text' }
+            onChange = { onChange }
+            maxLength = { maxLength }
+            required
+          />
+          <span className = { 'text-label' }>{ placeholder }</span>
+          <span className ={ 'bar' }></span>
+        </div>
       </div>
     )
   }
 }
 
 GenericTextBox.propTypes = {
-  placelhikder : PropTypes.string,
+  placelholder : PropTypes.string,
   onChange : PropTypes.func,
   maxLength : PropTypes.number,
   type : PropTypes.string
