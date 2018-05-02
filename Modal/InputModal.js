@@ -16,12 +16,13 @@ class InputModal extends Component {
   }
 
   render () {
-    const { onClose, type, maxLength, onChange, placeholder, onSubmit } = this.props
+    const { onClose, type, maxLength, onChange, placeholder, onSubmit, isDismisable } = this.props
 
     return (
       <form onSubmit = { onSubmit }>
         <Modal
           onClose = { onClose }
+          isDismisable = { isDismisable }
         >
           <GenericTextBox
             type = { type }
@@ -41,8 +42,8 @@ class InputModal extends Component {
 }
 
 InputModal.propTypes = {
-  onClose : PropTypes.func.important,
-  onChange : PropTypes.func.important,
+  onClose : PropTypes.func,
+  onChange : PropTypes.func,
   onSubmit : PropTypes.func,
   type : PropTypes.string,
   placeholder : PropTypes.string,

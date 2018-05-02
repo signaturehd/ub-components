@@ -25,24 +25,26 @@ class Modal extends Component {
   * allow escape button
   */
   handleKeyUp (e) {
-    const { onClose } = this.props
-    const keys = {
-      27: () => {
-        e.preventDefault()
-        onClose()
-        window.removeEventListener('keyup', this.handleKeyUp, false)
-      },
+    const { onClose, isDismisable } = this.props
+    if ( isDismisable ) {
+      const keys = {
+        27: () => {
+          e.preventDefault()
+          onClose()
+          window.removeEventListener('keyup', this.handleKeyUp, false)
+        },
+      }
+      if (keys[e.keyCode]) keys[e.keyCode]()
     }
-
-    if (keys[e.keyCode]) keys[e.keyCode]()
   }
 
   handleOutsideClick (e) {
-    const { onClose } = this.props
-
-    if (e.target === this.modalOverlay) {
-      onClose()
-      document.removeEventListener('click', this.handleOutsideClick, false)
+    const { onClose, isDismisable } = this.props
+    if (isDismisable) {
+      if (e.target === this.modalOverlay) {
+        onClose()
+        document.removeEventListener('click', this.handleOutsideClick, false)
+      }
     }
   }
 
@@ -78,10 +80,12 @@ Modal.propTypes = {
   fullHeight: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
   width: PropTypes.number,
+  isDismisable: PropTypes.bool
 }
 
 Modal.defaultProps = {
   fullHeight: false,
+  isDismisable: false,
   width: 40,
 }
 
