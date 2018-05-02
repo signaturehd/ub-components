@@ -13,7 +13,7 @@ class NewsCardComponent extends Component {
   render () {
     const { news, onClick } = this.props
     return (
-        <Cards className = {'news-card'}>
+        <Cards>
           <div></div>
           <div className = {'card-body'}>
             <h3>{news.Title}</h3>

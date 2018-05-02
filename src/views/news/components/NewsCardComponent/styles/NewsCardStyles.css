@@ -1,10 +1,10 @@
-.news-card {
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  padding: 5px;
-  background: #fff;
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
-  border-radius: 5px;
-  width: 100%;
-  border: 0px transparent;
+.card-container {
+  display:grid;
+  grid-column-gap: 1%;
+  grid-template-columns : repeat(250px);
+  margin-top: 20px;
+}
+
+.news-body {
+  padding : 50px;
 }
