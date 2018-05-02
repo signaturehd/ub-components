@@ -17,7 +17,7 @@ class Uploader extends Component {
  render () {
   return (
     <label>
-     <input
+     <input className = { 'text-icon' }
       type="file"
       ref={input => {
        this.fileInput = input

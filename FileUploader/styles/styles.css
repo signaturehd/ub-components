@@ -53,13 +53,14 @@
     opacity: 0.5;
 }
 
-.input {
+input {
     position: absolute;
     top: 0;
     left: -10em;
     height: 0;
     width: 0;
     opacity: 0;
+    display:none;
 }
 
 .loader {
@@ -161,7 +162,7 @@
 
 .input-cover {
     padding: 1em;
-    display: flex;
+     display:none;
     align-items: center;
     align-content: center;
     border-radius: 2px;
