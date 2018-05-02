@@ -13,7 +13,7 @@ import ConnectPartial from '../../utils/ConnectPartial';
 import NewsCardComponent from './components/NewsCardComponent/NewsCardComponent'
 import NewsModalComponent from '../newsview/NewsModalComponent'
 
-import './css/styles.css'
+import './styles/NewsStyles.css'
 
 class NewsView extends BaseMVPView {
   constructor (props) {
