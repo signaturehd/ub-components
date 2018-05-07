@@ -26,7 +26,7 @@ class Modal extends Component {
   */
   handleKeyUp (e) {
     const { onClose, isDismisable } = this.props
-    if ( isDismisable ) {
+    if (isDismisable) {
       const keys = {
         27: () => {
           e.preventDefault()
