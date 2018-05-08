@@ -69,8 +69,6 @@ class Modal extends Component {
             { children }
           </div>
         </div>
-
-
       </div>
     )
   }
@@ -80,7 +78,7 @@ Modal.propTypes = {
   fullHeight: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
   width: PropTypes.number,
-  isDismisable: PropTypes.bool
+  isDismisable: PropTypes.bool,
 }
 
 Modal.defaultProps = {

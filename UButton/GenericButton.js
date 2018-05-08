@@ -1,6 +1,6 @@
 import React , { Component } from 'react'
-import './styles/button.css'
 
+import './styles/button.css'
 
 export default class GenericButton extends Component {
   render () {

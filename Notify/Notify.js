@@ -4,9 +4,6 @@ import PropTypes from 'prop-types'
 import './styles/styles.css'
 
 class Notify extends Component {
-  constructor (props) {
-    super(props)
-  }
 
   render () {
     const { onClose, message, title, type } = this.props
@@ -26,20 +23,16 @@ class Notify extends Component {
   }
 }
 
-// its not about who is the best,
-// its about who is first
-
 Notify.propTypes = {
   onClose : PropTypes.func,
   type : PropTypes.string,
   message : PropTypes.string,
-  title : PropTypes.string
+  title : PropTypes.string,
 }
 
 Notify.defaultProps = {
   message : 'Notify Message',
   title : 'Notify Title',
-  open : 'false'
 }
 
 export default Notify

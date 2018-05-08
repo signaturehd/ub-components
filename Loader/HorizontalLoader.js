@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-
 import './styles/style.css'
 
-class Loader extends Component {
+class HorizontalLoader extends Component {
   render () {
     const { width, show } = this.props
 
@@ -16,20 +15,20 @@ class Loader extends Component {
             <div
             className = { width ? 'determinate' : 'indeterminate' }>
             </div>
-          </div>          
+          </div>
         }
       </div>
     )
   }
 }
 
-Loader.propTypes = {
+HorizontalLoader.propTypes = {
   width : PropTypes.number,
-  show : PropTypes.bool
+  show : PropTypes.bool,
 }
 
-Loader.defaultProps = {
+HorizontalLoader.defaultProps = {
   width : 0,
-  show : false
+  show : false,
 }
-export default Loader
+export default HorizontalLoader
