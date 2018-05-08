@@ -2,7 +2,7 @@ import React , { Component } from 'react'
 
 import './styles/button.css'
 
-export default class GenericButton extends Component {
+class GenericButton extends Component {
   render () {
     const { text, onClick, type } = this.props
 
@@ -15,3 +15,5 @@ export default class GenericButton extends Component {
     )
   }
 }
+
+export default GenericButton

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import './styles/styles.css'
 
-class Cards extends Component {
+class Card extends Component {
   constructor (props) {
     super(props)
   }
@@ -19,13 +19,13 @@ class Cards extends Component {
   }
 }
 
-Cards.propTypes = {
+Card.propTypes = {
   children : PropTypes.node,
   onClick : PropTypes.func,
   className : PropTypes.string,
 }
 
-Cards.defaultProps = {
+Card.defaultProps = {
   children : null,
   className : 'card',
 }

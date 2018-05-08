@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import Modal from './Modal'
 import GenericTextBox from '../TextBox/GenericTextBox'
-import { GenericButton } from '../UButton'
+import GenericButton from '../UButton/GenericButton'
 
 class InputModal extends Component {
 

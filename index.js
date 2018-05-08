@@ -1,15 +1,15 @@
-import UButton from './UButton/GenericButton'
+import GenericButton from './UButton/GenericButton'
 import Card from './Card/Card'
 import Modal from './Modal/Modal'
 import InputModal from './Modal/InputModal'
-import * as TextBox from './TextBox'
+import GenericTextBox from './TextBox/GenericTextBox'
 import HorizontalLoader from './Loader/HorizontalLoader'
 import Notify from './Notify/Notify'
 import AppBar from './AppBar/AppBar'
 
 export {
-  UButton,
-  TextBox,
+  GenericButton,
+  GenericTextBox,
   Card,
   Modal,
   InputModal,

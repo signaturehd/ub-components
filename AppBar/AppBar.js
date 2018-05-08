@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './styles/appbar.css'
 
 class AppBar extends Component {
-  
+
   constructor (props) {
       super(props)
   }
@@ -28,7 +28,6 @@ AppBar.propTypes = {
 }
 
 AppBar.defaultProps = {
-  children: { <div></div> },
 }
 
 export default AppBar
