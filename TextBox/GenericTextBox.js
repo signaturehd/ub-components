@@ -14,6 +14,7 @@ class GenericTextBox extends Component {
             className = { 'text' }
             onChange = { onChange }
             maxLength = { maxLength }
+            value = { value }
             required
           />
           <span className = { 'text-label' }>{ placeholder }</span>
