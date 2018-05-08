@@ -12,7 +12,7 @@ class Card extends Component {
     const { onClick, children, className } = this.props
 
     return (
-      <div className = { className } onClick = { onClick }>
+      <div className = { `card ${className}` } onClick = { onClick }>
         { children }
       </div>
     )
