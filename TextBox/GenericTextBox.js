@@ -2,10 +2,9 @@ import React , { Component } from 'react'
 import PropTypes from 'prop-types'
 import './styles/textbox.css'
 
-
 class GenericTextBox extends Component {
   render () {
-    const { placeholder, onChange, type, maxLength } = this.props
+    const { placeholder, onChange, type, maxLength, value } = this.props
 
     return (
       <div className = {'container'}>
@@ -29,14 +28,15 @@ GenericTextBox.propTypes = {
   placelholder : PropTypes.string,
   onChange : PropTypes.func,
   maxLength : PropTypes.number,
-  type : PropTypes.string
+  type : PropTypes.string,
+  value : PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 }
 
 GenericTextBox.defaultProps = {
-  placeholder : 'Generic TextBox',
   type : 'text',
-  maxLength : 100
 }
-
 
 export default GenericTextBox
