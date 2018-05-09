@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import './styles/style.css'
 
-class HorizontalLoader extends Component {
+class Loader extends Component {
   render () {
     const { width, show } = this.props
 
@@ -22,13 +22,13 @@ class HorizontalLoader extends Component {
   }
 }
 
-HorizontalLoader.propTypes = {
+Loader.propTypes = {
   width : PropTypes.number,
   show : PropTypes.bool,
 }
 
-HorizontalLoader.defaultProps = {
+Loader.defaultProps = {
   width : 0,
   show : false,
 }
-export default HorizontalLoader
+export default Loader

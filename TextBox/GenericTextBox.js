@@ -4,7 +4,7 @@ import './styles/textbox.css'
 
 class GenericTextBox extends Component {
   render () {
-    const { placeholder, onChange, type, maxLength, value } = this.props
+    const { placeholder, onChange, type, maxLength, value, child } = this.props
 
     return (
       <div className = {'container'}>
@@ -30,6 +30,7 @@ GenericTextBox.propTypes = {
   onChange : PropTypes.func,
   maxLength : PropTypes.number,
   type : PropTypes.string,
+  child : PropTypes.element,
   value : PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
