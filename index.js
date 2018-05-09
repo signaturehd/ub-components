@@ -6,6 +6,7 @@ import GenericTextBox from './TextBox/GenericTextBox'
 import Notify from './Notify/Notify'
 import AppBar from './AppBar/AppBar'
 import Loader from './Loader/Loader'
+import Drawer from './Drawer/Drawer'
 
 export {
   GenericButton,
@@ -16,4 +17,5 @@ export {
   Notify,
   Loader,
   AppBar,
+  Drawer,
 }
