@@ -10,10 +10,10 @@ class AppBar extends Component {
   }
 
   render () {
-    const { children } = this.props
+    const { children, className } = this.props
 
     return (
-      <div className={ 'header' }>
+      <div className={ `header ${className}` }>
         { children }
       </div>
     )
@@ -21,6 +21,7 @@ class AppBar extends Component {
 }
 
 AppBar.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
