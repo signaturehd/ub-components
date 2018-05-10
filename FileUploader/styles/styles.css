@@ -1,27 +1,45 @@
+input[type=file] {
+  opacity:0;
+  padding:10px 0px 10px 0px;
+  position:absolute;
+}
 
-.container {
+.file-container {
   padding:0px 15px 0px 15px;
 }
 
-.group {
+.file-group {
+  object-fit: cover;
   position:relative;
   width:100%;
   margin-top:45px;
 }
 
-.text {
+.file-text {
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  width:210px;
+  display:inline-block;
+  border-bottom:1px solid #757575;
   font-size:16px;
+  height:25px;
   padding:10px 0px 10px 0px;
   display:block;
+}
+
+.file {
+  display:block;
+  padding:10px 0px 10px 0px;
   width:100%;
   border:none;
   background: transparent;
-  border-bottom:1px solid #757575;
 }
-.text:focus { outline:none; }
 
-/* .text-label ======================================= */
-.text-label {
+.file:focus { outline:none; }
+
+/* .file-label ======================================= */
+.file-label {
   color:#999;
   font-size:16px;
   font-weight:normal;
@@ -30,13 +48,6 @@
   left:5px;
   top:10px;
   background: transparent;
-  transition:0.2s ease all;
-  -moz-transition:0.2s ease all;
-  -webkit-transition:0.2s ease all;
-}
-
-/* active state */
-.text:focus ~ .text-label, .text:valid ~ .text-label 		{
   top:-20px;
   font-size:14px;
   color:#ff8a00;
@@ -63,7 +74,7 @@
 }
 
 /* active state */
-.text:focus ~ .bar:before, .text:focus ~ .bar:after {
+.file:focus ~ .bar:before, .file:focus ~ .bar:after {
   width:50%;
 }
 
@@ -79,22 +90,22 @@
 }
 
 /* active state */
-.text:focus ~ .highlight {
-  -webkit-animation:.textHighlighter 0.3s ease;
-  -moz-animation:.textHighlighter 0.3s ease;
-  animation:.textHighlighter 0.3s ease;
+.file:focus ~ .highlight {
+  -webkit-animation:.fileHighlighter 0.3s ease;
+  -moz-animation:.fileHighlighter 0.3s ease;
+  animation:.fileHighlighter 0.3s ease;
 }
 
 /* ANIMATIONS ================ */
-@-webkit-keyframes .textHighlighter {
+@-webkit-keyframes .fileHighlighter {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }
-@-moz-keyframes .textHighlighter {
+@-moz-keyframes .fileHighlighter {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }
-@keyframes .textHighlighter {
+@keyframes .fileHighlighter {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }

@@ -15,6 +15,7 @@
 .notify-container {
   position:fixed;
   padding : 3%;
+  background:red;
 }
 
 .danger {

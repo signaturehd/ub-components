@@ -4,7 +4,7 @@ import './styles/textbox.css'
 
 class GenericTextBox extends Component {
   render () {
-    const { placeholder, onChange, type, maxLength, value, child } = this.props
+    const { placeholder, onChange, type, maxLength, value, child, onClick } = this.props
 
     return (
       <div className = {'container'}>
@@ -15,6 +15,7 @@ class GenericTextBox extends Component {
             onChange = { onChange }
             maxLength = { maxLength }
             value = { value }
+            onClick = { onClick }
             required
           />
           <span className = { 'text-label' }>{ placeholder }</span>

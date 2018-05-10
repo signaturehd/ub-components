@@ -6,12 +6,14 @@ import GenericTextBox from './TextBox/GenericTextBox'
 import Notify from './Notify/Notify'
 import AppBar from './AppBar/AppBar'
 import Loader from './Loader/Loader'
+import FileUploader from './FileUploader/FileUploader'
 
 export {
   GenericButton,
   GenericTextBox,
   Card,
   Modal,
+  FileUploader,
   InputModal,
   Notify,
   Loader,
