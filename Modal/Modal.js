@@ -49,7 +49,7 @@ class Modal extends Component {
   }
 
   render () {
-    const { onClose, children, fullHeight, width } = this.props
+    const { onClose, children, fullHeight, width, isDismisable } = this.props
 
     const modalClass = `modal${  fullHeight ? ' full-height' : ''}`
 
@@ -60,11 +60,14 @@ class Modal extends Component {
           style={{ width: `${width}%` }}
           className={ modalClass }
           ref={ node => (this.modal = node) }>
-          <img
-            src={ require('./images/x-circle.png') }
-            className='close-button'
-            onClick={ onClose }
-          />
+          {
+            isDismisable &&
+            <img
+              src={ require('./images/x-circle.png') }
+              className='close-button'
+              onClick={ onClose }
+            />
+          }
           <div className='modal-content'>
             { children }
           </div>
