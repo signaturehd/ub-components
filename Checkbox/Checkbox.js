@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import './styles/styles.css'
 
@@ -14,7 +15,7 @@ class Checkbox extends Component {
       <label className="material-checkbox">
         <input type="checkbox"
           checked= { checked }
-          onChange = { onCHange }
+          onChange = { onChange }
          />
         <span>{ label }</span>
       </label>
