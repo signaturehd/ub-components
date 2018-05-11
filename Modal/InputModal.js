@@ -7,7 +7,6 @@ import GenericTextBox from '../TextBox/GenericTextBox'
 import GenericButton from '../UButton/GenericButton'
 
 class InputModal extends Component {
-
   render () {
     const { onClose, type, maxLength, onChange, placeholder, onSubmit, isDismisable } = this.props
 

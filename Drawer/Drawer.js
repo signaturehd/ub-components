@@ -11,7 +11,7 @@ import './css/drawer.css'
 const CANCEL_DISTANCE_ON_SCROLL = 20
 
 class Drawer extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -37,21 +37,21 @@ class Drawer extends Component {
     this.saveSidebarRef = this.saveSidebarRef.bind(this)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.setState({
       dragSupported: typeof window === 'object' && 'ontouchstart' in window,
     })
     this.saveSidebarWidth()
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     // filter out the updates when we're touching
     if (!this.isTouching()) {
       this.saveSidebarWidth()
     }
   }
 
-  onTouchStart(ev) {
+  onTouchStart (ev) {
     // filter out if a user starts swiping with a second finger
     if (!this.isTouching()) {
       const touch = ev.targetTouches[0]
@@ -65,10 +65,10 @@ class Drawer extends Component {
     }
   }
 
-  onTouchMove(ev) {
+  onTouchMove (ev) {
     if (this.isTouching()) {
-      let touches = ev.targetTouches
-      for (var i in touches) {
+      const touches = ev.targetTouches
+      for (const i in touches) {
         // we only care about the finger that we are tracking
         if (touches[i].identifier === this.state.touchIdentifier) {
           this.setState({
@@ -81,7 +81,7 @@ class Drawer extends Component {
     }
   }
 
-  onTouchEnd() {
+  onTouchEnd () {
     if (this.isTouching()) {
       // trigger a change to open if sidebar has been dragged beyond dragToggleDistance
       const touchWidth = this.touchSidebarWidth()
@@ -104,7 +104,7 @@ class Drawer extends Component {
   // This logic helps us prevents the user from sliding the sidebar horizontally
   // while scrolling the sidebar vertically. When a scroll event comes in, we're
   // cancelling the ongoing gesture if it did not move horizontally much.
-  onScroll() {
+  onScroll () {
     if (this.isTouching() && this.inCancelDistanceOnScroll()) {
       this.setState({
         touchIdentifier: null,
@@ -117,7 +117,7 @@ class Drawer extends Component {
   }
 
   // True if the on going gesture X distance is less than the cancel distance
-  inCancelDistanceOnScroll() {
+  inCancelDistanceOnScroll () {
     let cancelDistanceOnScroll
 
     if (this.props.pullRight) {
@@ -130,30 +130,30 @@ class Drawer extends Component {
     return cancelDistanceOnScroll
   }
 
-  isTouching() {
+  isTouching () {
     return this.state.touchIdentifier !== null
   }
 
-  outsideClicked() {
+  outsideClicked () {
     if (this.props.open) {
       this.props.onSetOpen(false)
     }
   }
 
-  saveSidebarWidth() {
+  saveSidebarWidth () {
     const width = this.sidebar && this.sidebar.offsetWidth || this.props.defaultSidebarWidth
 
     if (width !== this.state.sidebarWidth) {
-      this.setState({sidebarWidth: width})
+      this.setState({ sidebarWidth: width })
     }
   }
 
-  saveSidebarRef(node) {
+  saveSidebarRef (node) {
     this.sidebar = node
   }
 
   // calculate the sidebarWidth based on current touch info
-  touchSidebarWidth() {
+  touchSidebarWidth () {
     // if the sidebar is open and start point of drag is inside the sidebar
     // we will only drag the distance they moved their finger
     // otherwise we will move the sidebar to be below the finger.
@@ -176,13 +176,13 @@ class Drawer extends Component {
     return Math.min(this.state.touchCurrentX, this.state.sidebarWidth)
   }
 
-  render() {
+  render () {
     let drawerRootClass = 'drawer-root'
     let drawerClass = 'drawer'
     let outsideClass = 'outside'
     let contentClass = 'content'
 
-    let rootProps = {}
+    const rootProps = {}
     const sidebarStyle = { width: this.state.sidebarWidth }
     const contentStyle = {}
 
@@ -233,11 +233,10 @@ class Drawer extends Component {
         sidebarStyle.WebkitTransform = `translateX(-${(1 - percentage) * 100}%)`
         contentStyle.marginLeft = `${contentMargin}px`
       }
-
     } else if (this.props.docked) {
       // slide open sidebar
-      sidebarStyle.transform = `translateX(0%)`
-      sidebarStyle.WebkitTransform = `translateX(0%)`
+      sidebarStyle.transform = 'translateX(0%)'
+      sidebarStyle.WebkitTransform = 'translateX(0%)'
 
       if (this.props.pullRight) {
         contentStyle.marginRight = `${this.state.sidebarWidth}px`
@@ -246,10 +245,10 @@ class Drawer extends Component {
       }
     } else if (this.props.open) {
       // slide open sidebar
-      sidebarStyle.transform = `translateX(0%)`
-      sidebarStyle.WebkitTransform = `translateX(0%)`
+      sidebarStyle.transform = 'translateX(0%)'
+      sidebarStyle.WebkitTransform = 'translateX(0%)'
 
-      //show outside
+      // show outside
       outsideClass += ' show'
 
       // make space on the left/right side of the content for the sidebar

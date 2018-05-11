@@ -8,13 +8,13 @@ class Checkbox extends Component {
   }
 
   render () {
-    const { label, onChange, checked, } = this.props
+    const { label, onChange, checked } = this.props
 
     return (
       <label className="material-checkbox">
         <input type="checkbox"
           checked= { checked }
-          onChange = { onCHange }}
+          onChange = { onCHange }
          />
         <span>{ label }</span>
       </label>

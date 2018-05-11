@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import './styles/styles.css'
 
 class Notify extends Component {
-
   render () {
     const { onClose, message, title, type } = this.props
     return (

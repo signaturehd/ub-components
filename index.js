@@ -7,7 +7,7 @@ import Notify from './Notify/Notify'
 import AppBar from './AppBar/AppBar'
 import Loader from './Loader/Loader'
 import FileUploader from './FileUploader/FileUploader'
-import Checkbox from './FileUploader/FileUploader'
+import Checkbox from './Checkbox/Checkbox'
 
 export {
   GenericButton,
