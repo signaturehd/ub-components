@@ -6,6 +6,7 @@ import GenericTextBox from './TextBox/GenericTextBox'
 import Notify from './Notify/Notify'
 import AppBar from './AppBar/AppBar'
 import Loader from './Loader/Loader'
+import CircularLoader from './Loader/CircularLoader'
 import FileUploader from './FileUploader/FileUploader'
 import Checkbox from './Checkbox/Checkbox'
 
@@ -18,6 +19,7 @@ export {
   InputModal,
   Notify,
   Loader,
+  CircularLoader,
   AppBar,
   Checkbox,
 }
