@@ -4,11 +4,11 @@ import './styles/button.css'
 
 class GenericButton extends Component {
   render () {
-    const { text, onClick, type, disabled } = this.props
+    const { text, onClick, type, disabled, className } = this.props
 
     return (
       <button
-        className = { '_generic-button' }
+        className = { `_generic-button ${className}` }
         onClick = { onClick }
         disabled = {disabled}
         type = { type }
