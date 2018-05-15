@@ -12,7 +12,7 @@ class CircularLoader extends Component {
         {
           show &&
           <div className = { 'circular-loader' } >
-            <span className = {'span-text'}
+            <span className = {'span-text'}></span>
           </div>
         }
       </div>
@@ -20,13 +20,13 @@ class CircularLoader extends Component {
   }
 }
 
-Loader.propTypes = {
+CircularLoader.propTypes = {
   width : PropTypes.number,
   show : PropTypes.bool,
 }
 
-Loader.defaultProps = {
+CircularLoader.defaultProps = {
   width : 0,
   show : false,
 }
-export default Loader
+export default CircularLoader
