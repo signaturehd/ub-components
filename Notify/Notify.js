@@ -7,16 +7,9 @@ class Notify extends Component {
   render () {
     const { onClose, message, title, type } = this.props
     return (
-      <div className = { 'notify-container' } >
-        <div className = { `notify ${type}` }>
-          <img
-            src={ require('./images/x-circle.png') }
-            className='close-button'
-            onClick={ onClose }
-          />
-          <div className = { 'notify-title' }> { title } </div>
-          <div className = { 'notify-message' }> { message } </div>
-        </div>
+      <div className = { `notify ${type}` }>
+        <div className = { 'notify-title' }> { title } </div>
+        <div className = { 'notify-message' }> { message } </div>
       </div>
     )
   }
