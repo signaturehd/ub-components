@@ -9,6 +9,7 @@ import Loader from './Loader/Loader'
 import CircularLoader from './Loader/CircularLoader'
 import FileUploader from './FileUploader/FileUploader'
 import Checkbox from './Checkbox/Checkbox'
+import Drawer from './Drawer/Drawer'
 
 export {
   GenericButton,
@@ -21,5 +22,6 @@ export {
   Loader,
   CircularLoader,
   AppBar,
+  Drawer,
   Checkbox,
 }
