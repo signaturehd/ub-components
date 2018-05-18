@@ -5,12 +5,17 @@ import './styles/styles.css'
 
 class Notify extends Component {
   render () {
-    const { onClose, message, title, type } = this.props
+    const { onClose, message, title, type, onClick } = this.props
     return (
-      <div className = { `notify ${type}` }>
-        <div className = { 'notify-title' }> { title } </div>
-        <div className = { 'notify-message' }> { message } </div>
-      </div>
+        <div className = { `notify ${type}` }>
+          <img
+            src={ require('./images/x-circle.png') }
+            className='close-button'
+            onClick={ onClick }
+          />
+          <div className = { 'notify-title' }> { title } </div>
+          <div className = { 'notify-message' }> { message } </div>
+        </div>
     )
   }
 }
@@ -20,6 +25,8 @@ Notify.propTypes = {
   type : PropTypes.string,
   message : PropTypes.string,
   title : PropTypes.string,
+  onClick : PropTypes.func,
+  onExpire : PropTypes.func
 }
 
 Notify.defaultProps = {

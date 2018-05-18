@@ -5,144 +5,32 @@
 
 .notify {
   color : #fff;
-  width: 20%;
-  padding: 1%;
-  display: grid;
-  right: 10px;
-  bottom: 10px;
+  width: 100%;
+  padding: 3%;
+}
+
+.notify-title {
+  padding:10px;
+  font-weight: bold;
+}
+
+.notify-message {
+  font-weight:lighter;
+  padding:10px;
 }
 
 .danger {
-  background : #FF0000
+  background : #AD1457
 }
 
 .warning {
-  background : #FF8A00
+  background : #EF6C00
+}
+
+.success {
+  background : #00C853
 }
 
 .primary {
-  background : #004EFF
+  background : #0091EA
 }
-
-
-
-/*
-#success i {
-  color: #3eb470;
-}
-#info i {
-  color: #2a7ac0;
-}
-#warning i {
-  color: #e5a800;
-}
-#error i {
-  color: #ea5050;
-}
-.alert-success, .alert-info, .alert-warning, .alert-danger {
-  width: auto !important;
-  min-width: 250px !important;
-  max-width: 425px !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  margin-top: 20px !important;
-  padding: 9px 40px 10px 12px !important;
-  vertical-align: middle;
-}
-.alert-success span, .alert-info span, .alert-warning span, .alert-danger span {
-  display: block;
-  letter-spacing: 0.035em !important;
-  float: left !important;
-}
-.alert-success span strong, .alert-info span strong, .alert-warning span strong, .alert-danger span strong {
-  font-size: 1.1em !important;
-}
-.alert-success span:nth-child(2), .alert-info span:nth-child(2), .alert-warning span:nth-child(2), .alert-danger span:nth-child(2) {
-  position: relative;
-  top: 1px;
-  font-size: 0.85em;
-  height: auto !important;
-  margin: auto;
-}
-.alert-success span:nth-child(3), .alert-info span:nth-child(3), .alert-warning span:nth-child(3), .alert-danger span:nth-child(3) {
-  position: relative;
-  top: -1px;
-  padding-top: 0;
-  padding-left: 6px;
-}
-.alert-success span:nth-child(4), .alert-info span:nth-child(4), .alert-warning span:nth-child(4), .alert-danger span:nth-child(4) {
-  font-size: 0.9em;
-  max-width: 75% !important;
-  max-height: 75% !important;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  padding: 2px 3px 1px 6px;
-}
-.alert-success span:before, .alert-info span:before, .alert-warning span:before, .alert-danger span:before {
-  position: relative !important;
-  font-size: 1.85em !important;
-  top: -0.35px !important;
-  margin-right: 3px !important;
-  margin-bottom: 20px !important;
-}
-.alert-success .close, .alert-info .close, .alert-warning .close, .alert-danger .close {
-  top: 29% !important;
-  right: 10px;
-  height: auto;
-  width: 19px;
-  border-radius: 100px;
-  outline: none !important;
-  font-size: 18px !important;
-  padding: 2px 1px 1px;
-  opacity: 0.8;
-}
-.alert-success .close:hover, .alert-info .close:hover, .alert-warning .close:hover, .alert-danger .close:hover {
-  font-size: 16px !important;
-  color: rgba(255, 255, 255, 0.95) !important;
-  opacity: 0.6;
-  transition: background 200ms linear;
-  transition: color 250ms linear;
-}
-.alert-success {
-  background: rgba(176, 227, 181, 0.95);
-}
-.alert-success:hover {
-  background: #b0e3b5;
-}
-.alert-success .close {
-  color: rgba(60, 118, 61, 0.98);
-}
-.alert-success .close:hover {
-  background: rgba(60, 118, 61, 0.5);
-}
-.alert-info {
-  background: rgba(182, 218, 252, 0.95);
-}
-.alert-info .close {
-  color: #31708f !important;
-}
-.alert-info .close:hover {
-  background: rgba(49, 112, 143, 0.5) !important;
-}
-.alert-warning {
-  background: rgba(240, 224, 164, 0.95);
-  color: #b57317 !important;
-}
-.alert-warning .close {
-  color: #b57317 !important;
-}
-.alert-warning .close:hover {
-  background: rgba(181, 115, 23, 0.6) !important;
-}
-.alert-danger {
-  background: rgba(229, 155, 155, 0.95) !important;
-}
-.alert-danger .close {
-  color: #be2424 !important;
-}
-.alert-danger .close:hover {
-  background: rgba(190, 36, 36, 0.5) !important;
-}
-.fa-warning {
-  position: relative;
-  top: 4px;
-} */
