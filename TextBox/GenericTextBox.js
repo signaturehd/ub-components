@@ -4,14 +4,23 @@ import './styles/textbox.css'
 
 class GenericTextBox extends Component {
   render () {
-    const { placeholder, onChange, type, maxLength, value, child, onClick } = this.props
+    const {
+      placeholder,
+      onChange,
+      type,
+      maxLength,
+      value,
+      child,
+      onClick,
+      className
+    } = this.props
 
     return (
       <div className = {'container'}>
         <div className ="group">
           <input
             type = { type }
-            className = { 'text' }
+            className = { `text ${className}` }
             onChange = { onChange }
             maxLength = { maxLength }
             value = { value }
@@ -31,6 +40,7 @@ GenericTextBox.propTypes = {
   onChange : PropTypes.func,
   maxLength : PropTypes.number,
   type : PropTypes.string,
+  className : PropTypes.string,
   child : PropTypes.element,
   value : PropTypes.oneOfType([
     PropTypes.string,
