@@ -1,4 +1,5 @@
 import GenericButton from './UButton/GenericButton'
+import FloatingActionButton from './UButton/FloatingActionButton'
 import Card from './Card/Card'
 import Modal from './Modal/Modal'
 import InputModal from './Modal/InputModal'
@@ -13,6 +14,7 @@ import Drawer from './Drawer/Drawer'
 
 export {
   GenericButton,
+  FloatingActionButton,
   GenericTextBox,
   Card,
   Modal,

@@ -12,3 +12,27 @@
   background: #ff8a00;
   color: #fff;
 }
+
+._btn-fab {
+ width: 54px;
+ height: 54px;
+ background: #ff8a00;
+ border-radius: 50%;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ transition: all 0.1s ease-in-out;
+ font-size: 36px;
+ color: white;
+ text-align: center;
+ line-height: 35px;
+ border: 1px;
+ outline: none;
+ position: fixed;
+ right: 50px;
+ bottom: 50px;
+ cursor: pointer;
+}
+
+._btn-fab:hover {
+  box-shadow: 0 0px 4px 0 #666;
+  transform: scale(1.05);
+}
