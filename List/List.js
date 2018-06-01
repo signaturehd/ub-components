@@ -12,13 +12,17 @@ class List extends Component {
     const { title, description } = this.props
 
     return (
-      <div className="valign-wrapper">
-        <div className="title">
-          { title }
-          <br/>
-          <span>{ description }</span>
+      <ul>
+      <li className="waves-effect">
+        <div className="valign-wrapper">
+          <div className="title">
+            <h4>{description}</h4>
+            <span>{ title }</span>
+          </div>
         </div>
-      </div>
+      </li>
+      </ul>
+
     )
   }
 }
