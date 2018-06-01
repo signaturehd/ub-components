@@ -1,0 +1,28 @@
+.list {
+  margin: 0;
+}
+
+.list li {
+  padding: 0 16px;
+}
+
+.list li .valign-wrapper {
+  min-height: 72px;
+}
+
+.list i.circle {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+
+.list .title span {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+i.ml-auto {
+  color: rgba(0, 0, 0, 0.26);
+}
