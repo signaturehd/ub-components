@@ -3,10 +3,10 @@ import React , { Component } from 'react'
 import './styles/button.css'
 
 class FloatingActionButton extends Component {
-  render() {
-    const {text, className, onClick} = this.props
+  render () {
+    const { text, className, onClick } = this.props
 
-    return(
+    return (
       <button
         className = { `_btn-fab ${className}` }
         onClick = {onClick}

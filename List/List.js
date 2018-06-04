@@ -8,7 +8,6 @@ class List extends Component {
   }
 
   render () {
-
     const { title, description } = this.props
 
     return (
