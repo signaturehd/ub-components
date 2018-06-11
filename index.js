@@ -12,6 +12,7 @@ import FileUploader from './FileUploader/FileUploader'
 import Checkbox from './Checkbox/Checkbox'
 import Drawer from './Drawer/Drawer'
 import List from './List/List'
+import Line from './Line/Line'
 
 export {
   GenericButton,
@@ -28,4 +29,5 @@ export {
   Drawer,
   List,
   Checkbox,
+  Line
 }
