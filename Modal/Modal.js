@@ -49,7 +49,13 @@ class Modal extends Component {
   }
 
   render () {
-    const { onClose, children, fullHeight, width, isDismisable } = this.props
+    const {
+      onClose,
+      children,
+      fullHeight,
+      width,
+      isDismisable,
+    } = this.props
 
     const modalClass = `modal${  fullHeight ? ' full-height' : ''}`
 
