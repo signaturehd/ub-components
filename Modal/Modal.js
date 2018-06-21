@@ -55,26 +55,36 @@ class Modal extends Component {
       fullHeight,
       width,
       isDismisable,
+      boxShadow,
+      backgroundColor,
+      overflowY,
+      borderRadius
     } = this.props
 
     const modalClass = `modal${  fullHeight ? ' full-height' : ''}`
 
     return (
-      <div className='modal-overlay'
+      <div className={ 'modal-overlay' }
         ref={ node => (this.modalOverlay = node) }>
         <div
-          style={{ width: `${width}%` }}
+          style={{
+            width: `${width}%`,
+            boxShadow: `${ boxShadow }`,
+            backgroundColor: `${ backgroundColor }`,
+            overflowY: `${ overflowY }`,
+            borderRadius: `${ borderRadius }`
+          }}
           className={ modalClass }
           ref={ node => (this.modal = node) }>
           {
             isDismisable &&
             <img
               src={ require('./images/x-circle.png') }
-              className='close-button'
+              className={ 'close-button' }
               onClick={ onClose }
             />
           }
-          <div className='modal-content'>
+          <div className={ 'modal-content' }>
             { children }
           </div>
         </div>
@@ -88,6 +98,10 @@ Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   width: PropTypes.number,
   isDismisable: PropTypes.bool,
+  boxShadow: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  overflowY: PropTypes.string,
+  borderRadius: PropTypes.string,
 }
 
 Modal.defaultProps = {
