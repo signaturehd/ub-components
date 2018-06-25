@@ -12,43 +12,47 @@ class GenericTextBox extends Component {
       value,
       child,
       onClick,
-      className
-    } = this.props
+      className,
+      group,
+      container
+    }=this.props
 
     return (
-      <div className = {'container'}>
-        <div className ="group">
+      <div className={ container ? container : 'container' }>
+        <div className={ group ? group : 'group'  }>
           <input
-            type = { type }
-            className = { `text ${className}` }
-            onChange = { onChange }
-            maxLength = { maxLength }
-            value = { value }
-            onClick = { onClick }
+            type={ type }
+            className={ `text ${className}` }
+            onChange={ onChange }
+            maxLength={ maxLength }
+            value={ value }
+            onClick={ onClick }
             required
           />
-          <span className = { 'text-label' }>{ placeholder }</span>
-          <span className ={ 'bar' }></span>
+          <span className={ 'text-label' }>{ placeholder }</span>
+          <span className={ 'bar' }></span>
         </div>
       </div>
     )
   }
 }
 
-GenericTextBox.propTypes = {
+GenericTextBox.propTypes={
   placelholder : PropTypes.string,
   onChange : PropTypes.func,
   maxLength : PropTypes.number,
   type : PropTypes.string,
   className : PropTypes.string,
   child : PropTypes.element,
+  group : PropTypes.string,
+  container : PropTypes.string,
   value : PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
   ]),
 }
 
-GenericTextBox.defaultProps = {
+GenericTextBox.defaultProps={
   type : 'text',
 }
 
