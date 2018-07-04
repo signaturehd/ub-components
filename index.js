@@ -1,5 +1,6 @@
 import GenericButton from './UButton/GenericButton'
 import FloatingActionButton from './UButton/FloatingActionButton'
+import FloatingSettingsButton from './UButton/FloatingSettingsButton'
 import Card from './Card/Card'
 import Modal from './Modal/Modal'
 import InputModal from './Modal/InputModal'
@@ -17,6 +18,7 @@ import Line from './Line/Line'
 export {
   GenericButton,
   FloatingActionButton,
+  FloatingSettingsButton,
   GenericTextBox,
   Card,
   Modal,
