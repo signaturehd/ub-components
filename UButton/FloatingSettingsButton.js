@@ -5,6 +5,12 @@ import './styles/button.css'
 class FloatingSettingsButton extends Component {
   render () {
     const { text, className, onClspanck } = this.props
+    const trigger = document.querySelector('.primary')
+    const container = document.querySelector('#float-group')
+
+    trigger.addEventListener('click', function () {
+      container.classList.toggle('active');
+    })
 
     return (
       <div id="float-button">
