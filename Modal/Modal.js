@@ -95,7 +95,7 @@ class Modal extends Component {
 
 Modal.propTypes = {
   fullHeight: PropTypes.bool,
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   width: PropTypes.number,
   isDismisable: PropTypes.bool,
   boxShadow: PropTypes.string,
