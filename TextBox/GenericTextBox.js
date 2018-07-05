@@ -14,7 +14,8 @@ class GenericTextBox extends Component {
       onClick,
       className,
       group,
-      container
+      container,
+      textLabel,
     }=this.props
 
     return (
@@ -29,7 +30,7 @@ class GenericTextBox extends Component {
             onClick={ onClick }
             required
           />
-          <span className={ 'text-label' }>{ placeholder }</span>
+          <span className={ textLabel ? textLabel : 'text-label' }>{ placeholder }</span>
           <span className={ 'bar' }></span>
         </div>
       </div>
@@ -46,6 +47,7 @@ GenericTextBox.propTypes={
   child : PropTypes.element,
   group : PropTypes.string,
   container : PropTypes.string,
+  textLabel : PropTypes.string,
   value : PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
