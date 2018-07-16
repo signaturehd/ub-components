@@ -12,6 +12,7 @@ class GenericTextBox extends Component {
       value,
       child,
       onClick,
+      onFocus,
       className,
       group,
       container,
@@ -28,6 +29,7 @@ class GenericTextBox extends Component {
             maxLength={ maxLength }
             value={ value }
             onClick={ onClick }
+            onFocus={ onFocus }
             required
           />
           <span className={ textLabel ? textLabel : 'text-label' }>{ placeholder }</span>
@@ -41,6 +43,8 @@ class GenericTextBox extends Component {
 GenericTextBox.propTypes={
   placelholder : PropTypes.string,
   onChange : PropTypes.func,
+  onFocus : PropTypes.func,
+  onClick : PropTypes.func,
   maxLength : PropTypes.number,
   type : PropTypes.string,
   className : PropTypes.string,
