@@ -5,11 +5,14 @@ import Card from './Card/Card'
 import Modal from './Modal/Modal'
 import InputModal from './Modal/InputModal'
 import GenericTextBox from './TextBox/GenericTextBox'
+import GenericInput from './TextBox/GenericInput'
+import GenericFileInput from './TextBox/GenericFileInput'
 import Notify from './Notify/Notify'
 import AppBar from './AppBar/AppBar'
 import Loader from './Loader/Loader'
 import CircularLoader from './Loader/CircularLoader'
 import FileUploader from './FileUploader/FileUploader'
+import MultipleFileUploader from './FileUploader/MultipleFileUploader'
 import Checkbox from './Checkbox/Checkbox'
 import Drawer from './Drawer/Drawer'
 import List from './List/List'
@@ -31,5 +34,8 @@ export {
   Drawer,
   List,
   Checkbox,
-  Line
+  Line,
+  MultipleFileUploader,
+  GenericInput,
+  GenericFileInput
 }

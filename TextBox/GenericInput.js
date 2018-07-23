@@ -1,13 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import './css/input.css'
+import './styles/input.css'
 
 class GenericInput extends Component {
 
   render () {
 
-    const { text, style, hint, value, onChange, disabled, refCallback, errorMessage, type } = this.props
+    const {
+      text,
+      style,
+      hint,
+      value,
+      onChange,
+      disabled,
+      refCallback,
+      errorMessage,
+      type
+    } = this.props
 
     return (
       <div style={ style } className='input-wrapper'>
