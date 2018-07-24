@@ -17,7 +17,8 @@ class GenericInput extends Component {
       refCallback,
       errorMessage,
       type,
-      readOnly
+      readOnly,
+      onClick
     } = this.props
 
     return (
@@ -30,6 +31,7 @@ class GenericInput extends Component {
           onChange={ onChange }
           value={ value }
           className='input'
+          onClick={ onClick }
           readOnly= {readOnly}
           placeholder={ hint } />
         { errorMessage && <span className='error-message'>{ errorMessage }</span> }
@@ -40,6 +42,7 @@ class GenericInput extends Component {
 
 GenericInput.propTypes = {
   refCallback: PropTypes.func,
+  onClick: PropTypes.func,
   type: PropTypes.string,
   readOnly: PropTypes.bool,
   onChange: PropTypes.func,
