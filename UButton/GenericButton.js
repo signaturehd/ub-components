@@ -4,7 +4,13 @@ import './styles/button.css'
 
 class GenericButton extends Component {
   render () {
-    const { text, onClick, type, disabled, className } = this.props
+    const {
+      text,
+      onClick,
+      type,
+      disabled,
+      className,
+    } = this.props
 
     return (
       <button

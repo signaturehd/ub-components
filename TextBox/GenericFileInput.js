@@ -38,9 +38,9 @@ class GenericFileInput extends Component {
       style,
       hint,
       value,
-      disabled
+      disabled,
+      errorMessage
     } = this.props
-
     return (
       <div style={ style } className='input-wrapper'>
         <span className='input-text' dangerouslySetInnerHTML={{ __html: text }}></span>
@@ -57,6 +57,7 @@ class GenericFileInput extends Component {
             className='file-input'
             placeholder={ hint }
             disabled={ disabled } />
+          { errorMessage && <span className='error-message'>{ errorMessage }</span> }
         </div>
       </div>
     )
@@ -72,6 +73,7 @@ GenericFileInput.propTypes = {
   hint: PropTypes.string,
   value: PropTypes.string,
   disabled: PropTypes.bool,
+  errorMessage: PropTypes.string,
 }
 
 GenericFileInput.defaultProps = {

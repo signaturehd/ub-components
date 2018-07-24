@@ -11,12 +11,28 @@ class MultipleFileUploader extends Component {
 
   }
 
-  render () {
+  isValid (attachment) {
+    let file = attachment && attachment.split('/')
+    file = file[file.length - 1]
+    let isValid
+    switch (file) {
+      case 'jpg' :
+        isValid = true
+      case 'png' :
+        isValid = true
+      case 'jpeg' :
+        isValid = true
+      case 'pdf' :
+        isValid = true
+    }
+    return isValid ? false : true
+  }
 
+  render () {
     const {
       fileArray,
       placeholder,
-      setFile
+      setFile,
     } = this.props
 
     return (
@@ -26,9 +42,14 @@ class MultipleFileUploader extends Component {
           fileArray.length !== 0 &&
           fileArray.map((attachment, key) => (
             <div key = {key}>
+              <br/>
               <GenericFileInput
                 text = { attachment.name }
                 onChange = { (e) => setFile(e.target.files[0], key)}
+                errorMessage = {
+                  attachment &&
+                  attachment.file &&
+                  this.isValid(attachment.file.type) ? 'Invalid File' : '' }
               />
             </div>
           ))

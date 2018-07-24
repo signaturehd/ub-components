@@ -4,6 +4,7 @@ import FloatingSettingsButton from './UButton/FloatingSettingsButton'
 import Card from './Card/Card'
 import Modal from './Modal/Modal'
 import InputModal from './Modal/InputModal'
+import SingleInputModal from './Modal/SingleInputModal'
 import GenericTextBox from './TextBox/GenericTextBox'
 import GenericInput from './TextBox/GenericInput'
 import GenericFileInput from './TextBox/GenericFileInput'
@@ -27,6 +28,7 @@ export {
   Modal,
   FileUploader,
   InputModal,
+  SingleInputModal,
   Notify,
   Loader,
   CircularLoader,
