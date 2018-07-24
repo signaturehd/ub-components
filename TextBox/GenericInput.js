@@ -41,7 +41,7 @@ class GenericInput extends Component {
 }
 
 GenericInput.propTypes = {
-  refCallback: PropTypes.func,
+  refCallback: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string,
   readOnly: PropTypes.bool,
