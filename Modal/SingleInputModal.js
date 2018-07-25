@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
 import PropTypes from 'prop-types'
-import Modal from './Modal'
-import GenericButton from '../UButton/GenericButton'
+import { Modal, GenericButton } from '../../ub-components'
+
+import './styles/modal.css'
 
 class SingleInputModal extends Component {
   constructor (props) {
@@ -14,6 +15,8 @@ class SingleInputModal extends Component {
       inputArray,
       onClose,
       label,
+      className,
+      selectedArray,
     } = this.props
 
     return (
@@ -24,10 +27,12 @@ class SingleInputModal extends Component {
         <center>
           <h3>{label}</h3>
         </center>
+          <br/>
         {
           inputArray.length !== 0 &&
           inputArray.map((inputs, key) => (
             <GenericButton
+              className = { 'single-input-modal-button' }
               key = { key }
               onClick = { () => selectedArray(inputs.id, inputs.name) }
               text = { inputs.name }
@@ -38,7 +43,6 @@ class SingleInputModal extends Component {
     )
   }
 }
-
 
 SingleInputModal.propTypes = {
   label : PropTypes.string,
