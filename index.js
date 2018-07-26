@@ -13,6 +13,7 @@ import SingleInputModal from './Modal/SingleInputModal'
 import ConfirmationModal from './Modal/ConfirmationModal'
 
 //Text Box
+import MultipleInputModal from './Modal/MultipleInputModal'
 import GenericTextBox from './TextBox/GenericTextBox'
 import GenericInput from './TextBox/GenericInput'
 import GenericFileInput from './TextBox/GenericFileInput'
@@ -54,6 +55,7 @@ export {
   FileUploader,
   InputModal,
   SingleInputModal,
+  MultipleInputModal,
   Notify,
   Loader,
   CircularLoader,

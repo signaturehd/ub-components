@@ -31,6 +31,7 @@ class SingleInputModal extends Component {
         <div
           className = { 'select-grid' }
         >
+
         {
           inputArray.length !== 0 &&
           inputArray.map((inputs, key) => (
@@ -46,7 +47,6 @@ class SingleInputModal extends Component {
             </div>
           ))
         }
-        </div>
       </Modal>
     )
   }
