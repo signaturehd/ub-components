@@ -35,12 +35,13 @@ class MultipleFileUploader extends Component {
       fileArray,
       placeholder,
       setFile,
-      disabled
+      disabled,
+      getFile
     } = this.props
 
     const {
       attachmentArray
-    } = this.props
+    } = this.state
 
     return (
       <div>
@@ -61,6 +62,7 @@ class MultipleFileUploader extends Component {
                     updatedAttachment[key].base64 = reader.result
                     updatedAttachment[key].file = file
                     this.setState({ fileArray : updatedAttachment })
+                    getFile(fileArray)
                   }
                   reader.readAsDataURL(file)
                   }
@@ -73,18 +75,23 @@ class MultipleFileUploader extends Component {
               />
                 <div>
                   <div className={ 'multiple-file-attachment-form' }>
-                    <img
-                      src={ require('./images/x-circle.png') }
-                      className={ 'close-button' }
-                      onClick={
-                        () => {
-                          const updatedAttachment = [...fileArray]
-                          updatedAttachment[key].base64 = ''
-                          updatedAttachment[key].file = ''
-                          this.setState({ fileArray : updatedAttachment })
+                    {
+                      attachment.base64 ?
+                      <img
+                        src={ require('./images/x-circle.png') }
+                        className={ 'close-button' }
+                        onClick={
+                          () => {
+                            const updatedAttachment = [...fileArray]
+                            updatedAttachment[key].base64 = ''
+                            updatedAttachment[key].file = ''
+                            this.setState({ fileArray : updatedAttachment })
+                          }
                         }
-                      }
-                    />
+                      />
+                      :
+                      <div></div>
+                    }
                   {
                     attachment.base64 ?
                     <div
