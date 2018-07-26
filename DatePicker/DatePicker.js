@@ -9,7 +9,16 @@ import './css/datepicker.css'
 class DatePicker extends Component {
 
   render() {
-    const { selected, onChange, text, hint, errorMessage } = this.props
+    const {
+      selected,
+      onChange,
+      text,
+      hint,
+      errorMessage,
+      disabled,
+      maxDate,
+      minDate,
+    } = this.props
 
     return (
       <div className='datepicker-container'>
@@ -18,6 +27,9 @@ class DatePicker extends Component {
             selected={ selected }
             onChange={ onChange }
             placeholderText={ hint }
+            minDate={ minDate }
+            maxDate={ maxDate }
+            disabled={ disabled }
         />
         <img className='datepicker-icon' src={ require('./images/calendar.png') } />
         { errorMessage && <span className='error-message'>{ errorMessage }</span> }
@@ -35,6 +47,9 @@ DatePicker.propTypes = {
     PropTypes.object,
   ]),
   errorMessage: PropTypes.string,
+  disabled : PropTypes.bool,
+  maxDate : PropTypes.object,
+  minDate : PropTypes.object,
 }
 
 export default DatePicker
