@@ -17,10 +17,7 @@ class SingleInputModal extends Component {
       inputArray,
       onClose,
       label,
-<<<<<<< Updated upstream
       className,
-=======
->>>>>>> Stashed changes
       selectedArray,
     } = this.props
 
@@ -32,14 +29,7 @@ class SingleInputModal extends Component {
         <center>
           <h2>{label}</h2>
         </center>
-<<<<<<< Updated upstream
           <br/>
-=======
-        <br/>
-        <div
-          className = { 'select-grid' }
-        >
->>>>>>> Stashed changes
         {
           inputArray.length !== 0 &&
           inputArray.map((inputs, key) => (
@@ -52,7 +42,6 @@ class SingleInputModal extends Component {
             />
           ))
         }
-        </div>
       </Modal>
     )
   }

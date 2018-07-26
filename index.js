@@ -5,6 +5,7 @@ import Card from './Card/Card'
 import Modal from './Modal/Modal'
 import InputModal from './Modal/InputModal'
 import SingleInputModal from './Modal/SingleInputModal'
+import MultipleInputModal from './Modal/MultipleInputModal'
 import GenericTextBox from './TextBox/GenericTextBox'
 import GenericInput from './TextBox/GenericInput'
 import GenericFileInput from './TextBox/GenericFileInput'
@@ -30,6 +31,7 @@ export {
   FileUploader,
   InputModal,
   SingleInputModal,
+  MultipleInputModal,
   Notify,
   Loader,
   CircularLoader,
