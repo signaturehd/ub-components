@@ -47,6 +47,7 @@ class SingleInputModal extends Component {
             </div>
           ))
         }
+        </div>
       </Modal>
     )
   }
