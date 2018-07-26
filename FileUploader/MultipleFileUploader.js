@@ -33,6 +33,7 @@ class MultipleFileUploader extends Component {
       fileArray,
       placeholder,
       setFile,
+      disabled
     } = this.props
 
     return (
@@ -46,6 +47,7 @@ class MultipleFileUploader extends Component {
               <GenericFileInput
                 text = { attachment.name }
                 onChange = { (e) => setFile(e.target.files[0], key)}
+                disabled = { disabled }
                 errorMessage = {
                   attachment &&
                   attachment.file &&
@@ -72,6 +74,7 @@ MultipleFileUploader.propTypes = {
   placeholder : PropTypes.string,
   onResponse : PropTypes.func,
   setFile : PropTypes.func,
+  disabled : PropTypes.bool,
 }
 
 MultipleFileUploader.defaultProps = {

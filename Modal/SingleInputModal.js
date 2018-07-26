@@ -5,8 +5,6 @@ import { Modal, GenericButton } from '../../ub-components'
 
 import './styles/modal.css'
 
-import './css/modal.css'
-
 class SingleInputModal extends Component {
   constructor (props) {
     super(props)
@@ -17,10 +15,7 @@ class SingleInputModal extends Component {
       inputArray,
       onClose,
       label,
-<<<<<<< Updated upstream
       className,
-=======
->>>>>>> Stashed changes
       selectedArray,
     } = this.props
 
@@ -32,24 +27,23 @@ class SingleInputModal extends Component {
         <center>
           <h2>{label}</h2>
         </center>
-<<<<<<< Updated upstream
-          <br/>
-=======
         <br/>
         <div
           className = { 'select-grid' }
         >
->>>>>>> Stashed changes
         {
           inputArray.length !== 0 &&
           inputArray.map((inputs, key) => (
-            <GenericButton
-              className = { 'single-input-modal-button' }
-              key = { key }
-              className = { 'select-button' }
-              onClick = { () => selectedArray(inputs.id, inputs.name) }
-              text = { inputs.name }
-            />
+            <div>
+              <GenericButton
+                className = { 'single-input-modal-button' }
+                key = { key }
+                className = { 'select-button' }
+                onClick = { () => selectedArray(inputs.id, inputs.name) }
+                text = { inputs.name }
+              />
+              <br/>
+            </div>
           ))
         }
         </div>
