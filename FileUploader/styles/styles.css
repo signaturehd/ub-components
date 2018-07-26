@@ -104,3 +104,7 @@
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }
+
+.multiple-file-attachment-form {
+  padding: 5px;
+}
