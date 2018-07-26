@@ -5,6 +5,8 @@ import { Modal, GenericButton } from '../../ub-components'
 
 import './styles/modal.css'
 
+import './css/modal.css'
+
 class SingleInputModal extends Component {
   constructor (props) {
     super(props)
@@ -15,7 +17,10 @@ class SingleInputModal extends Component {
       inputArray,
       onClose,
       label,
+<<<<<<< Updated upstream
       className,
+=======
+>>>>>>> Stashed changes
       selectedArray,
     } = this.props
 
@@ -25,20 +30,29 @@ class SingleInputModal extends Component {
         onClose = { onClose }
       >
         <center>
-          <h3>{label}</h3>
+          <h2>{label}</h2>
         </center>
+<<<<<<< Updated upstream
           <br/>
+=======
+        <br/>
+        <div
+          className = { 'select-grid' }
+        >
+>>>>>>> Stashed changes
         {
           inputArray.length !== 0 &&
           inputArray.map((inputs, key) => (
             <GenericButton
               className = { 'single-input-modal-button' }
               key = { key }
+              className = { 'select-button' }
               onClick = { () => selectedArray(inputs.id, inputs.name) }
               text = { inputs.name }
             />
           ))
         }
+        </div>
       </Modal>
     )
   }
@@ -52,7 +66,10 @@ SingleInputModal.propTypes = {
     PropTypes.objectOf(
       PropTypes.shape({
         name : PropTypes.string,
-        id : PropTypes.number
+        id : PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number
+        ])
       })
     )
   ),

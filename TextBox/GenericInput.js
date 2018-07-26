@@ -18,7 +18,8 @@ class GenericInput extends Component {
       errorMessage,
       type,
       readOnly,
-      onClick
+      onClick,
+      maxLength
     } = this.props
 
     return (
@@ -32,6 +33,7 @@ class GenericInput extends Component {
           value={ value }
           className='input'
           onClick={ onClick }
+          maxLength={maxLength}
           readOnly= {readOnly}
           placeholder={ hint } />
         { errorMessage && <span className='error-message'>{ errorMessage }</span> }
@@ -43,6 +45,7 @@ class GenericInput extends Component {
 GenericInput.propTypes = {
   refCallback: PropTypes.string,
   onClick: PropTypes.func,
+  maxLength: PropTypes.number,
   type: PropTypes.string,
   readOnly: PropTypes.bool,
   onChange: PropTypes.func,

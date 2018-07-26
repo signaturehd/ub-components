@@ -16,6 +16,7 @@ import FileUploader from './FileUploader/FileUploader'
 import MultipleFileUploader from './FileUploader/MultipleFileUploader'
 import Checkbox from './Checkbox/Checkbox'
 import Drawer from './Drawer/Drawer'
+import DatePicker from './DatePicker/DatePicker'
 import List from './List/List'
 import Line from './Line/Line'
 
@@ -39,5 +40,6 @@ export {
   Line,
   MultipleFileUploader,
   GenericInput,
-  GenericFileInput
+  GenericFileInput,
+  DatePicker
 }

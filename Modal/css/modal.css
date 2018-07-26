@@ -38,6 +38,15 @@
   float: right;
 }
 
+.select-grid {
+  display: grid;
+  grid-row-gap: 10px;
+}
+
+.select-button {
+  width : 100%;
+}
+
 @media only screen and (max-width: 768px) {
   .modal {
     width: 100% !important;
