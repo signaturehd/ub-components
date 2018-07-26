@@ -19,7 +19,7 @@ class ConfirmationModal extends Component {
     return (
       <Modal
         isDismisable = { true }
-        onCLose = { onClose }
+        onClose = { onClose }
       >
         <center>
           <h3>{ text }</h3>
