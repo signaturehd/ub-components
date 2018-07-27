@@ -11,6 +11,7 @@ import Modal from './Modal/Modal'
 import InputModal from './Modal/InputModal'
 import SingleInputModal from './Modal/SingleInputModal'
 import ConfirmationModal from './Modal/ConfirmationModal'
+import LoaderModal from './Modal/LoaderModal'
 
 //Text Box
 import MultipleInputModal from './Modal/MultipleInputModal'
@@ -68,5 +69,6 @@ export {
   MultipleFileUploader,
   GenericInput,
   GenericFileInput,
-  DatePicker
+  DatePicker,
+  LoaderModal
 }
