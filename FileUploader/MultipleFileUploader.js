@@ -36,7 +36,8 @@ class MultipleFileUploader extends Component {
       placeholder,
       setFile,
       disabled,
-      getFile
+      getFile,
+      errorMessage
     } = this.props
 
     const {
@@ -71,9 +72,10 @@ class MultipleFileUploader extends Component {
                 errorMessage = {
                   attachment &&
                   attachment.file &&
-                  this.isValid(attachment.file.type) ? 'Invalid File' : '' }
+                  this.isValid(attachment.file.type) ? 'Invalid File' : errorMessage }
               />
                 <div>
+                  <br/>
                   <div className={ 'multiple-file-attachment-form' }>
                     {
                       attachment.base64 ?
@@ -109,7 +111,7 @@ class MultipleFileUploader extends Component {
                           attachment &&
                           attachment.file &&
                           this.isValid(attachment.file.type) ?
-                              attachment.name : '' }
+                               '' : attachment.file.name }
                       </h6>
                     </div>
                     :
@@ -136,6 +138,7 @@ MultipleFileUploader.propTypes = {
       )
   ),
   placeholder : PropTypes.string,
+  errorMessage : PropTypes.string,
   onResponse : PropTypes.func,
   setFile : PropTypes.func,
   disabled : PropTypes.bool,
