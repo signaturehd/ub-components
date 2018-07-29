@@ -72,7 +72,10 @@ class MultipleFileUploader extends Component {
                 errorMessage = {
                   attachment &&
                   attachment.file &&
-                  this.isValid(attachment.file.type) ? 'Invalid File' : errorMessage }
+                  this.isValid(attachment.file.type)
+                   ? 'Invalid File / Attach here the required files (e.g jpg, pdf, png, jpeg)' :
+                   errorMessage
+                 }
               />
                 <div>
                   <br/>
