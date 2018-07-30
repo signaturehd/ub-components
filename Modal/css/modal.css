@@ -58,11 +58,4 @@
     margin-left: 5px;
     margin-right: 5px;
   }
-
-  .modal-overlay {
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    align-items: flex-end;
-  }
 }
