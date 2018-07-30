@@ -5,9 +5,6 @@ import PropTypes from 'prop-types'
 class MultipleFileUploader extends Component {
   constructor (props) {
     super(props)
-      this.state = {
-        attachmentArray : []
-    }
   }
 
   fileChecker (file) {
@@ -36,13 +33,10 @@ class MultipleFileUploader extends Component {
       placeholder,
       setFile,
       disabled,
-      getFile,
       errorMessage
     } = this.props
 
-    const {
-      attachmentArray
-    } = this.state
+    console.log(fileArray)
 
     return (
       <div>
@@ -56,16 +50,15 @@ class MultipleFileUploader extends Component {
               <h2 className = { 'font-size-14px' }>{ attachment.name }</h2>
               <GenericFileInput
                 onChange = { (e) => {
-                  const updatedAttachment = [...fileArray]
-                  const reader = new FileReader()
-                  const file = e.target.files[0]
-                  reader.onloadend=() => {
-                    updatedAttachment[key].base64 = reader.result
-                    updatedAttachment[key].file = file
-                    this.setState({ fileArray : updatedAttachment })
-                    getFile(fileArray)
-                  }
-                  reader.readAsDataURL(file)
+                    const updatedAttachment = [...fileArray]
+                    const reader = new FileReader()
+                    const file = e.target.files[0]
+                    reader.onloadend=() => {
+                      updatedAttachment[key].base64 = reader.result
+                      updatedAttachment[key].file = file
+                      setFile(updatedAttachment)
+                    }
+                    reader.readAsDataURL(file)
                   }
                 }
                 disabled = { disabled }
@@ -85,9 +78,9 @@ class MultipleFileUploader extends Component {
                         onClick={
                           () => {
                             const updatedAttachment = [...fileArray]
-                            updatedAttachment[key].base64 = ''
-                            updatedAttachment[key].file = ''
-                            this.setState({ fileArray : updatedAttachment })
+                            delete updatedAttachment[key].base64
+                            delete updatedAttachment[key].file
+                            setFile(updatedAttachment)
                           }
                         }
                       />
