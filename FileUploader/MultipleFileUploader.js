@@ -36,8 +36,6 @@ class MultipleFileUploader extends Component {
       errorMessage
     } = this.props
 
-    console.log(fileArray)
-
     return (
       <div>
         <center>
