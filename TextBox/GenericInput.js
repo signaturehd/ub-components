@@ -23,20 +23,25 @@ class GenericInput extends Component {
     } = this.props
 
     return (
-      <div style={ style } className='input-wrapper'>
-        <span className='input-text'>{ text }</span>
+      <div
+        style={ style }
+        className={ 'input-wrapper' }>
+        <span className={ 'input-text' }>{ text }</span>
         <input
           type={ type }
           ref={ refCallback }
           disabled={ disabled }
           onChange={ onChange }
           value={ value }
-          className='input'
+          className={ 'input' }
           onClick={ onClick }
           maxLength={maxLength}
           readOnly= {readOnly}
           placeholder={ hint } />
-        { errorMessage && <span className='error-message'>{ errorMessage }</span> }
+        <div className = { 'input-grid-wrapper' }>
+          <div></div>
+          { errorMessage && <span className={ 'error-message' }>{ errorMessage }</span> }
+        </div>
       </div>
     )
   }
