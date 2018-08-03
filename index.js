@@ -5,6 +5,7 @@ import FloatingSettingsButton from './UButton/FloatingSettingsButton'
 
 //Card
 import Card from './Card/Card'
+import PresentationCard from './Card/PresentationCard'
 
 //Modals
 import Modal from './Modal/Modal'
@@ -52,6 +53,7 @@ export {
   FloatingSettingsButton,
   GenericTextBox,
   Card,
+  PresentationCard,
   Modal,
   FileUploader,
   InputModal,
