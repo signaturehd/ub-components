@@ -100,7 +100,7 @@ class MultipleFileUploader extends Component {
                       } }
                     >
                       <h6
-                        className={ 'mpl-file-name' }>
+                        className={ 'multiple-fileuploader-name' }>
                         {
                           attachment &&
                           attachment.file &&
