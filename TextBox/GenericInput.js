@@ -19,7 +19,8 @@ class GenericInput extends Component {
       type,
       readOnly,
       onClick,
-      maxLength
+      maxLength,
+      imageProps
     } = this.props
 
     return (
@@ -36,7 +37,7 @@ class GenericInput extends Component {
           className={ 'input' }
           onClick={ onClick }
           maxLength={maxLength}
-          readOnly= {readOnly}
+          readOnly= { readOnly }
           placeholder={ hint } />
         <div className = { 'input-grid-wrapper' }>
           <div></div>
@@ -56,6 +57,7 @@ class GenericInput extends Component {
 
 GenericInput.propTypes = {
   refCallback: PropTypes.string,
+  imageProps: PropTypes.string,
   onClick: PropTypes.func,
   maxLength: PropTypes.number,
   type: PropTypes.string,
