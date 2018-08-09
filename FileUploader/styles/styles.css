@@ -2,6 +2,15 @@
   padding:0px 15px 0px 15px;
 }
 
+.multiple-font-weight-bolder {
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+.multiple-attachment-name {
+  font-size: 11px;
+}
+
 .file-group {
   object-fit: cover;
   position:relative;

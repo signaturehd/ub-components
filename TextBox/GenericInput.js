@@ -40,7 +40,14 @@ class GenericInput extends Component {
           placeholder={ hint } />
         <div className = { 'input-grid-wrapper' }>
           <div></div>
-          { errorMessage && <span className={ 'error-message' }>{ errorMessage }</span> }
+          {
+            errorMessage ?
+            <span className = { 'error-message' }>
+              { errorMessage }
+            </span>
+            :
+            <span className = { 'error-message-null' }></span>
+          }
         </div>
       </div>
     )

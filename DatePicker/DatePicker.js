@@ -31,8 +31,18 @@ class DatePicker extends Component {
             maxDate={ maxDate }
             disabled={ disabled }
         />
-        <img className='datepicker-icon' src={ require('./images/calendar.png') } />
-        { errorMessage && <span className='error-message'>{ errorMessage }</span> }
+        <img className = { 'datepicker-icon' } src = { require('./images/calendar.png') } />
+        <div className = { 'date-grid-wrapper' }>
+          <div></div>
+          {
+            errorMessage ?
+            <span className = { 'error-message' }>
+              { errorMessage }
+            </span>
+            :
+            <span className = { 'error-message-null' }></span>
+          }
+        </div>
       </div>
     )
   }

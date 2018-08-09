@@ -39,13 +39,13 @@ class MultipleFileUploader extends Component {
     return (
       <div>
         <center>
-          <h4 className = { 'font-weight-bolder' }>{ placeholder }</h4>
+          <h4 className = { 'multiple-font-weight-bolder' }>{ placeholder }</h4>
         </center>
         {
           fileArray.length !== 0 &&
           fileArray.map((attachment, key) => (
             <div key = {key}>
-              <h2 className = { 'font-size-14px' }>{ attachment.name }</h2>
+              <h2 className = { 'multiple-attachment-name' }>{ attachment.name }</h2>
               <GenericFileInput
                 onChange = { (e) => {
                     const updatedAttachment = [...fileArray]

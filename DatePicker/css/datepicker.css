@@ -1,5 +1,3 @@
-.datepicker-container {
-}
 
 .datepicker-container .datepicker-icon {
   position: relative;
@@ -11,16 +9,24 @@
   pointer-events: none;
 }
 
+.date-grid-wrapper {
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+  text-align: right;
+}
+
+.error-message-null {
+  margin-bottom: 20px;
+}
+
 .datepicker-container .datepicker-text {
   color: #4A4A4A;
-  font-size: 14px;
-  margin-bottom: 5px;
+  font-size: 11px;
 }
 
 .datepicker-container .error-message {
   color: #F44336;
   font-size: 10px;
-  margin-top: 3px;
 }
 
 .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,
