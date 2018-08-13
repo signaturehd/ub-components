@@ -71,23 +71,26 @@ class MultipleFileUploader extends Component {
                 <div>
                   <br/>
                   <div className={ 'multiple-file-attachment-form' }>
-                    {
-                      attachment.base64 ?
-                      <img
-                        src={ require('./images/x-circle.png') }
-                        className={ 'close-button' }
-                        onClick={
-                          () => {
-                            const updatedAttachment = [...fileArray]
-                            delete updatedAttachment[key].base64
-                            delete updatedAttachment[key].file
-                            setFile(updatedAttachment)
-                          }
+                  {
+
+                    disabled ?
+                    <div></div> :
+                    attachment.base64 ?
+                    <img
+                      src={ require('./images/x-circle.png') }
+                      className={ 'close-button' }
+                      onClick={
+                        () => {
+                          const updatedAttachment = [...fileArray]
+                          delete updatedAttachment[key].base64
+                          delete updatedAttachment[key].file
+                          setFile(updatedAttachment)
                         }
-                      />
-                      :
-                      <div></div>
-                    }
+                      }
+                    />
+                    :
+                    <div></div>
+                  }
                   {
                     attachment.base64 ?
                     <div
