@@ -9,10 +9,12 @@ class Card extends Component {
   }
 
   render () {
-    const { onClick, children, className } = this.props
+    const { onClick, children, className, style } = this.props
 
     return (
-      <div className = { `card ${className}` } onClick = { onClick }>
+      <div
+        style = { style }
+        className = { `card ${className}` } onClick = { onClick }>
         { children }
       </div>
     )
@@ -23,6 +25,7 @@ Card.propTypes = {
   children : PropTypes.node,
   onClick : PropTypes.func,
   className : PropTypes.string,
+  style : PropTypes.string,
 }
 
 Card.defaultProps = {
