@@ -18,6 +18,7 @@ class DatePicker extends Component {
       disabled,
       maxDate,
       minDate,
+      readOnly
     } = this.props
 
     return (
@@ -30,6 +31,7 @@ class DatePicker extends Component {
             minDate={ minDate }
             maxDate={ maxDate }
             disabled={ disabled }
+            readOnly={ readOnly }
         />
         <img className = { 'datepicker-icon' } src = { require('./images/calendar.png') } />
         <div className = { 'date-grid-wrapper' }>

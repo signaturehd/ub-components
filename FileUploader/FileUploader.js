@@ -10,7 +10,7 @@ class FileUploader extends Component {
   }
 
   render () {
-    const { onChange, value, placeholder } = this.props
+    const { onChange, value, placeholder, base64, disabled  } = this.props
 
     return (
       <div className = {'file-container'}>
@@ -25,6 +25,42 @@ class FileUploader extends Component {
           <span className = { 'file-label' }>{ placeholder }</span>
           <span className ={ 'bar' }></span>
         </div>
+        <div>
+          <br/>
+          <div className={ 'multiple-file-attachment-form' }>
+          {
+            disabled ?
+            <div></div> :
+            base64 &&
+            <img
+              src={ require('./images/x-circle.png') }
+              className={ 'close-button' }
+              onClick={
+                () => {}
+              }
+            />
+          }
+          {
+            base64 &&
+            <div
+              style={ {
+                backgroundImage: `url('${ base64}')`,
+                width: 'auto',
+                height: '60px',
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+              } }
+            >
+              <h6
+                className={ 'multiple-fileuploader-name' }>
+                {
+                  value
+                }
+              </h6>
+            </div>
+          }
+        </div>
+      </div>
       </div>
     )
   }
@@ -32,8 +68,10 @@ class FileUploader extends Component {
 
 FileUploader.propTypes = {
   value : PropTypes.string,
+  value : PropTypes.string,
   onChange : PropTypes.func,
-  placeholder : PropTypes.string
+  placeholder : PropTypes.string,
+  disabled  : PropTypes.bool,
 }
 
 FileUploader.defaultProps = {
