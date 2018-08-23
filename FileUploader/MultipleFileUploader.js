@@ -75,27 +75,25 @@ class MultipleFileUploader extends Component {
 
                     disabled ?
                     <div></div> :
-                    attachment.base64 ?
+                    attachment.base64 &&
                     <img
                       src={ require('./images/x-circle.png') }
                       className={ 'close-button' }
                       onClick={
                         () => {
                           const updatedAttachment = [...fileArray]
-                          delete updatedAttachment[key].base64
                           delete updatedAttachment[key].file
+                          delete updatedAttachment[key].base64
                           setFile(updatedAttachment)
                         }
                       }
                     />
-                    :
-                    <div></div>
                   }
                   {
-                    attachment.base64 ?
+                    attachment.base64 &&
                     <div
                       style={ {
-                        backgroundImage: `url('${attachment && attachment.base64}')`,
+                        backgroundImage: `url('${attachment.base64 && attachment.base64}')`,
                         width: 'auto',
                         height: '60px',
                         backgroundSize: 'contain',
@@ -111,8 +109,6 @@ class MultipleFileUploader extends Component {
                                '' : attachment.file.name }
                       </h6>
                     </div>
-                    :
-                    <div></div>
                   }
                 </div>
               </div>
@@ -130,7 +126,7 @@ MultipleFileUploader.propTypes = {
         PropTypes.shape({
           name : PropTypes.string,
           file : PropTypes.object,
-          base64 : PropTypes.string,
+          base64 : PropTypes.blob,
         })
       )
   ),
