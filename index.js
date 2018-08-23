@@ -38,8 +38,9 @@ import MultipleFileUploader from './FileUploader/MultipleFileUploader'
 //Check Box
 import Checkbox from './Checkbox/Checkbox'
 
-//Date Pickers
+//Date and Time Pickers
 import DatePicker from './DatePicker/DatePicker'
+import TimePickerComponent from './DatePicker/TimePickerComponent'
 
 //List
 import List from './List/List'
@@ -72,5 +73,6 @@ export {
   GenericInput,
   GenericFileInput,
   DatePicker,
+  TimePickerComponent,
   LoaderModal
 }
