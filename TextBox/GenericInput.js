@@ -20,7 +20,8 @@ class GenericInput extends Component {
       readOnly,
       onClick,
       maxLength,
-      imageProps
+      imageProps,
+      className
     } = this.props
 
     return (
@@ -58,6 +59,7 @@ class GenericInput extends Component {
 GenericInput.propTypes = {
   refCallback: PropTypes.string,
   imageProps: PropTypes.string,
+  className: PropTypes.string,
   onClick: PropTypes.func,
   maxLength: PropTypes.number,
   type: PropTypes.string,
