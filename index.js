@@ -6,6 +6,7 @@ import FloatingSettingsButton from './UButton/FloatingSettingsButton'
 //Card
 import Card from './Card/Card'
 import PresentationCard from './Card/PresentationCard'
+import GenericMultipleCard from './Card/GenericMultipleCard'
 
 //Modals
 import Modal from './Modal/Modal'
@@ -34,6 +35,7 @@ import CircularLoader from './Loader/CircularLoader'
 //File Uploader
 import FileUploader from './FileUploader/FileUploader'
 import MultipleFileUploader from './FileUploader/MultipleFileUploader'
+import MultipleAttachments from './FileUploader/MultipleAttachments'
 
 //Check Box
 import Checkbox from './Checkbox/Checkbox'
@@ -55,6 +57,7 @@ export {
   GenericTextBox,
   Card,
   PresentationCard,
+  GenericMultipleCard,
   Modal,
   FileUploader,
   InputModal,
@@ -70,6 +73,7 @@ export {
   Checkbox,
   Line,
   MultipleFileUploader,
+  MultipleAttachments,
   GenericInput,
   GenericFileInput,
   DatePicker,

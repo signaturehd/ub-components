@@ -5,3 +5,10 @@
   border: 0px transparent;
   margin-bottom: 10px;
 }
+
+.multiple-card-grid-option {
+  display: grid;
+  grid-template-columns: .2fr 1fr .1fr;
+  margin: 0px auto;
+  align-items: center;
+}
