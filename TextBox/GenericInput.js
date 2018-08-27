@@ -19,6 +19,7 @@ class GenericInput extends Component {
       type,
       readOnly,
       onClick,
+      onFocus,
       maxLength,
       imageProps,
       className
@@ -37,6 +38,7 @@ class GenericInput extends Component {
           value={ value }
           className={ 'input' }
           onClick={ onClick }
+          onFocus={ onFocus }
           maxLength={maxLength}
           readOnly= { readOnly }
           placeholder={ hint } />
@@ -61,6 +63,7 @@ GenericInput.propTypes = {
   imageProps: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
+  onFocus: PropTypes.func,
   maxLength: PropTypes.number,
   type: PropTypes.string,
   readOnly: PropTypes.bool,

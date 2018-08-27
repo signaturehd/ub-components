@@ -10,10 +10,9 @@ class GenericMultipleCard extends Component {
   render () {
     const {
       cardDataHolder,
-      setFile,
+      setCard,
       disabled,
       errorMessage,
-      countFunc,
       count
     } = this.props
 
@@ -25,8 +24,7 @@ class GenericMultipleCard extends Component {
             <div>
               <Card
                 className = { 'multiple-card-grid-option' }
-                key = {key}
-                onClick = { () => {} }>
+                key = {key}>
                 <div>
                   {
                     attachment && attachment.imageKey.map((resp, key) =>
@@ -54,9 +52,7 @@ class GenericMultipleCard extends Component {
                       className = { 'close-button-global' }
                       src = { require('./images/ic_mode_edit_grey_500_18dp.png') }
                       onClick = { () => {
-                        cardDataHolder.splice(key, 1)
-                        let newCount = parseInt(count) - 1
-                        countFunc(newCount)
+                        
                       }}
                     />
                   }
@@ -67,8 +63,7 @@ class GenericMultipleCard extends Component {
                       src = { require('./images/x-circle.png') }
                       onClick = { () => {
                         cardDataHolder.splice(key, 1)
-                        let newCount = parseInt(count) - 1
-                        countFunc(newCount)
+                        setCard(cardDataHolder)
                       }}
                     />
                   }
@@ -96,7 +91,7 @@ GenericMultipleCard.propTypes = {
   placeholder : PropTypes.string,
   errorMessage : PropTypes.string,
   onResponse : PropTypes.func,
-  setFile : PropTypes.func,
+  setCard : PropTypes.func,
   disabled : PropTypes.bool,
 }
 
