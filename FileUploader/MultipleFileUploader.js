@@ -47,6 +47,7 @@ class MultipleFileUploader extends Component {
             <div key = {key}>
               <h2 className = { 'multiple-attachment-name' }>{ attachment.name }</h2>
               <GenericFileInput
+                keyId = { key }
                 onChange = { (e) => {
                     const updatedAttachment = [...fileArray]
                     const reader = new FileReader()
@@ -86,6 +87,8 @@ class MultipleFileUploader extends Component {
                           delete updatedAttachment[key].file
                           delete updatedAttachment[key].base64
                           setFile(updatedAttachment)
+                          document.getElementById("#file-upload-"+key).type = ''
+                          document.getElementById("#file-upload-"+key).type = 'file'
                         }
                       }
                     />

@@ -34,6 +34,7 @@ class GenericFileInput extends Component {
   render () {
     const { message } = this.state
     const {
+      keyId,
       text,
       style,
       hint,
@@ -43,7 +44,7 @@ class GenericFileInput extends Component {
       onChange,
       isMessage
     } = this.props
-    
+
     return (
       <div style={ style } className='input-wrapper'>
         <span className='input-text' dangerouslySetInnerHTML={{ __html: text }}></span>
@@ -54,6 +55,7 @@ class GenericFileInput extends Component {
             placeholder={ hint }
             disabled />
           <input
+            id = { '#file-upload-'+keyId }
             type='file'
             onChange={ this.handleOnChange }
             value={ value }
@@ -77,7 +79,12 @@ GenericFileInput.propTypes = {
   value: PropTypes.string,
   disabled: PropTypes.bool,
   errorMessage: PropTypes.string,
-  onChange : PropTypes.func,
+  onChange : PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.func
+  ]),
+  keyId: PropTypes.number
 }
 
 GenericFileInput.defaultProps = {
