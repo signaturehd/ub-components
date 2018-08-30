@@ -59,6 +59,7 @@ class MultipleFileUploader extends Component {
                     reader.readAsDataURL(file)
                   }
                 }
+                isMessage = { fileArray[key].file }
                 disabled = { disabled }
                 errorMessage = {
                   attachment &&
