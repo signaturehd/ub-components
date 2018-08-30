@@ -9,7 +9,7 @@ class TimePickerComponent extends Component {
 
   render() {
     const {
-      selected,
+      time,
       text,
       errorMessage,
       disabled,
@@ -17,13 +17,22 @@ class TimePickerComponent extends Component {
       timeMode,
       showTimezone,
       timeFormat,
-      onTimeChange
+      onTimeChange,
+      meridiem
     } = this.props
 
     return (
       <div className='datepicker-container'>
         <span className='datepicker-text'>{ text }</span>
-        <TimePicker />
+        <TimePicker
+          text = { text }
+          format = { timeFormat }
+          timeMode = { timeMode }
+          meridiem = { meridiem }
+          time = { time }
+          onTimeChange = { onTimeChange }
+          disabled = { disabled }
+        />
         <div className = { 'date-grid-wrapper' }>
           <div></div>
           {
