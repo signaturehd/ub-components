@@ -11,6 +11,7 @@ class DatePicker extends Component {
   render() {
     const {
       selected,
+      value,
       onChange,
       text,
       hint,
@@ -26,6 +27,7 @@ class DatePicker extends Component {
         <span className='datepicker-text'>{ text }</span>
         <ReactDatePicker
             selected={ selected }
+            value={ value }
             onChange={ onChange }
             placeholderText={ hint }
             minDate={ minDate }
