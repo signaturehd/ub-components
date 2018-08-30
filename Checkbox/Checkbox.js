@@ -9,13 +9,14 @@ class Checkbox extends Component {
   }
 
   render () {
-    const { label, onChange, checked } = this.props
+    const { label, onChange, checked, disabled } = this.props
 
     return (
       <label className="material-checkbox">
         <input type="checkbox"
           checked= { checked }
           onChange = { onChange }
+          disabled = { disabled }
          />
         <span>{ label }</span>
       </label>
@@ -27,6 +28,7 @@ class Checkbox extends Component {
 Checkbox.propTypes = {
   onChange : PropTypes.func,
   checked : PropTypes.bool,
+  disabled : PropTypes.bool,
   label : PropTypes.string,
 }
 
