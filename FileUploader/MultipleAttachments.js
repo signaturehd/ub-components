@@ -85,6 +85,7 @@ class MultipleAttachments extends Component {
                         fileArray.splice(key, 1)
                         let newCount = parseInt(count) - 1
                         countFunc(newCount)
+                        setFile(fileArray)
                       }}
                     />
                   }
