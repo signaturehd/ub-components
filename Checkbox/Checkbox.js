@@ -9,7 +9,12 @@ class Checkbox extends Component {
   }
 
   render () {
-    const { label, onChange, checked, disabled } = this.props
+    const {
+      label,
+      onChange,
+      checked,
+      disabled
+    } = this.props
 
     return (
       <label className="material-checkbox">
