@@ -124,7 +124,7 @@
 }
 
 .multiple-attachments-grid-option {
-  grid-template-columns: 1fr .1fr;
+  grid-template-columns: 1fr .04fr;
   display: grid;
   align-items: center;
   margin: 0px auto;
