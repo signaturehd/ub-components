@@ -91,7 +91,6 @@ class MultipleAttachments extends Component {
                   }
                 </div>
                 <br/>
-                <br/>
                 <div>
                   <div>
                   {
@@ -115,6 +114,7 @@ class MultipleAttachments extends Component {
                       </h6>
                     </div>
                   }
+                  <br/>
                 </div>
               </div>
             </div>
