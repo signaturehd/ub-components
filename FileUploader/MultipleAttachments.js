@@ -77,17 +77,22 @@ class MultipleAttachments extends Component {
                     />
                   </div>
                   {
-                    !disabled &&
-                    <img
-                      className = { 'close-button-global' }
-                      src = { require('./images/x-circle.png') }
-                      onClick = { () => {
-                        fileArray.splice(key, 1)
-                        let newCount = parseInt(count) - 1
-                        countFunc(newCount)
-                        setFile(fileArray)
-                      }}
-                    />
+                    fileArray.length >1 &&
+                    <div>
+                    {
+                      !disabled &&
+                      <img
+                        className = { 'close-button-global' }
+                        src = { require('./images/x-circle.png') }
+                        onClick = { () => {
+                          fileArray.splice(key, 1)
+                          let newCount = parseInt(count) - 1
+                          countFunc(newCount)
+                          setFile(fileArray)
+                        }}
+                      />
+                    }
+                    </div>
                   }
                 </div>
                 <br/>
