@@ -42,6 +42,7 @@ class MultipleAttachments extends Component {
       <div>
         <center>
           <h4 className = { 'multiple-font-weight-bolder' }>{ placeholder }</h4>
+          <br/>
         </center>
         {
           fileArray.length !== 0 &&
@@ -67,6 +68,7 @@ class MultipleAttachments extends Component {
                         }
                       }
                       disabled = { disabled }
+                      hint = { attachment.name }
                       errorMessage = {
                         attachment &&
                         attachment.file &&
