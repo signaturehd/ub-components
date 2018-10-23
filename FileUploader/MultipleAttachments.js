@@ -67,6 +67,7 @@ class MultipleAttachments extends Component {
                           reader.readAsDataURL(file)
                         }
                       }
+                      isMessage = { fileArray[key].file }
                       disabled = { disabled }
                       hint = { attachment.name }
                       errorMessage = {
