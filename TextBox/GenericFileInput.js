@@ -89,7 +89,7 @@ GenericFileInput.propTypes = {
 
 GenericFileInput.defaultProps = {
   onChange: e => {},
-  hint: 'Select Photo',
+  hint: 'Select File',
 }
 
 export default GenericFileInput
