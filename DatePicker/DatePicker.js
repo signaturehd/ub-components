@@ -19,7 +19,8 @@ class DatePicker extends Component {
       disabled,
       maxDate,
       minDate,
-      readOnly
+      readOnly,
+      dateFormat
     } = this.props
 
     return (
@@ -32,6 +33,7 @@ class DatePicker extends Component {
             placeholderText={ hint }
             minDate={ minDate }
             maxDate={ maxDate }
+            dateFormat = { dateFormat }
             disabled={ disabled }
             readOnly={ readOnly }
         />
@@ -63,6 +65,7 @@ DatePicker.propTypes = {
   errorMessage: PropTypes.string,
   disabled : PropTypes.bool,
   maxDate : PropTypes.object,
+  dateFormat : PropTypes.string,
   minDate : PropTypes.object,
 }
 
