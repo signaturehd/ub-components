@@ -4,9 +4,11 @@
 }
 
 .notify {
-  color : #fff;
+    /* color: #fff; */
   width: 100%;
+  border-radius: 15px;
   padding: 3%;
+  box-shadow: 0 1px 16px rgba(0,0,0,0.12), 0 4px 10px rgba(0,0,0,0.24);
 }
 
 .notify-title {
@@ -20,17 +22,17 @@
 }
 
 .danger {
-  background : #AD1457
+  color : #AD1457
 }
 
 .warning {
-  background : #EF6C00
+  color : #EF6C00
 }
 
 .success {
-  background : #00C853
+  color : #00C853
 }
 
 .primary {
-  background : #0091EA
+  color : #0091EA
 }
