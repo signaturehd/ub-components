@@ -34,6 +34,10 @@ class DatePicker extends Component {
             maxDate={ maxDate }
             disabled={ disabled }
             readOnly={ readOnly }
+            showYearDropdown
+            showMonthDropdown
+            scrollableMonthDropdown
+            scrollableYearDropdown
             dropdownMode={'select'}
         />
         <img className = { 'datepicker-icon' } src = { require('./images/calendar.png') } />

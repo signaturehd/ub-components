@@ -1,7 +1,6 @@
 import React , { Component } from 'react'
 
 import './styles/button.css'
-import Image from '../../images/drawer/mytravel.png'
 
 class FloatingActionButton extends Component {
   render () {
@@ -13,7 +12,7 @@ class FloatingActionButton extends Component {
         onClick = {onClick}
       >
       {text && text}
-      {image && <img src={Image} width = { '60%' } height = { '60%' }/>}
+      {image && <img width = { '60%' } height = { '60%' }/>}
       </button>
 
     )
