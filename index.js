@@ -31,6 +31,7 @@ import Drawer from './Drawer/Drawer'
 //Loader
 import Loader from './Loader/Loader'
 import CircularLoader from './Loader/CircularLoader'
+import SkeletalLoader from './Loader/ContentLoaderComponent'
 
 //File Uploader
 import FileUploader from './FileUploader/FileUploader'
@@ -66,6 +67,7 @@ export {
   Notify,
   Loader,
   CircularLoader,
+  SkeletalLoader,
   ConfirmationModal,
   AppBar,
   Drawer,
