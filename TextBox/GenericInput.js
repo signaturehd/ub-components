@@ -22,7 +22,8 @@ class GenericInput extends Component {
       onFocus,
       maxLength,
       imageProps,
-      className
+      className,
+      resize
     } = this.props
 
     return (
@@ -30,18 +31,36 @@ class GenericInput extends Component {
         style={ style }
         className={ 'input-wrapper' }>
         <span className={ 'input-text' }>{ text }</span>
-        <input
-          type={ type }
-          ref={ refCallback }
-          disabled={ disabled }
-          onChange={ onChange }
-          value={ value }
-          className={ 'input' }
-          onClick={ onClick }
-          onFocus={ onFocus }
-          maxLength={maxLength}
-          readOnly= { readOnly }
-          placeholder={ hint } />
+        {
+          type === 'textarea' ?
+          <textarea
+            resize={ resize }
+            ref={ refCallback }
+            disabled={ disabled }
+            onChange={ onChange }
+            value={ value }
+            className={ 'textarea' }
+            onClick={ onClick }
+            onFocus={ onFocus }
+            maxLength={maxLength}
+            readOnly= { readOnly }
+            placeholder={ hint }
+          />
+          :
+          <input
+            type={ type }
+            ref={ refCallback }
+            disabled={ disabled }
+            onChange={ onChange }
+            value={ value }
+            className={ 'input' }
+            onClick={ onClick }
+            onFocus={ onFocus }
+            maxLength={maxLength}
+            readOnly= { readOnly }
+            placeholder={ hint }
+          />
+        }
         <div className = { 'input-grid-wrapper' }>
           <div></div>
           {

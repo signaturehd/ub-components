@@ -57,6 +57,33 @@
   font-size: 14px;
 }
 
+.textarea {
+  height: 100px;
+  resize: none;
+  border-color: #C9CBD0;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  outline: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ff8a00;
+}
+
+.textarea::placeholder {
+  color: #C9CBD0;
+  opacity: 1;
+  font-size: 14px;
+}
+
 /* password input */
 .password-wrapper {
   width: 100%;
