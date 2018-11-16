@@ -13,8 +13,11 @@ import ContentLoader, {
 class SkeletalLoader extends Component {
   render () {
     const {
-      height,
-      width,
+      className,
+      radius,
+      circleSizeObject,
+      boxSizeObject,
+      titleSizeObject,
       shapeCircle,
       shapeBox,
       showFacebookComponent,
@@ -22,20 +25,51 @@ class SkeletalLoader extends Component {
       showBulletListComponent,
       showCodeComponent,
       showSizeContent,
+      showListComponent,
+      shapeTitle,
     } = this.props
 
     return (
-      <div>
+      <div className = { `${ className }` }>
+      {
+        shapeBox &&
         <ContentLoader
-          height={height}
-          width={width}
+          width = { boxSizeObject && boxSizeObject.width }
+          height = { boxSizeObject && boxSizeObject.height }
           speed={2}
-          primaryColor="#fafafa"
-          secondaryColor="#fff"
-        >
-        {
-          shapeBox &&
-        		<rect width="200.4" height="141.1" />
+          primaryColor="#f3f3f3"
+          secondaryColor="#ecebeb"
+          >
+      		<rect
+            width={ boxSizeObject && boxSizeObject.width }
+            height={ boxSizeObject && boxSizeObject.height } />
+        </ContentLoader>
+      }
+      {
+        shapeTitle &&
+        <ContentLoader
+          height={ titleSizeObject && titleSizeObject.height }
+      		width={ titleSizeObject && titleSizeObject.width }
+          speed={2}
+          primaryColor="#f3f3f3"
+          secondaryColor="#ecebeb"
+          >
+          <rect
+            width = { titleSizeObject && titleSizeObject.width }
+            height = { titleSizeObject && titleSizeObject.height } />
+        </ContentLoader>
+      }
+      {
+        shapeCircle &&
+        <ContentLoader
+          height = { circleSizeObject && circleSizeObject.height }
+          width = { circleSizeObject && circleSizeObject.width }
+          speed={2}
+          primaryColor="#f3f3f3"
+          secondaryColor="#ecebeb"
+          >
+      	   <circle r = { radius } />
+        </ContentLoader>
         }
         {
           showFacebookComponent &&
@@ -51,34 +85,55 @@ class SkeletalLoader extends Component {
           showCodeComponent &&
           <Code />
         }
-
         {
           showBulletListComponent &&
           <BulletList />
         }
-        </ContentLoader>
+        {
+          showListComponent &&
+          <List />
+        }
       </div>
     )
   }
 }
 
 SkeletalLoader.propTypes = {
-  width : PropTypes.number,
-  height : PropTypes.number,
-  shape : PropTypes.string,
+  circleSizeObject : PropTypes.object,
+  boxSizeObject: PropTypes.object,
+  titleSizeObject: PropTypes.object,
+  radius : PropTypes.number,
+  className : PropTypes.string,
+  shapeCircle : PropTypes.bool,
   showFacebookComponent : PropTypes.bool,
+  shapeBox : PropTypes.bool,
   showInstagramComponent : PropTypes.bool,
   showCodeComponent : PropTypes.bool,
   showBulletListComponent : PropTypes.bool,
+  showListComponent : PropTypes.bool,
+  shapeTitle : PropTypes.bool,
 }
 
 SkeletalLoader.defaultProps = {
+  showListComponent : false,
   showFacebookComponent : false,
   showInstagramComponent : false,
   showCodeComponent : false,
   showBulletListComponent : false,
-  width : 0,
-  height : 0,
-  shape: 'bar',
+  shapeTitle : false,
+  shapeCircle : false,
+  shapeBox : false,
+  boxSizeObject: {
+    width: 0,
+    height : 0
+  },
+  circleSizeObject: {
+    width: 0,
+    height : 0
+  },
+  titleSizeObject: {
+    width: 0,
+    height : 0
+  },
 }
 export default SkeletalLoader
