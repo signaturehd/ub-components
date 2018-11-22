@@ -27,6 +27,7 @@ class SkeletalLoader extends Component {
       showSizeContent,
       showListComponent,
       shapeTitle,
+      shapeCodeComponent,
     } = this.props
 
     return (
@@ -73,25 +74,38 @@ class SkeletalLoader extends Component {
         }
         {
           showFacebookComponent &&
-          <Facebook/>
+          <Facebook
+            width = { '100%' }
+            height = { '100%' }/>
         }
 
         {
           showInstagramComponent &&
-          <Instagram />
+          <Instagram
+            width = { '100%' }
+            height = { '100%' }/>
         }
 
         {
           showCodeComponent &&
-          <Code />
+          <Code
+            width = { '100%' }
+            height = { '100%' }
+            />
         }
         {
           showBulletListComponent &&
-          <BulletList />
+          <BulletList
+            width = { '100%' }
+            height = { '100%' }
+            />
         }
         {
           showListComponent &&
-          <List />
+          <List
+            width = { '100%' }
+            height = { '100%' }
+            />
         }
       </div>
     )
