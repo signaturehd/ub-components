@@ -17,6 +17,7 @@ class SingleInputModal extends Component {
       label,
       className,
       selectedArray,
+      multipleContentArray
     } = this.props
 
     return (
@@ -40,7 +41,10 @@ class SingleInputModal extends Component {
                 className = { 'single-input-modal-button' }
                 key = { key }
                 className = { 'select-button' }
-                onClick = { () => selectedArray(inputs.id, inputs.name) }
+                onClick = { () => {
+                  selectedArray(inputs.id, inputs.name)
+                  multipleContentArray(inputs)
+                } }
                 text = { inputs.name }
               />
               <br/>
@@ -57,6 +61,7 @@ SingleInputModal.propTypes = {
   label : PropTypes.string,
   onClose : PropTypes.func,
   selectedArray : PropTypes.func,
+  multipleContentArray : PropTypes.func,
   inputArray : PropTypes.arrayOf(
     PropTypes.objectOf(
       PropTypes.shape({
