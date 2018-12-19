@@ -23,7 +23,8 @@ class GenericInput extends Component {
       maxLength,
       imageProps,
       className,
-      resize
+      resize,
+      onKeyPress
     } = this.props
 
     return (
@@ -38,6 +39,7 @@ class GenericInput extends Component {
             ref={ refCallback }
             disabled={ disabled }
             onChange={ onChange }
+            onKeyPress = { onKeyPress }
             value={ value }
             className={ 'textarea' }
             onClick={ onClick }
@@ -52,6 +54,7 @@ class GenericInput extends Component {
             ref={ refCallback }
             disabled={ disabled }
             onChange={ onChange }
+            onKeyPress = { onKeyPress }
             value={ value }
             className={ 'input' }
             onClick={ onClick }

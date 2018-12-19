@@ -16,6 +16,7 @@ class GenericTextBox extends Component {
       className,
       group,
       container,
+      onKeyPress,
       textLabel,
     }=this.props
 
@@ -30,6 +31,7 @@ class GenericTextBox extends Component {
             value={ value }
             onClick={ onClick }
             onFocus={ onFocus }
+            onKeyPress={ onKeyPress }
             required
           />
           <span className={ textLabel ? textLabel : 'text-label' }>{ placeholder }</span>
