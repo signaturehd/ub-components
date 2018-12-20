@@ -2,6 +2,7 @@
 import GenericButton from './UButton/GenericButton'
 import FloatingActionButton from './UButton/FloatingActionButton'
 import FloatingSettingsButton from './UButton/FloatingSettingsButton'
+import GenericIconButton from './UButton/GenericIconButton'
 
 //Card
 import Card from './Card/Card'
@@ -55,6 +56,7 @@ export {
   GenericButton,
   FloatingActionButton,
   FloatingSettingsButton,
+  GenericIconButton,
   GenericTextBox,
   Card,
   PresentationCard,
