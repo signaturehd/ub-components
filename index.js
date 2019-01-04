@@ -33,6 +33,7 @@ import Drawer from './Drawer/Drawer'
 import Loader from './Loader/Loader'
 import CircularLoader from './Loader/CircularLoader'
 import SkeletalLoader from './Loader/ContentLoaderComponent'
+import GenericLoader from './Loader/GenericLoader'
 
 //File Uploader
 import FileUploader from './FileUploader/FileUploader'
@@ -82,5 +83,6 @@ export {
   GenericFileInput,
   DatePicker,
   TimePickerComponent,
-  LoaderModal
+  LoaderModal,
+  GenericLoader
 }
