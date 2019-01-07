@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 
 import './styles/style.css'
 
-class CircularLoader extends Component {
+import Modal from '../Modal/Modal'
+
+class GenericLoader extends Component {
   render () {
     const { show } = this.props
 
@@ -11,22 +13,33 @@ class CircularLoader extends Component {
       <div>
         {
           show &&
-          <div className = { 'circular-loader' } >
-            <span className = {'span-text'}></span>
-          </div>
+          <Modal
+            boxShadow = { 'none' }
+            borderRadius = { 'none' }
+            backgroundColor = { 'transparent' }
+            >
+            <div>
+              <div className = { 'generic-loader' } >
+                <img
+                  width = { 100 }
+                  height = { 100 }
+                  src= { require('../../images/mobileview/loading-gif-150x150(no-bg).gif')  }/>
+              </div>
+            </div>
+          </Modal>
         }
       </div>
     )
   }
 }
 
-CircularLoader.propTypes = {
+GenericLoader.propTypes = {
   width : PropTypes.number,
   show : PropTypes.bool,
 }
 
-CircularLoader.defaultProps = {
+GenericLoader.defaultProps = {
   width : 0,
   show : false,
 }
-export default CircularLoader
+export default GenericLoader
