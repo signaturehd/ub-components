@@ -12,7 +12,7 @@ class GenericLoader extends Component {
     return (
       <div>
         {
-          show &&
+          true &&
           <Modal
             boxShadow = { 'none' }
             borderRadius = { 'none' }
