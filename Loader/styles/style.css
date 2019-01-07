@@ -36,10 +36,10 @@
 
 /* Gif Loader */
 .generic-loader {
-  text-align: center;
   z-index: 1;
-  position: absolute;
-  background-color: #fff;
+  text-align: center;
+  margin: auto;
+  background-color: transparent;
 }
 
 @keyframes indeterminate_first {
