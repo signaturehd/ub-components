@@ -7,7 +7,7 @@ import Modal from '../Modal/Modal'
 
 class GenericLoader extends Component {
   render () {
-    const { show, validateLoading } = this.props
+    const { show, validateLoading, message } = this.props
 
     return (
       <div>
@@ -26,6 +26,8 @@ class GenericLoader extends Component {
                   height = { 75 }
                   src= { require('../../images/mobileview/loading-gif-150x150(no-bg).gif')  }/>
               </div>
+              <br/>
+              <h4>{ message }</h4>
             </div>
           </Modal>
         }
@@ -36,6 +38,7 @@ class GenericLoader extends Component {
 
 GenericLoader.propTypes = {
   width : PropTypes.number,
+  message : PropTypes.string,
   show : PropTypes.bool,
   validateLoading : PropTypes.bool,
 }
@@ -44,5 +47,6 @@ GenericLoader.defaultProps = {
   width : 0,
   show : false,
   validateLoading : false,
+  message : '',
 }
 export default GenericLoader
