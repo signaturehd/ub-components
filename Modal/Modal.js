@@ -58,13 +58,18 @@ class Modal extends Component {
       boxShadow,
       backgroundColor,
       overflowY,
-      borderRadius
+      borderRadius,
+      modalOverlay
     } = this.props
 
     const modalClass = `modal${  fullHeight ? ' full-height' : ''}`
 
     return (
-      <div className={ 'modal-overlay' }
+      <div
+          style = {{
+            backgroundColor: `${modalOverlay}`
+          }}
+         className={ 'modal-overlay' }
         ref={ node => (this.modalOverlay = node) }>
         <div
           style={{
@@ -101,6 +106,7 @@ Modal.propTypes = {
   boxShadow: PropTypes.string,
   backgroundColor: PropTypes.string,
   overflowY: PropTypes.string,
+  modalOverlay: PropTypes.string,
   borderRadius: PropTypes.string,
 }
 

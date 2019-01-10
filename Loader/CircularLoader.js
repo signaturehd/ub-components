@@ -7,7 +7,7 @@ import Modal from '../Modal/Modal'
 
 class GenericLoader extends Component {
   render () {
-    const { show } = this.props
+    const { show, validateLoading } = this.props
 
     return (
       <div>
@@ -17,6 +17,7 @@ class GenericLoader extends Component {
             boxShadow = { 'none' }
             borderRadius = { 'none' }
             backgroundColor = { 'transparent' }
+            modalOverlay = { validateLoading && '#fff' }
             >
             <div>
               <div className = { 'generic-loader' } >
@@ -36,10 +37,12 @@ class GenericLoader extends Component {
 GenericLoader.propTypes = {
   width : PropTypes.number,
   show : PropTypes.bool,
+  validateLoading : PropTypes.bool,
 }
 
 GenericLoader.defaultProps = {
   width : 0,
   show : false,
+  validateLoading : false,
 }
 export default GenericLoader
