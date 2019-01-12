@@ -53,7 +53,11 @@ import List from './List/List'
 //Line
 import Line from './Line/Line'
 
+//Charts
+import LineChart from './Charts/LineChart'
+
 export {
+  LineChart,
   GenericButton,
   FloatingActionButton,
   FloatingSettingsButton,
