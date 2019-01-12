@@ -33,92 +33,88 @@ class MultipleFileUploader extends Component {
       placeholder,
       setFile,
       disabled,
-      errorMessage
+      errorMessage,
+      onClick
     } = this.props
 
     return (
       <div>
         <center>
-          <h4 className = { 'multiple-font-weight-bolder' }>{ placeholder }</h4>
+          <h4>{ placeholder }</h4>
         </center>
-        {
-          fileArray.length !== 0 &&
-          fileArray.map((attachment, key) => (
-            <div key = {key}>
-              <h2 className = { 'multiple-attachment-name' }>{ attachment.name }</h2>
-              <GenericFileInput
-                keyId = { key }
-                onChange = { (e) => {
-                    const updatedAttachment = [...fileArray]
-                    const reader = new FileReader()
-                    const file = e.target.files[0]
-                    reader.onloadend=() => {
-                      updatedAttachment[key].base64 = reader.result
-                      updatedAttachment[key].file = file
-                      setFile(updatedAttachment)
-                    }
-                    reader.readAsDataURL(file)
-                  }
-                }
-                isMessage = { fileArray[key].file }
-                disabled = { disabled }
-                errorMessage = {
-                  attachment &&
-                  attachment.file &&
-                  this.isValid(attachment.file.type)
-                   ? 'Invalid File / Attach here the required files (e.g jpg, pdf, png, jpeg)' :
-                   errorMessage
-                 }
-              />
-                <div>
-                  <br/>
-                  <div className={ 'multiple-file-attachment-form' }>
-                  {
-
-                    disabled ?
-                    <div></div> :
-                    attachment.base64 &&
-                    <img
-                      src={ require('./images/x-circle.png') }
-                      className={ 'close-button' }
-                      onClick={
-                        () => {
-                          const updatedAttachment = [...fileArray]
-                          delete updatedAttachment[key].file
-                          delete updatedAttachment[key].base64
+        <br/>
+        <div className = { 'grid-global-columns-x3' }>
+          {
+            fileArray.length !== 0 &&
+            fileArray.map((attachment, key) => (
+              <div
+                className = { 'multiple-input-border' }
+                key = {key}>
+                <h2 className = { 'multiple-attachment-name' }>{ attachment.name }</h2>
+                <div className = { 'multiple-grid-image' }>
+                  <GenericFileInput
+                    keyId = { key }
+                    onChange = { (e) => {
+                        const updatedAttachment = [...fileArray]
+                        const reader = new FileReader()
+                        const file = e.target.files[0]
+                        reader.onloadend=() => {
+                          updatedAttachment[key].base64 = reader.result
+                          updatedAttachment[key].file = file
                           setFile(updatedAttachment)
-                          document.getElementById("#file-upload-"+key).type = ''
-                          document.getElementById("#file-upload-"+key).type = 'file'
                         }
+                        reader.readAsDataURL(file)
                       }
-                    />
-                  }
-                  {
-                    attachment.base64 &&
-                    <div
-                      style={ {
-                        backgroundImage: `url('${attachment.base64 && attachment.base64}')`,
-                        width: 'auto',
-                        height: '60px',
-                        backgroundSize: 'contain',
-                        backgroundRepeat: 'no-repeat',
-                      } }
-                    >
-                      <h6
-                        className={ 'multiple-fileuploader-name' }>
-                        {
-                          attachment &&
-                          attachment.file &&
-                          this.isValid(attachment.file.type) ?
-                               '' : attachment.file.name }
-                      </h6>
-                    </div>
-                  }
+                    }
+                    isMessage = { fileArray[key].file }
+                    disabled = { disabled }
+                    errorMessage = {
+                      attachment &&
+                      attachment.file &&
+                      this.isValid(attachment.file.type)
+                       ? 'Invalid File / Attach here the required files (e.g jpg, pdf, png, jpeg)' :
+                       errorMessage
+                     }
+                  />
+                  <div>
+                    {
+
+                      disabled ?
+                      <div></div> :
+                      attachment.base64 &&
+                      <img
+                        src={ require('./images/x-circle.png') }
+                        className={ 'close-button' }
+                        onClick={
+                          () => {
+                            const updatedAttachment = [...fileArray]
+                            delete updatedAttachment[key].file
+                            delete updatedAttachment[key].base64
+                            setFile(updatedAttachment)
+                            document.getElementById("#file-upload-"+key).type = ''
+                            document.getElementById("#file-upload-"+key).type = 'file'
+                          }
+                        }
+                      />
+                    }
+                  </div>
                 </div>
+                <div
+                  style={ {
+                    backgroundImage: `url( ${ attachment.base64 ? attachment.base64 : require('../../images/icons/default_image_loading.png') })`,
+                    width: 'auto',
+                    height: '100px',
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    margin: 'auto',
+                    objectFit: 'contain',
+                  } }
+                />
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
     )
   }

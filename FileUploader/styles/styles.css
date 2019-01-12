@@ -1,13 +1,19 @@
 .file-container {
 }
 
-.multiple-font-weight-bolder {
-  font-weight: bolder;
-  font-size: 14px;
-}
-
 .multiple-attachment-name {
   font-size: 11px;
+  text-align: center;
+}
+
+.multiple-input-border {
+  border: 1px dashed black;
+  margin-bottom: 10px;
+}
+
+.multiple-grid-image {
+  display: grid;
+  grid-template-columns: auto .05fr;
 }
 
 .file-group {
@@ -110,10 +116,6 @@
 @keyframes .fileHighlighter {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
-}
-
-.multiple-file-attachment-form {
-  padding: 5px;
 }
 
 .multiple-fileuploader-name {
