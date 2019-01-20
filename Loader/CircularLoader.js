@@ -22,8 +22,8 @@ class GenericLoader extends Component {
             <div>
               <div className = { 'generic-loader' } >
                 <img
-                  width = { 75 }
-                  height = { 75 }
+                  width = { 100 }
+                  height = { 100 }
                   src= { require('../../images/mobileview/loading-gif-150x150(no-bg).gif')  }/>
               </div>
               <br/>
