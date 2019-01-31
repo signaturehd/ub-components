@@ -33,7 +33,6 @@ class DatePicker extends Component {
             minDate={ minDate }
             maxDate={ maxDate }
             disabled={ disabled }
-            readOnly={ readOnly }
             showYearDropdown
             showMonthDropdown
             scrollableMonthDropdown
