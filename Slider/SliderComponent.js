@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Tooltip from 'rc-tooltip'
-import Slider from 'rc-slider'
-import 'rc-slider/assets/index.css'
-import 'rc-tooltip/assets/bootstrap_white.css'
-
+import Slider, { createSliderWithTooltip } from 'rc-slider'
+import 'rc-slider/assets/index.css';
 import './styles/index.css'
 
-class SliderComponent extends Component {
+function percentFormatter(v) {
+  return v;
+}
 
+class SliderComponent extends Component {
   constructor (props) {
     super(props)
+    this.state = {
+      valueText : ''
+    }
   }
 
   render () {
@@ -18,42 +21,31 @@ class SliderComponent extends Component {
       min,
       max,
       onChangeValue,
+      text
     } = this.props
 
-    const createSliderWithTooltip = Slider.createSliderWithTooltip;
-    const Range = createSliderWithTooltip(Slider.Range);
-    const Handle = Slider.Handle;
+    const {
+      valueText
+    } = this.state
 
-    const handle = (props) => {
-    const { value, dragging, index, ...restProps } = props;
-    const overLayStyle = { width : 20, margin: 0, height: 20 }
+    const style = { width: 300 }
 
-    return (
-      <Tooltip
-        prefixCls={ 'rc-slider-tooltip' }
-        overlay={ value }
-        visible={ dragging }
-        placement={ 'top' }
-        key={ index }
-      >
-      <Handle
-        value={value}
-        {...restProps} />
-      </Tooltip>
-      );
-    };
-
-    const wrapperStyle = { width: 400 };
-    console.log(value)
+    const SliderWithTooltip = createSliderWithTooltip(Slider);
     return (
       <center>
-        <div style={wrapperStyle}>
-          <Slider
-            min={min}
-            max={max}
-            defaultValue={3}
-            handle={handle} />
+        <div style={style}>
+          <SliderWithTooltip
+            min = { min }
+            max = { max }
+            value = { valueText }
+            tipFormatter={percentFormatter}
+            onChange={ (e) => {
+              this.setState({ valueText : e })
+              this.props.onChangeValue(e)
+            } }
+          />
         </div>
+        <p className = { 'unionbank-color-grey font-size-12px' }>{ text }</p>
       </center>
     )
   }
