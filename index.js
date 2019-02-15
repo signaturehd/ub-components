@@ -56,7 +56,11 @@ import Line from './Line/Line'
 //Charts
 import LineChart from './Charts/LineChart'
 
+//SliderComponent
+import SliderComponent from './Slider/SliderComponent'
+
 export {
+  SliderComponent,
   LineChart,
   GenericButton,
   FloatingActionButton,
