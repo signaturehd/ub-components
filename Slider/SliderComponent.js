@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Slider, { createSliderWithTooltip } from 'rc-slider'
-import 'rc-slider/assets/index.css';
-import './styles/index.css'
-
-function percentFormatter(v) {
-  return v;
-}
+import { Slider } from 'material-ui-slider'
+import '@material-ui/styles'
 
 class SliderComponent extends Component {
   constructor (props) {
@@ -30,22 +25,23 @@ class SliderComponent extends Component {
 
     const style = { width: 300 }
 
-    const SliderWithTooltip = createSliderWithTooltip(Slider);
     return (
       <center>
         <div style={style}>
-          <SliderWithTooltip
+          <Slider
+            color = 'rgb(255, 153, 0)'
             min = { min }
             max = { max }
+            step = { 1 }
+            defaultValue = { min }
             value = { valueText }
-            tipFormatter={percentFormatter}
-            onChange={ (e) => {
-              this.setState({ valueText : e })
-              this.props.onChangeValue(e)
+            onChange={ (value, e) => {
+              onChangeValue(value, e)
+              this.setState({ valueText : value })
             } }
           />
         </div>
-        <p className = { 'unionbank-color-grey font-size-12px' }>{ text }</p>
+        <h4 className = { 'unionbank-color-grey font-size-10px' }>{ text }</h4>
       </center>
     )
   }
@@ -55,4 +51,5 @@ SliderComponent.propTypes = {
 }
 SliderComponent.defaultProps = {
 }
+
 export default SliderComponent
