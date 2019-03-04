@@ -39,6 +39,7 @@ import GenericLoader from './Loader/GenericLoader'
 import FileUploader from './FileUploader/FileUploader'
 import MultipleFileUploader from './FileUploader/MultipleFileUploader'
 import MultipleAttachments from './FileUploader/MultipleAttachments'
+import DragAndDropFileUploader from './FileUploader/DragAndDropFileUploader'
 
 //Check Box
 import Checkbox from './Checkbox/Checkbox'
@@ -86,6 +87,7 @@ export {
   Checkbox,
   Line,
   MultipleFileUploader,
+  DragAndDropFileUploader,
   MultipleAttachments,
   GenericInput,
   GenericFileInput,
