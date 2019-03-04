@@ -14,7 +14,9 @@ class DragAndDropFileUploader extends Component {
 
 		return(
 			<div className='video-uploading-button-size'>
-        <Dropzone onDrop = { (e,f) => onDrop(e,f) }>
+        <Dropzone
+					multiple={false}
+					onDrop = { (e,f) => onDrop(e,f) }>
           {({ getRootProps, getInputProps, isDragActive }) => {
             return (
               <div
