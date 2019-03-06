@@ -44,7 +44,7 @@ class MultipleAttachments extends Component {
           <h4>{ placeholder }</h4>
         </center>
         <br/>
-        <div className = { 'grid-global-columns-x3' }>
+        <div className = { fileArray.length === 1 ? '' : 'grid-global-columns-x3' }>
           {
             fileArray.length !== 0 &&
             fileArray.map((attachment, key) => (
