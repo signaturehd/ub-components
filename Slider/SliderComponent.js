@@ -10,6 +10,14 @@ class SliderComponent extends Component {
     }
   }
 
+  componentWillReceiveProps (nextProps) {
+    if(nextProps === '') {
+      this.setState({ valueText : nextProps.min })
+    } else {
+      this.setState({ valueText : nextProps.defaultValue })
+    }
+  }
+
   render () {
     const {
       min,
@@ -32,8 +40,8 @@ class SliderComponent extends Component {
             min = { min }
             max = { max }
             step = { 1 }
-            defaultValue = { min }
-            value = { valueText }
+            defaultValue = { parseInt(valueText) }
+            value = { parseInt(valueText) }
             onChange={ (value, e) => {
               onChangeValue(value, e)
               this.setState({ valueText : value })
