@@ -5,6 +5,7 @@ import './styles/multipleAvatar.css'
 
 import { convertInitial } from '../../utils/initialUtils'
 import { randomColor } from '../../utils/randomColorUtils'
+import { isDataURL } from '../../utils/base65CheckerUtils'
 
 class SingleAvatar extends Component {
   constructor (props) {
@@ -13,6 +14,11 @@ class SingleAvatar extends Component {
 
   checkInitials (data) {
     return convertInitial(data)
+  }
+
+  checkUrl (testUrl) {
+    const validate = isDataURL(testUrl)
+    return validate
   }
 
   render () {
@@ -25,18 +31,20 @@ class SingleAvatar extends Component {
       height,
       fontColor,
     } = this.props
-    console.log(backgroundColor)
+
     return (
       <div
         style = {{
-          background: backgroundColor ? backgroundColor: randomColor(),
+          background: this.checkUrl(backgroundColor) ? `url(${backgroundColor})`: randomColor(),
           width: width,
+          backgroundSize: this.checkUrl(backgroundColor) ? '': 'cover',
           height: height,
+          backgroundPosition: 'center',
           borderRadius: '50px',
           color: fontColor,
         }}
-        className = { `avatar-${backgroundColor ? 'base64' : 'text'}-settings` }>
-        <h4 className={ `avatar-font${fontSize}` }> { backgroundColor ? '' : this.checkInitials('test test') }</h4>
+        className = { `avatar-${this.checkUrl(backgroundColor) ? 'base64' : 'text'}-settings` }>
+        { this.checkUrl(backgroundColor) ? '' : this.checkInitials('test test') }
       </div>
     )
   }
@@ -55,8 +63,8 @@ SingleAvatar.propTypes = {
 SingleAvatar.defaultProps = {
   fontSize: 10,
   initials: 'Empty Empty',
-  width: '25px',
-  height: '25px',
+  width: '20px',
+  height: '20px',
   fontColor: '#fff',
 }
 
