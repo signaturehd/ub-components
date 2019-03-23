@@ -60,7 +60,13 @@ import LineChart from './Charts/LineChart'
 //SliderComponent
 import SliderComponent from './Slider/SliderComponent'
 
+//Avatar
+import SingleAvatar from './Avatar/SingleAvatar'
+import MultipleAvatar from './Avatar/MultipleAvatar'
+
 export {
+  SingleAvatar,
+  MultipleAvatar,
   SliderComponent,
   LineChart,
   GenericButton,
