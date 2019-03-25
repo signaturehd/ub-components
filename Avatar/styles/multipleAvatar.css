@@ -1,6 +1,22 @@
+@font-face {
+  font-family: 'Gotham Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Gotham Bold');
+  src: url('../fonts/Gotham-Bold.eot');
+  src : url('../fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gotham-Bold.ttf') format('truetype'),
+  url('../fonts/Gotham-Bold.woff') format('woff');
+}
+
+.avatar-font {
+  font-family: 'Gotham Bold' !important;
+}
+
 .avatar-text-settings {
   text-align: center;
   margin: auto;
+  font-weight: 900;
 }
 
 .avatar-base64-settings {
