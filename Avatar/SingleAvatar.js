@@ -41,18 +41,22 @@ class SingleAvatar extends Component {
   render () {
     const {
       initials,
-      base64,
       fontSize,
       backgroundColor,
       width,
       height,
+      margin,
+      key,
       fontColor,
+      borderColor,
+      defaultColor
     } = this.props
 
     return (
       <h4
+        key = { key }
         style = {{
-          background: this.isDataURL(backgroundColor) ? `url(${backgroundColor})`: this.randomColor(),
+          background: defaultColor ? 'black' : this.isDataURL(backgroundColor) ? `url(${backgroundColor})`: this.randomColor(),
           width: width,
           backgroundSize: this.isDataURL(backgroundColor) ? '': 'cover',
           height: height,
@@ -62,28 +66,37 @@ class SingleAvatar extends Component {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          margin: margin,
+          border: borderColor,
         }}
-        className = { `avatar-font avatar-${this.isDataURL(backgroundColor) ? 'base64' : 'text'}-settings` }
-        >{ this.isDataURL(backgroundColor) ? '' : this.convertInitial('test test') }</h4>
+        className = { `avatar-font${fontSize} avatar-${this.isDataURL(backgroundColor) ? 'base64' : 'text'}-settings` }
+        >{ defaultColor ? this.isDataURL(backgroundColor) ? '' : '+'+this.convertInitial(initials): this.isDataURL(backgroundColor) ? '' : this.convertInitial(initials) }</h4>
     )
   }
 }
 
 SingleAvatar.propTypes = {
   fontSize: PropTypes.string,
+  defaultColor: PropTypes.bool,
   initials: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
   backgroundColor: PropTypes.string,
   fontColor: PropTypes.string,
-  base64 : PropTypes.blob,
+  key: PropTypes.number,
+  margin: PropTypes.string,
+  borderColor: PropTypes.string,
 }
 
 SingleAvatar.defaultProps = {
   fontSize: 10,
+  key: 0,
+  defaultColor: false,
   initials: 'Empty Empty',
+  margin: '0',
   width: '20px',
   height: '20px',
+  borderColor: 'none',
   fontColor: '#fff',
 }
 

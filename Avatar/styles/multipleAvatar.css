@@ -15,13 +15,23 @@
 
 .avatar-text-settings {
   text-align: center;
-  margin: auto;
-  font-weight: 900;
 }
 
 .avatar-base64-settings {
   background-size: cover;
   object-fit: cover;
+}
+
+.avatar-font7 {
+  font-size: 7px;
+}
+
+.avatar-font8 {
+  font-size: 8px;
+}
+
+.avatar-font9 {
+  font-size: 9px;
 }
 
 .avatar-font10 {
